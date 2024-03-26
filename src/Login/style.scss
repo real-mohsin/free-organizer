@@ -54,6 +54,19 @@ $offwhite : #F5F6FA;
       justify-content: center;
       align-items: center;
       height: 100%;
+
+      .bottom-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        font-size: 14px;
+        align-items: center;
+        width: 100%;
+
+        .reset-link {
+          color: $blue;
+        }
+      }
     }
   }
 }

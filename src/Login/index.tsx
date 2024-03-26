@@ -2,6 +2,7 @@ import './style.scss'
 import loginbg from '../assets/images/login-bg.png'
 import InputField from '../Components/InputField';
 import { useState, ChangeEvent } from 'react';
+import Button from '../Components/Button';
 
 function Login() {
 
@@ -31,9 +32,25 @@ contractors</div>
         <div className='form-container'>
           <InputField type={'text'} label={'Email'} value={email} name={'email'} placeholder={'jon@example.com'} onChange={handleEmailChange} />
           <InputField type={'password'} label={'Password'} value={password} name={'password'} placeholder={'********'} onChange={handlePasswordChange} />
+
+          <div className='bottom-section'>
+            <div className='remember-forget-section'>
+              <input type="checkbox" name="vehicle1" value="Bike" />
+              <label> Remember me</label>
+            </div>
+
+            <a href="" className='reset-link'>Reset/forgot password</a>
+          </div>
+
+          <Button variant="primary" size="medium" onClick={() => console.log('Medium button clicked')}>
+            Login
+          </Button>
+
         </div>
-      </div>
+      <div>
     </div>
+  </div>
+</div>
     );
 }
 

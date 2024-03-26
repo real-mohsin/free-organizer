@@ -1,0 +1,59 @@
+$blue : #6383FA;
+$white : #fff;
+$offwhite : #F5F6FA;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+
+  .blue-box {
+    max-width: 598px;
+    width: 100%;
+    padding: 96px 62px 0 62px;
+    background-color: $blue;
+    border-radius: 32px 0 0 32px;
+    box-sizing: border-box;
+
+    .login-heading {
+      font-size: 40px;
+      color: $white;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .sub-head {
+      font-size: 24px;
+      color: $white;
+      margin-bottom: 32px;
+    }
+
+    .bgimg {
+      max-width: 473px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .white-box {
+    max-width: 487px;
+    width: 100%;
+    background-color: $offwhite;
+    border-radius: 0 32px 32px 0;
+    box-sizing: border-box;
+    padding: 0 52px;
+
+    .form-container {
+      max-width: 384px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

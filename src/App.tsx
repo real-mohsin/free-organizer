@@ -5,11 +5,12 @@ import Clients from './Clients'
 import Tasks from './Tasks'
 import Login from './Login'
 
+
 function App() {
 
   return (
     <Routes>
-      <Route path='/' element={ <Dashboard /> } />
+      <Route path='dashboard' element={ <Dashboard /> } />
       <Route path='clients' element={ <Clients /> } />
       <Route path='tasks' element={ <Tasks /> } />
       <Route path='login' element={ <Login /> } />

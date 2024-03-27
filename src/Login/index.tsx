@@ -1,21 +1,39 @@
 import './style.scss'
 import loginbg from '../assets/images/login-bg.png'
 import InputField from '../Components/InputField';
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import Button from '../Components/Button';
+import { useNavigate } from 'react-router-dom';
+
+
+interface FormData {
+  email: string;
+  password: string;
+}
 
 function Login() {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
-  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
-  }
+  const [formData, setFormData] = useState<FormData>({
+    email: '',
+    password: ''
+  });
 
-  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value)
-  }
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    console.log(formData); // Do whatever you want with the form data
+      alert('Redirecting you to Dashboard')
+      navigate('/dashboard')
+  };
 
   return (
     <div className='login-container'>
@@ -28,24 +46,29 @@ contractors</div>
           <img src={loginbg} alt={'login-bg-img'} />
         </div>
       </div>
-      <div className='white-box'>
-        <div className='form-container'>
-          <InputField type={'text'} label={'Email'} value={email} name={'email'} placeholder={'jon@example.com'} onChange={handleEmailChange} />
-          <InputField type={'password'} label={'Password'} value={password} name={'password'} placeholder={'********'} onChange={handlePasswordChange} />
 
-          <div className='bottom-section'>
-            <div className='remember-forget-section'>
-              <input type="checkbox" name="vehicle1" value="Bike" />
-              <label> Remember me</label>
+      <div className='white-box'>
+        
+        <div className='form-container'>
+
+          <form onSubmit={handleSubmit} className='w-100'>
+            <InputField type={'text'} label={'Email'} value={formData.email} name={'email'} placeholder={'jon@example.com'} onChange={handleInputChange} />
+
+            <InputField type={'password'} label={'Password'} value={formData.password} name={'password'} placeholder={'********'} onChange={handleInputChange} />
+
+            <div className='bottom-section'>
+              <div className='remember-forget-section'>
+                <input type="checkbox" name="vehicle1" value="Bike" />
+                <label> Remember me</label>
+              </div>
+
+              <a href="" className='reset-link'>Reset password</a>
             </div>
 
-            <a href="" className='reset-link'>Reset/forgot password</a>
-          </div>
-
-          <Button variant="primary" size="medium" onClick={() => console.log('Medium button clicked')}>
-            Login
-          </Button>
-
+            <Button type='submit' variant="primary" size="medium" onClick={() => console.log('Submit button clicked')}>
+              Login
+            </Button>
+          </form>
         </div>
       <div>
     </div>

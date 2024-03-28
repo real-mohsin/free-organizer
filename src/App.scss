@@ -1,10 +1,6 @@
 $blue : #6383FA;
 $white : #fff;
 
-.dflex {
-  display: flex;
-}
-
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -94,4 +90,28 @@ body {
 
 .w-100 {
   width: 100%;
+}
+
+.dflex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1920px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
 }

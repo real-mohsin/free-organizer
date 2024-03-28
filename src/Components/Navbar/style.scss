@@ -1,0 +1,37 @@
+.nav-bar {
+  margin: 16px 0;
+
+  .profile-title {
+    .profile-block {
+      width: 88px;
+      height: 88px;
+      border-radius: 100%;
+      margin-right: 16px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .profile-name {
+      font-size: 20px;
+      font-weight: 600;
+      width: min-content;
+    }
+  }
+
+  .nav-container {
+    max-width: 444px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navlinks {
+    font-size: 20px;
+    font-weight: 600;
+    color: #151667;
+    text-decoration: none;
+  }
+
+}

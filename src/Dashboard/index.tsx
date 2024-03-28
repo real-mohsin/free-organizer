@@ -1,5 +1,15 @@
+import NavBar from '../Components/Navbar';
+import './style.scss'
+
 function Dashboard() {
-    return ( <>Dashboard Page</> );
+  return (
+    <>
+      <NavBar />
+      <div className='container'>
+        Dashboard Page
+      </div>
+    </>
+    );
 }
 
 export default Dashboard;

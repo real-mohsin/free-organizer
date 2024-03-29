@@ -1,0 +1,94 @@
+.kpi-bg {
+  background-color: #F1F4FF;
+  margin-bottom: 32px;
+
+  .container {
+    padding: 61px 24px 102px 24px;
+
+    .dashboard-title {
+      font-size: 64px;
+      font-weight: 600;
+      color: #151667;
+      margin-bottom: 36px;
+    }
+
+    .kpi-graph-sec {
+      width: 100%;
+
+      .kpi-section {
+        max-width: 428px;
+        width: 100%;
+        flex-wrap: wrap;
+  
+        .kpi-block {
+          max-width: 173px;
+          width: 100%;
+          margin-bottom: 40px;
+          .title {
+            font-size: 48px;
+            font-weight: 600;
+            color: #3B58FF;
+          }
+  
+          .sub-title {
+            font-size: 20px;
+            color: #151667;
+          }
+        }
+
+      }
+
+      .graph-sec {
+        max-width: 1140px;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+}
+
+.heading {
+  font-size: 48px;
+  color: #151667;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.client-sec {
+  max-width: 974px;
+  width: 100%;
+}
+
+.tasks-sec {
+  max-width: 844px;
+  width: 100%;
+}
+
+.tbl-container {
+  width: 100%;
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
+    
+   td, th{
+      border-top: 1px solid #ECF0F1;
+      padding: 10px;
+    }
+    
+    th{
+      background-color: #3B58FF;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 24px 16px;
+    }
+  }
+
+}

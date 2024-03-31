@@ -1,9 +1,95 @@
 import NavBar from '../Components/Navbar';
 import './style.scss'
 
-import graph from '../assets/images/line-graph.png'
+// import graph from '../assets/images/line-graph.png'
 import externalicon from '../assets/images/External-icon.png'
 import Footer from '../Components/Footer';
+
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer
+} from "recharts";
+
+const data = [
+  {
+    name: "Jan",
+    Earning: 4000,
+    pv: 2400,
+    amt: 2400
+  },
+  {
+    name: "Feb",
+    Earning: 3000,
+    pv: 1398,
+    amt: 2210
+  },
+  {
+    name: "Mar",
+    Earning: 2000,
+    pv: 9800,
+    amt: 2290
+  },
+  {
+    name: "Apr",
+    Earning: 2780,
+    pv: 3908,
+    amt: 2000
+  },
+  {
+    name: "May",
+    Earning: 1890,
+    pv: 4800,
+    amt: 2181
+  },
+  {
+    name: "Jun",
+    Earning: 2390,
+    pv: 3800,
+    amt: 2500
+  },
+  {
+    name: "Jul",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  },
+  {
+    name: "Aug",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  },
+  {
+    name: "Sep",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  },
+  {
+    name: "Oct",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  },
+  {
+    name: "Nov",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  },
+  {
+    name: "Dec",
+    Earning: 3490,
+    pv: 4300,
+    amt: 2100
+  }
+];
+
 
 function Dashboard() {
 
@@ -56,7 +142,23 @@ function Dashboard() {
               </div>
 
               <div className='graph-sec'>
-                 <img src={graph} alt={'line-graph'} />
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart
+                    data={data}
+                    margin={{
+                      top: 10,
+                      right: 30,
+                      left: 0,
+                      bottom: 0
+                    }}
+                  >
+                  <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="Earning" stroke="#3B58FF" fill="#6383FA" />
+                  </AreaChart>
+                </ResponsiveContainer>
               </div>
 
             </div>
@@ -73,13 +175,15 @@ function Dashboard() {
             <div className='tbl-container'>
               <table>
                 <thead>
-                  <th>No</th>
-                  <th>Project Title</th>
-                  <th>Client Name</th>
-                  <th>Time Zone</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
-                  <th></th>
+                  <tr>
+                    <th>No</th>
+                    <th>Project Title</th>
+                    <th>Client Name</th>
+                    <th>Time Zone</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -142,11 +246,13 @@ function Dashboard() {
             <div className='tbl-container'>
               <table>
                 <thead>
-                  <th>No</th>
-                  <th>Task</th>
-                  <th>Due Date</th>
-                  <th>Status</th>
-                  <th></th>
+                  <tr>
+                    <th>No</th>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>

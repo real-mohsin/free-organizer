@@ -1,10 +1,15 @@
 $blue : #6383FA;
 $white : #fff;
 
+* {
+  margin: 0;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   box-sizing: border-box;
+  background-color: #F1F4FF;
 }
 
 .inter-100 {
@@ -114,4 +119,63 @@ body {
   width: 100%;
   padding: 0 24px;
   margin: 0 auto;
+}
+
+.page-container {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  font-size: 40px;
+  font-weight: 600;
+  color: #151667;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.page-sub-heading {
+  color: #3578B6;
+  margin-bottom: 24px;
+}
+
+.tbl-container {
+  width: 100%;
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
+    
+   td, th{
+      border-top: 1px solid #ECF0F1;
+      padding: 10px;
+    }
+    
+    th{
+      background-color: #3B58FF;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 24px 16px;
+    }
+  }
+
+}
+
+.heading {
+  font-size: 48px;
+  color: #151667;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.bg-white {
+  background-color: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
 }

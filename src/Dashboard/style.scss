@@ -51,13 +51,6 @@
   }
 }
 
-.heading {
-  font-size: 48px;
-  color: #151667;
-  font-weight: 600;
-  margin-bottom: 32px;
-}
-
 .client-sec {
   max-width: 974px;
   width: 100%;
@@ -68,27 +61,3 @@
   width: 100%;
 }
 
-.tbl-container {
-  width: 100%;
-
-  table{
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    overflow: hidden;
-    
-   td, th{
-      border-top: 1px solid #ECF0F1;
-      padding: 10px;
-    }
-    
-    th{
-      background-color: #3B58FF;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 500;
-      padding: 24px 16px;
-    }
-  }
-
-}

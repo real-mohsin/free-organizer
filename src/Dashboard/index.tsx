@@ -166,7 +166,7 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="container dflex justify-space-between">
+        <div className="container dflex justify-space-between bg-white">
           
           <div className="client-sec">
             <div className="heading">

@@ -1,4 +1,5 @@
-import InputField from "../Components/InputField";
+import editIcon from '../assets/images/edit-icon.png'
+import externalIcon from '../assets/images/External-icon.png'
 import NavBar from "../Components/Navbar";
 import './style.scss'
 
@@ -23,6 +24,7 @@ function Clients() {
                     <th>Time Zone</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,6 +35,10 @@ function Clients() {
                     <td>GMT+5</td>
                     <td>Aug 06, 2023</td>
                     <td>In progress</td>
+                    <td>
+                      <img src={editIcon} alt={'edit-icon'} />
+                      <img src={externalIcon} alt={'external-icon'} />
+                    </td>
                   </tr>
                   
                   <tr>
@@ -42,6 +48,9 @@ function Clients() {
                     <td>GMT+8</td>
                     <td>Feb 08, 2021</td>
                     <td>June 30, 2022</td>
+                    <td>
+                      <img src={editIcon} alt={'edit-icon'} />
+                    </td>
                   </tr>
 
                   <tr>
@@ -51,6 +60,9 @@ function Clients() {
                     <td>GMT-5</td>
                     <td>Jan 01, 2020</td>
                     <td>Jan 30, 2021</td>
+                    <td>
+                      <img src={editIcon} alt={'edit-icon'} />
+                    </td>
                   </tr>
 
                   <tr>
@@ -60,6 +72,9 @@ function Clients() {
                     <td>GMT+4</td>
                     <td>Jun 15, 2019</td>
                     <td>Jun 20, 2019</td>
+                    <td>
+                      <img src={editIcon} alt={'edit-icon'} />
+                    </td>
                   </tr>
 
                 </tbody>

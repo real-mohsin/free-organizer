@@ -9,7 +9,6 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   box-sizing: border-box;
-  background-color: #F1F4FF;
 }
 
 .inter-100 {
@@ -127,6 +126,7 @@ body {
   width: 100%;
   padding: 0 24px;
   margin: 0 auto;
+  margin-top: 48px;
 }
 
 .page-heading {
@@ -175,7 +175,7 @@ body {
 }
 
 .bg-white {
-  background-color: #fff;
+  background-color: #F1F4FF;
   padding: 32px 24px;
   border-radius: 8px;
 }

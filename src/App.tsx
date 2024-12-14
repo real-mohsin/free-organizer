@@ -4,6 +4,7 @@ import Dashboard from './Dashboard'
 import Clients from './Clients'
 import Tasks from './Tasks'
 import Login from './Login'
+import AddClient from './Client-Add'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path='dashboard' element={ <Dashboard /> } />
       <Route path='clients' element={ <Clients /> } />
+      <Route path='add-client' element={ <AddClient /> } />
       <Route path='tasks' element={ <Tasks /> } />
       <Route path='login' element={ <Login /> } />
       {/* NO MATCH PATH */}

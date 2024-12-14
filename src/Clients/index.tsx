@@ -1,16 +1,34 @@
+import { useNavigate } from 'react-router-dom';
 import editIcon from '../assets/images/edit-icon.png'
 import externalIcon from '../assets/images/External-icon.png'
+import Button from '../Components/Button';
+import Footer from '../Components/Footer';
 import NavBar from "../Components/Navbar";
 import './style.scss'
 
 function Clients() {
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+      navigate('/add-client')
+  };
+
   return (
     <>
       <NavBar />
       <div className="container">
-
-        <div className="page-heading">Clients List</div>
-        <div className="page-sub-heading">List of all the clients you have worked with.</div>
+        <div className='dflex justify-space-between align-center'>
+          <div>
+            <div className="page-heading">Clients List</div>
+            <div className="page-sub-heading">List of all the clients you have worked with.</div>
+          </div>
+          <div>
+            <Button variant={'primary'} size={'large'} type={'button'} onClick={handleNavigate}>
+              Add Client
+            </Button>
+          </div>
+        </div>
 
         <div className="bg-white">
 
@@ -85,6 +103,8 @@ function Clients() {
 
 
       </div>
+
+      <Footer />
     </>
     );
 }

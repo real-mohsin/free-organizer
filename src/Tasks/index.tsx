@@ -1,6 +1,8 @@
 import editIcon from '../assets/images/edit-icon.png'
 import externalIcon from '../assets/images/External-icon.png'
+import Footer from '../Components/Footer';
 import NavBar from "../Components/Navbar";
+import Button from '../Components/Button';
 
 function Tasks() {
   return (
@@ -8,8 +10,17 @@ function Tasks() {
       <NavBar />
       <div className="container">
 
-        <div className="page-heading">Tasks</div>
-        <div className="page-sub-heading">List of all tasks.</div>
+      <div className='dflex justify-space-between align-center'>
+          <div>
+            <div className="page-heading">Task List</div>
+            <div className="page-sub-heading">List of all tasks.</div>
+          </div>
+          <div>
+            <Button variant={'primary'} size={'large'} type={'button'}>
+              Add Task
+            </Button>
+          </div>
+      </div>
 
         <div className="bg-white">
 
@@ -82,6 +93,8 @@ function Tasks() {
 
 
       </div>
+
+      <Footer />
     </>
     );
 }

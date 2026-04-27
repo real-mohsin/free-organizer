@@ -5,6 +5,27 @@ import './style.scss'
 import externalicon from '../assets/images/External-icon.png'
 import Footer from '../Components/Footer';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
+export interface Client {
+  id: string;
+  name: string;
+  projectName: string;
+  timeZone: string;
+  startDate: string;
+  endDate: string;
+  amountEarned: string
+  platform: string;
+}
+
+export interface Todo {
+  id: string;
+  task: string;
+  dueDate: string;
+  status: string;
+  detail: string;
+}
+
 import {
   AreaChart,
   Area,
@@ -14,7 +35,9 @@ import {
   Tooltip,
   ResponsiveContainer
 } from "recharts";
+import { useEffect, useState } from 'react';
 
+// Graph Data
 const data = [
   {
     name: "Jan",
@@ -90,8 +113,48 @@ const data = [
   }
 ];
 
-
 function Dashboard() {
+
+  const [clients, setClients] = useState<Client[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+  
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchClients = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/clients`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: Client[] = await response.json(); // Ensure the response matches the Client type
+      setClients(data);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchTodos = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/todo`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: Todo[] = await response.json(); // Ensure the response matches the Client type
+      setTodos(data);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchClients();
+    fetchTodos();
+  },[])
 
   return (
     <>
@@ -172,68 +235,32 @@ function Dashboard() {
             <div className="heading">
               Clients & Projects List
             </div>
+            
             <div className='tbl-container'>
               <table>
                 <thead>
                   <tr>
-                    <th>No</th>
                     <th>Project Title</th>
                     <th>Client Name</th>
                     <th>Time Zone</th>
                     <th>Start Date</th>
                     <th>End Date</th>
-                    <th></th>
+                    <th>Platform</th>
+                    <th>Earning</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>01</td>
-                    <td>Maverick</td>
-                    <td>Mohsin R</td>
-                    <td>GMT+5</td>
-                    <td>Aug 06, 2023</td>
-                    <td>In progress</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
+                {clients.map((client) => (
+                  <tr key={client.id}>
+                    <td>{client.projectName}</td>
+                    <td>{client.name}</td>
+                    <td>{client.timeZone}</td>
+                    <td>{client.startDate}</td>
+                    <td>{client.endDate}</td>
+                    <td>{client.platform}</td>
+                    <td>${client.amountEarned}</td>
                   </tr>
-                  
-                  <tr>
-                    <td>02</td>
-                    <td>Inspxt</td>
-                    <td>Benjamin W</td>
-                    <td>GMT+8</td>
-                    <td>Feb 08, 2021</td>
-                    <td>June 30, 2022</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>03</td>
-                    <td>Aroma ERP</td>
-                    <td>Kate Z</td>
-                    <td>GMT-5</td>
-                    <td>Jan 01, 2020</td>
-                    <td>Jan 30, 2021</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>04</td>
-                    <td>OBS Transport</td>
-                    <td>Khalid Al Amir</td>
-                    <td>GMT+4</td>
-                    <td>Jun 15, 2019</td>
-                    <td>Jun 20, 2019</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
+                ))}
                 </tbody>
               </table>
             </div>
@@ -247,7 +274,6 @@ function Dashboard() {
               <table>
                 <thead>
                   <tr>
-                    <th>No</th>
                     <th>Task</th>
                     <th>Due Date</th>
                     <th>Status</th>
@@ -255,46 +281,16 @@ function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>01</td>
-                    <td>Complete the Maverick UI</td>
-                    <td>Sep 04, 2023</td>
-                    <td>Complete</td>
+                {todos.map((todo) => (
+                  <tr key={todo.id}>
+                    <td>{todo.task}</td>
+                    <td>{todo.dueDate}</td>
+                    <td>{todo.status}</td>
                     <td>
                       <img src={externalicon} alt={'external-link'} />
                     </td>
                   </tr>
-                  
-                  <tr>
-                    <td>02</td>
-                    <td>Start Maverick front-end development</td>
-                    <td>Sep 12, 2023</td>
-                    <td>In process</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>03</td>
-                    <td>Start Maverick back-end development</td>
-                    <td>Oct 01, 2023</td>
-                    <td>Pending</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>04</td>
-                    <td>Start Maverick front-end integration with back-end</td>
-                    <td>Oct 21, 2023</td>
-                    <td>Pending</td>
-                    <td>
-                      <img src={externalicon} alt={'external-link'} />
-                    </td>
-                  </tr>
-
+                ))}
                 </tbody>
               </table>
             </div>

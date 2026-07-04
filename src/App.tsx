@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Dashboard from './Dashboard'
-import Clients from './Clients'
-import Tasks from './Tasks'
-import Login from './Login'
-import AddClient from './Client-Add'
+import Dashboard from './pages/Dashboard'
+import Clients from './pages/Clients'
+import Tasks from './pages/Tasks'
+import Login from './pages/Login'
+import AddClient from './pages/Client-Add'
 
 
 function App() {

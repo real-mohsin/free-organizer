@@ -1,0 +1,164 @@
+/* ==================================================
+   RESET
+================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================================
+   DOCUMENT
+================================================== */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fo-font-family);
+    font-size: var(--fo-font-size-md);
+    font-weight: var(--fo-font-weight-normal);
+    line-height: var(--fo-line-height-normal);
+
+    background-color: var(--fo-color-background);
+    color: var(--fo-color-text-primary);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================================================
+   MEDIA
+================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+/* ==================================================
+   FORM ELEMENTS
+================================================== */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ==================================================
+   LINKS
+================================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==================================================
+   LISTS
+================================================== */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ==================================================
+   TABLES
+================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ==================================================
+   TYPOGRAPHY
+================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+/* ==================================================
+   HR
+================================================== */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--fo-color-border);
+}
+
+/* ==================================================
+   FOCUS
+================================================== */
+
+:focus-visible {
+    outline: 2px solid var(--fo-color-primary);
+    outline-offset: 2px;
+}
+
+/* ==================================================
+   SELECTION
+================================================== */
+
+::selection {
+    background-color: var(--fo-color-primary-light);
+    color: var(--fo-color-primary);
+}

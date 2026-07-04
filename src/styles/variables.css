@@ -1,0 +1,241 @@
+:root {
+   /* ==================================================
+       COLORS
+    ================================================== */
+
+   /* Primary */
+   --fo-color-primary: #2563eb;
+   --fo-color-primary-hover: #1d4ed8;
+   --fo-color-primary-active: #1e40af;
+   --fo-color-primary-light: #dbeafe;
+
+   /* Secondary */
+   --fo-color-secondary: #64748b;
+   --fo-color-secondary-hover: #475569;
+   --fo-color-secondary-active: #334155;
+   --fo-color-secondary-light: #f1f5f9;
+
+   /* Success */
+   --fo-color-success: #16a34a;
+   --fo-color-success-hover: #15803d;
+   --fo-color-success-active: #166534;
+   --fo-color-success-light: #dcfce7;
+
+   /* Warning */
+   --fo-color-warning: #f59e0b;
+   --fo-color-warning-hover: #d97706;
+   --fo-color-warning-active: #b45309;
+   --fo-color-warning-light: #fef3c7;
+
+   /* Danger */
+   --fo-color-danger: #dc2626;
+   --fo-color-danger-hover: #b91c1c;
+   --fo-color-danger-active: #991b1b;
+   --fo-color-danger-light: #fee2e2;
+
+   /* Info */
+   --fo-color-info: #0ea5e9;
+   --fo-color-info-hover: #0284c7;
+   --fo-color-info-active: #0369a1;
+   --fo-color-info-light: #e0f2fe;
+
+   /* Neutral */
+   --fo-color-white: #ffffff;
+   --fo-color-black: #000000;
+
+   --fo-color-gray-50: #f8fafc;
+   --fo-color-gray-100: #f1f5f9;
+   --fo-color-gray-200: #e2e8f0;
+   --fo-color-gray-300: #cbd5e1;
+   --fo-color-gray-400: #94a3b8;
+   --fo-color-gray-500: #64748b;
+   --fo-color-gray-600: #475569;
+   --fo-color-gray-700: #334155;
+   --fo-color-gray-800: #1e293b;
+   --fo-color-gray-900: #0f172a;
+
+   /* Background */
+   --fo-color-background: #f8fafc;
+   --fo-color-surface: #ffffff;
+   --fo-color-surface-hover: #f8fafc;
+   --fo-color-surface-active: #f1f5f9;
+
+   /* Text */
+   --fo-color-text-primary: #1e293b;
+   --fo-color-text-secondary: #64748b;
+   --fo-color-text-muted: #94a3b8;
+   --fo-color-text-disabled: #cbd5e1;
+
+   /* Borders */
+   --fo-color-border: #e2e8f0;
+   --fo-color-border-light: #f1f5f9;
+   --fo-color-border-dark: #cbd5e1;
+
+   /* ==================================================
+  /* ==================================================
+   TYPOGRAPHY
+================================================== */
+
+   --fo-font-family:
+      "Geist",
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif;
+
+   --fo-font-family-mono:
+      "Geist Mono",
+      "SFMono-Regular",
+      Consolas,
+      "Liberation Mono",
+      monospace;
+
+   --fo-font-size-xs: 12px;
+   --fo-font-size-sm: 14px;
+   --fo-font-size-md: 16px;
+   --fo-font-size-lg: 18px;
+   --fo-font-size-xl: 20px;
+   --fo-font-size-2xl: 24px;
+   --fo-font-size-3xl: 30px;
+   --fo-font-size-4xl: 36px;
+
+   --fo-font-weight-light: 300;
+   --fo-font-weight-normal: 400;
+   --fo-font-weight-medium: 500;
+   --fo-font-weight-semibold: 600;
+   --fo-font-weight-bold: 700;
+
+   --fo-line-height-tight: 1.2;
+   --fo-line-height-normal: 1.5;
+   --fo-line-height-loose: 1.8;
+
+   /* ==================================================
+       SPACING
+    ================================================== */
+
+   --fo-space-0: 0;
+   --fo-space-1: 4px;
+   --fo-space-2: 8px;
+   --fo-space-3: 12px;
+   --fo-space-4: 16px;
+   --fo-space-5: 20px;
+   --fo-space-6: 24px;
+   --fo-space-7: 28px;
+   --fo-space-8: 32px;
+   --fo-space-10: 40px;
+   --fo-space-12: 48px;
+   --fo-space-16: 64px;
+   --fo-space-20: 80px;
+   --fo-space-24: 96px;
+
+   /* ==================================================
+       BORDER RADIUS
+    ================================================== */
+
+   --fo-radius-none: 0;
+   --fo-radius-xs: 4px;
+   --fo-radius-sm: 6px;
+   --fo-radius-md: 8px;
+   --fo-radius-lg: 12px;
+   --fo-radius-xl: 16px;
+   --fo-radius-2xl: 24px;
+   --fo-radius-pill: 999px;
+   --fo-radius-circle: 50%;
+
+   /* ==================================================
+       SHADOWS
+    ================================================== */
+
+   --fo-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+   --fo-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+   --fo-shadow-md: 0 6px 12px rgba(0, 0, 0, 0.12);
+
+   --fo-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.16);
+
+   --fo-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+   /* ==================================================
+       TRANSITIONS
+    ================================================== */
+
+   --fo-transition-fast: 150ms ease-in-out;
+   --fo-transition-normal: 250ms ease-in-out;
+   --fo-transition-slow: 400ms ease-in-out;
+
+   /* ==================================================
+       COMPONENT HEIGHTS
+    ================================================== */
+
+   --fo-height-xs: 28px;
+   --fo-height-sm: 36px;
+   --fo-height-md: 44px;
+   --fo-height-lg: 52px;
+   --fo-height-xl: 60px;
+
+   /* ==================================================
+       Z-INDEX
+    ================================================== */
+
+   --fo-z-dropdown: 1000;
+   --fo-z-sticky: 1020;
+   --fo-z-fixed: 1030;
+   --fo-z-modal-backdrop: 1040;
+   --fo-z-modal: 1050;
+   --fo-z-popover: 1060;
+   --fo-z-tooltip: 1070;
+   --fo-z-toast: 1080;
+
+   /* ==================================================
+       LAYOUT
+    ================================================== */
+
+   --fo-sidebar-width: 260px;
+   --fo-sidebar-collapsed-width: 72px;
+
+   --fo-header-height: 64px;
+
+   --fo-footer-height: 60px;
+
+   --fo-container-max-width: 1440px;
+
+   /* ==================================================
+       BUTTON
+    ================================================== */
+
+   --fo-button-height-sm: 36px;
+   --fo-button-height-md: 44px;
+   --fo-button-height-lg: 52px;
+
+   --fo-button-padding-sm: 0 14px;
+   --fo-button-padding-md: 0 18px;
+   --fo-button-padding-lg: 0 24px;
+
+   /* ==================================================
+       INPUT
+    ================================================== */
+
+   --fo-input-height: 44px;
+
+   --fo-input-padding: 0 14px;
+
+   /* ==================================================
+       TABLE
+    ================================================== */
+
+   --fo-table-row-height: 52px;
+
+   /* ==================================================
+       SIDEBAR
+    ================================================== */
+
+   --fo-sidebar-item-height: 48px;
+
+   /* ==================================================
+       DASHBOARD
+    ================================================== */
+
+   --fo-dashboard-card-height: 140px;
+}

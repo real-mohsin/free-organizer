@@ -1,0 +1,284 @@
+/* ==================================================
+   TYPOGRAPHY
+   Free Organizer Design System
+================================================== */
+
+/* ==================================================
+   BASE TYPOGRAPHY
+================================================== */
+
+body {
+    font-family: var(--fo-font-family);
+    font-size: var(--fo-font-size-md);
+    font-weight: var(--fo-font-weight-normal);
+    line-height: var(--fo-line-height-normal);
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   DISPLAY
+   Used for landing pages and major highlights.
+================================================== */
+
+.fo-display {
+    font-size: var(--fo-font-size-4xl);
+    font-weight: var(--fo-font-weight-bold);
+    line-height: var(--fo-line-height-tight);
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   PAGE TITLE
+   Used once per page.
+================================================== */
+
+.fo-page-title {
+    font-size: var(--fo-font-size-3xl);
+    font-weight: var(--fo-font-weight-bold);
+    line-height: var(--fo-line-height-tight);
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   SECTION TITLE
+================================================== */
+
+.fo-section-title {
+    font-size: var(--fo-font-size-2xl);
+    font-weight: var(--fo-font-weight-semibold);
+    line-height: var(--fo-line-height-tight);
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   CARD TITLE
+================================================== */
+
+.fo-card-title {
+    font-size: var(--fo-font-size-xl);
+    font-weight: var(--fo-font-weight-semibold);
+    line-height: var(--fo-line-height-tight);
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   SUBTITLE
+================================================== */
+
+.fo-subtitle {
+    font-size: var(--fo-font-size-lg);
+    font-weight: var(--fo-font-weight-medium);
+    line-height: var(--fo-line-height-normal);
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==================================================
+   BODY
+================================================== */
+
+.fo-body {
+    font-size: var(--fo-font-size-md);
+    font-weight: var(--fo-font-weight-normal);
+    line-height: var(--fo-line-height-normal);
+    color: var(--fo-color-text-primary);
+}
+
+.fo-body-sm {
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-body-lg {
+    font-size: var(--fo-font-size-lg);
+}
+
+/* ==================================================
+   CAPTION
+================================================== */
+
+.fo-caption {
+    font-size: var(--fo-font-size-xs);
+    font-weight: var(--fo-font-weight-normal);
+    line-height: var(--fo-line-height-normal);
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==================================================
+   OVERLINE
+================================================== */
+
+.fo-overline {
+    font-size: var(--fo-font-size-xs);
+    font-weight: var(--fo-font-weight-semibold);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==================================================
+   LABEL
+================================================== */
+
+.fo-label {
+    display: inline-block;
+
+    margin-bottom: var(--fo-space-2);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    color: var(--fo-color-text-primary);
+}
+
+/* ==================================================
+   HELPER TEXT
+================================================== */
+
+.fo-helper-text {
+    margin-top: var(--fo-space-1);
+
+    font-size: var(--fo-font-size-xs);
+
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==================================================
+   LINKS
+================================================== */
+
+.fo-link {
+    color: var(--fo-color-primary);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    transition: color var(--fo-transition-fast);
+}
+
+.fo-link:hover {
+    color: var(--fo-color-primary-hover);
+}
+
+.fo-link:focus-visible {
+    outline: none;
+    box-shadow: var(--fo-focus-ring);
+    border-radius: var(--fo-radius-xs);
+}
+
+/* ==================================================
+   FONT WEIGHT
+================================================== */
+
+.fo-font-light {
+    font-weight: var(--fo-font-weight-light);
+}
+
+.fo-font-normal {
+    font-weight: var(--fo-font-weight-normal);
+}
+
+.fo-font-medium {
+    font-weight: var(--fo-font-weight-medium);
+}
+
+.fo-font-semibold {
+    font-weight: var(--fo-font-weight-semibold);
+}
+
+.fo-font-bold {
+    font-weight: var(--fo-font-weight-bold);
+}
+
+/* ==================================================
+   TEXT COLORS
+================================================== */
+
+.fo-text-primary {
+    color: var(--fo-color-text-primary);
+}
+
+.fo-text-secondary {
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-text-muted {
+    color: var(--fo-color-text-muted);
+}
+
+.fo-text-success {
+    color: var(--fo-color-success);
+}
+
+.fo-text-warning {
+    color: var(--fo-color-warning);
+}
+
+.fo-text-danger {
+    color: var(--fo-color-danger);
+}
+
+.fo-text-info {
+    color: var(--fo-color-info);
+}
+
+/* ==================================================
+   TEXT ALIGNMENT
+================================================== */
+
+.fo-text-left {
+    text-align: left;
+}
+
+.fo-text-center {
+    text-align: center;
+}
+
+.fo-text-right {
+    text-align: right;
+}
+
+/* ==================================================
+   TEXT TRANSFORM
+================================================== */
+
+.fo-uppercase {
+    text-transform: uppercase;
+}
+
+.fo-lowercase {
+    text-transform: lowercase;
+}
+
+.fo-capitalize {
+    text-transform: capitalize;
+}
+
+/* ==================================================
+   TEXT DECORATION
+================================================== */
+
+.fo-underline {
+    text-decoration: underline;
+}
+
+.fo-line-through {
+    text-decoration: line-through;
+}
+
+.fo-no-decoration {
+    text-decoration: none;
+}
+
+/* ==================================================
+   TEXT TRUNCATION
+================================================== */
+
+.fo-text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fo-text-break {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}

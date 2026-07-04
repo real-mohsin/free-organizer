@@ -1,0 +1,302 @@
+/* ==================================================
+   KEYFRAMES
+================================================== */
+
+/* Fade */
+
+@keyframes fo-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fo-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Slide */
+
+@keyframes fo-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fo-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fo-slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fo-slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale */
+
+@keyframes fo-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fo-scale-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.95);
+    }
+}
+
+/* Rotation */
+
+@keyframes fo-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse */
+
+@keyframes fo-pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .55;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Skeleton Loading */
+
+@keyframes fo-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Bounce */
+
+@keyframes fo-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Shake */
+
+@keyframes fo-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-4px);
+    }
+
+    40% {
+        transform: translateX(4px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+/* ==================================================
+   ANIMATION UTILITIES
+================================================== */
+
+.fo-animate-fade-in {
+    animation: fo-fade-in var(--fo-transition-normal);
+}
+
+.fo-animate-fade-out {
+    animation: fo-fade-out var(--fo-transition-normal);
+}
+
+.fo-animate-slide-up {
+    animation: fo-slide-up var(--fo-transition-normal);
+}
+
+.fo-animate-slide-down {
+    animation: fo-slide-down var(--fo-transition-normal);
+}
+
+.fo-animate-slide-left {
+    animation: fo-slide-left var(--fo-transition-normal);
+}
+
+.fo-animate-slide-right {
+    animation: fo-slide-right var(--fo-transition-normal);
+}
+
+.fo-animate-scale-in {
+    animation: fo-scale-in var(--fo-transition-normal);
+}
+
+.fo-animate-scale-out {
+    animation: fo-scale-out var(--fo-transition-normal);
+}
+
+.fo-animate-spin {
+    animation: fo-spin 1s linear infinite;
+}
+
+.fo-animate-pulse {
+    animation: fo-pulse 1.5s ease-in-out infinite;
+}
+
+.fo-animate-bounce {
+    animation: fo-bounce .8s ease infinite;
+}
+
+.fo-animate-shake {
+    animation: fo-shake .4s ease;
+}
+
+/* ==================================================
+   TRANSITION UTILITIES
+================================================== */
+
+.fo-transition {
+    transition: all var(--fo-transition-normal);
+}
+
+.fo-transition-fast {
+    transition: all var(--fo-transition-fast);
+}
+
+.fo-transition-slow {
+    transition: all var(--fo-transition-slow);
+}
+
+/* ==================================================
+   HOVER EFFECTS
+================================================== */
+
+.fo-hover-lift {
+    transition: transform var(--fo-transition-normal),
+                box-shadow var(--fo-transition-normal);
+}
+
+.fo-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--fo-shadow-md);
+}
+
+.fo-hover-scale {
+    transition: transform var(--fo-transition-normal);
+}
+
+.fo-hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* ==================================================
+   SKELETON
+================================================== */
+
+.fo-skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--fo-color-gray-100) 25%,
+        var(--fo-color-gray-200) 50%,
+        var(--fo-color-gray-100) 75%
+    );
+
+    background-size: 200% 100%;
+
+    animation: fo-shimmer 1.5s linear infinite;
+}
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}

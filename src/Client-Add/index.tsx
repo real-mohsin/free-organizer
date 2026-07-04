@@ -26,6 +26,10 @@ function AddClient() {
 
         <InputField type={'text'} label={'Time Zone'} value={''} name={'clientName'} placeholder={'jon@example.com'} onChange={handleInputChange} />
 
+        <InputField type={'number'} label={'Project Earning'} value={''} name={'clientName'} placeholder={'jon@example.com'} onChange={handleInputChange} />
+
+        <InputField type={'text'} label={'Platform'} value={''} name={'clientName'} placeholder={'jon@example.com'} onChange={handleInputChange} />
+
         <Button type='submit' variant="primary" size="medium" onClick={() => console.log('Submit button clicked')}>
           Save
         </Button>

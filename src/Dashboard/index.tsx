@@ -1,30 +1,11 @@
 import NavBar from '../Components/Navbar';
 import './style.scss'
 
-// import graph from '../assets/images/line-graph.png'
 import externalicon from '../assets/images/External-icon.png'
 import Footer from '../Components/Footer';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+// const apiUrl = import.meta.env.VITE_API_URL;
 
-export interface Client {
-  id: string;
-  name: string;
-  projectName: string;
-  timeZone: string;
-  startDate: string;
-  endDate: string;
-  amountEarned: string
-  platform: string;
-}
-
-export interface Todo {
-  id: string;
-  task: string;
-  dueDate: string;
-  status: string;
-  detail: string;
-}
 
 import {
   AreaChart,
@@ -35,7 +16,7 @@ import {
   Tooltip,
   ResponsiveContainer
 } from "recharts";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Graph Data
 const data = [
@@ -115,45 +96,10 @@ const data = [
 
 function Dashboard() {
 
-  const [clients, setClients] = useState<Client[]>([]);
-  const [todos, setTodos] = useState<Todo[]>([]);
   
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const fetchClients = async () => {
-    try {
-      const response = await fetch(`${apiUrl}/clients`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data: Client[] = await response.json(); // Ensure the response matches the Client type
-      setClients(data);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const fetchTodos = async () => {
-    try {
-      const response = await fetch(`${apiUrl}/todo`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data: Todo[] = await response.json(); // Ensure the response matches the Client type
-      setTodos(data);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
-    fetchClients();
-    fetchTodos();
+  
   },[])
 
   return (
@@ -250,17 +196,16 @@ function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                {clients.map((client) => (
-                  <tr key={client.id}>
-                    <td>{client.projectName}</td>
-                    <td>{client.name}</td>
-                    <td>{client.timeZone}</td>
-                    <td>{client.startDate}</td>
-                    <td>{client.endDate}</td>
-                    <td>{client.platform}</td>
-                    <td>${client.amountEarned}</td>
+                
+                  <tr>
+                    <td>Free Organizer</td>
+                    <td>Freelancers</td>
+                    <td>Asia/karachi</td>
+                    <td>Jul 3, 2026</td>
+                    <td>In Progress</td>
+                    <td>Open Source</td>
+                    <td>$--</td>
                   </tr>
-                ))}
                 </tbody>
               </table>
             </div>
@@ -281,16 +226,14 @@ function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                {todos.map((todo) => (
-                  <tr key={todo.id}>
-                    <td>{todo.task}</td>
-                    <td>{todo.dueDate}</td>
-                    <td>{todo.status}</td>
+                  <tr>
+                    <td>Complete the frontend of the project first</td>
+                    <td>July 5, 2026</td>
+                    <td>In Progress</td>
                     <td>
                       <img src={externalicon} alt={'external-link'} />
                     </td>
                   </tr>
-                ))}
                 </tbody>
               </table>
             </div>

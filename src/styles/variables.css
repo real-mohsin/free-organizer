@@ -77,19 +77,10 @@
 ================================================== */
 
    --fo-font-family:
-      "Geist",
-      "Segoe UI",
-      Roboto,
-      Helvetica,
-      Arial,
-      sans-serif;
+      "Geist", sans-serif;
 
    --fo-font-family-mono:
-      "Geist Mono",
-      "SFMono-Regular",
-      Consolas,
-      "Liberation Mono",
-      monospace;
+      "Geist Mono";
 
    --fo-font-size-xs: 12px;
    --fo-font-size-sm: 14px;

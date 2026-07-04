@@ -1,8 +1,7 @@
-import './style.scss'
-import loginbg from '../assets/images/login-bg.png'
-import InputField from '../Components/InputField';
+// import './style.scss'
+// import loginbg from '../assets/images/login-bg.png'
+// import InputField from '../Components/InputField';
 import { useState } from 'react';
-import Button from '../Components/Button';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -42,16 +41,16 @@ function Login() {
         <div className='sub-head'>for freelancers, free or independent
 contractors</div>
 
-        <div className='bgimg'>
+        {/* <div className='bgimg'>
           <img src={loginbg} alt={'login-bg-img'} />
-        </div>
+        </div> */}
       </div>
 
       <div className='white-box'>
         
         <div className='form-container'>
 
-          <form onSubmit={handleSubmit} className='w-100'>
+          {/* <form onSubmit={handleSubmit} className='w-100'>
             <InputField type={'text'} label={'Email'} value={formData.email} name={'email'} placeholder={'jon@example.com'} onChange={handleInputChange} />
 
             <InputField type={'password'} label={'Password'} value={formData.password} name={'password'} placeholder={'********'} onChange={handleInputChange} />
@@ -68,7 +67,7 @@ contractors</div>
             <Button type='submit' variant="primary" size="medium" onClick={() => console.log('Submit button clicked')}>
               Login
             </Button>
-          </form>
+          </form> */}
         </div>
       <div>
     </div>

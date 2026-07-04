@@ -282,3 +282,1089 @@ body {
     overflow-wrap: break-word;
     word-break: break-word;
 }
+
+/* ==================================================
+   FREE ORGANIZER DESIGN SYSTEM
+   UTILITIES
+================================================== */
+
+/* ==================================================
+   DISPLAY
+================================================== */
+
+.fo-block {
+    display: block;
+}
+
+.fo-inline {
+    display: inline;
+}
+
+.fo-inline-block {
+    display: inline-block;
+}
+
+.fo-flex {
+    display: flex;
+}
+
+.fo-inline-flex {
+    display: inline-flex;
+}
+
+.fo-grid {
+    display: grid;
+}
+
+.fo-inline-grid {
+    display: inline-grid;
+}
+
+.fo-hidden {
+    display: none;
+}
+
+/* ==================================================
+   FLEX DIRECTION
+================================================== */
+
+.fo-flex-row {
+    flex-direction: row;
+}
+
+.fo-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.fo-flex-column {
+    flex-direction: column;
+}
+
+.fo-flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* ==================================================
+   FLEX WRAP
+================================================== */
+
+.fo-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.fo-flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.fo-flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/* ==================================================
+   FLEX GROW / SHRINK
+================================================== */
+
+.fo-flex-1 {
+    flex: 1;
+}
+
+.fo-flex-auto {
+    flex: auto;
+}
+
+.fo-flex-initial {
+    flex: initial;
+}
+
+.fo-flex-none {
+    flex: none;
+}
+
+.fo-grow {
+    flex-grow: 1;
+}
+
+.fo-grow-0 {
+    flex-grow: 0;
+}
+
+.fo-shrink {
+    flex-shrink: 1;
+}
+
+.fo-shrink-0 {
+    flex-shrink: 0;
+}
+
+/* ==================================================
+   JUSTIFY CONTENT
+================================================== */
+
+.fo-justify-start {
+    justify-content: flex-start;
+}
+
+.fo-justify-center {
+    justify-content: center;
+}
+
+.fo-justify-end {
+    justify-content: flex-end;
+}
+
+.fo-justify-between {
+    justify-content: space-between;
+}
+
+.fo-justify-around {
+    justify-content: space-around;
+}
+
+.fo-justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* ==================================================
+   ALIGN ITEMS
+================================================== */
+
+.fo-items-start {
+    align-items: flex-start;
+}
+
+.fo-items-center {
+    align-items: center;
+}
+
+.fo-items-end {
+    align-items: flex-end;
+}
+
+.fo-items-stretch {
+    align-items: stretch;
+}
+
+.fo-items-baseline {
+    align-items: baseline;
+}
+
+/* ==================================================
+   ALIGN SELF
+================================================== */
+
+.fo-self-auto {
+    align-self: auto;
+}
+
+.fo-self-start {
+    align-self: flex-start;
+}
+
+.fo-self-center {
+    align-self: center;
+}
+
+.fo-self-end {
+    align-self: flex-end;
+}
+
+.fo-self-stretch {
+    align-self: stretch;
+}
+
+/* ==================================================
+   ALIGN CONTENT
+================================================== */
+
+.fo-content-start {
+    align-content: flex-start;
+}
+
+.fo-content-center {
+    align-content: center;
+}
+
+.fo-content-end {
+    align-content: flex-end;
+}
+
+.fo-content-between {
+    align-content: space-between;
+}
+
+.fo-content-around {
+    align-content: space-around;
+}
+
+.fo-content-evenly {
+    align-content: space-evenly;
+}
+
+/* ==================================================
+   GRID COLUMNS
+================================================== */
+
+.fo-grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.fo-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.fo-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fo-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.fo-grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.fo-grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.fo-grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* ==================================================
+   GRID AUTO FLOW
+================================================== */
+
+.fo-grid-flow-row {
+    grid-auto-flow: row;
+}
+
+.fo-grid-flow-column {
+    grid-auto-flow: column;
+}
+
+.fo-grid-flow-dense {
+    grid-auto-flow: dense;
+}
+
+/* ==================================================
+   GAP
+================================================== */
+
+.fo-gap-0 {
+    gap: var(--fo-space-0);
+}
+
+.fo-gap-1 {
+    gap: var(--fo-space-1);
+}
+
+.fo-gap-2 {
+    gap: var(--fo-space-2);
+}
+
+.fo-gap-3 {
+    gap: var(--fo-space-3);
+}
+
+.fo-gap-4 {
+    gap: var(--fo-space-4);
+}
+
+.fo-gap-5 {
+    gap: var(--fo-space-5);
+}
+
+.fo-gap-6 {
+    gap: var(--fo-space-6);
+}
+
+.fo-gap-7 {
+    gap: var(--fo-space-7);
+}
+
+.fo-gap-8 {
+    gap: var(--fo-space-8);
+}
+
+.fo-gap-10 {
+    gap: var(--fo-space-10);
+}
+
+.fo-gap-12 {
+    gap: var(--fo-space-12);
+}
+
+.fo-gap-16 {
+    gap: var(--fo-space-16);
+}
+
+.fo-gap-20 {
+    gap: var(--fo-space-20);
+}
+
+.fo-gap-24 {
+    gap: var(--fo-space-24);
+}
+
+/* ==================================================
+   ROW GAP
+================================================== */
+
+.fo-row-gap-0 { row-gap: var(--fo-space-0); }
+.fo-row-gap-1 { row-gap: var(--fo-space-1); }
+.fo-row-gap-2 { row-gap: var(--fo-space-2); }
+.fo-row-gap-3 { row-gap: var(--fo-space-3); }
+.fo-row-gap-4 { row-gap: var(--fo-space-4); }
+.fo-row-gap-5 { row-gap: var(--fo-space-5); }
+.fo-row-gap-6 { row-gap: var(--fo-space-6); }
+.fo-row-gap-8 { row-gap: var(--fo-space-8); }
+
+/* ==================================================
+   COLUMN GAP
+================================================== */
+
+.fo-col-gap-0 { column-gap: var(--fo-space-0); }
+.fo-col-gap-1 { column-gap: var(--fo-space-1); }
+.fo-col-gap-2 { column-gap: var(--fo-space-2); }
+.fo-col-gap-3 { column-gap: var(--fo-space-3); }
+.fo-col-gap-4 { column-gap: var(--fo-space-4); }
+.fo-col-gap-5 { column-gap: var(--fo-space-5); }
+.fo-col-gap-6 { column-gap: var(--fo-space-6); }
+.fo-col-gap-8 { column-gap: var(--fo-space-8); }
+
+/* ==================================================
+   WIDTH
+================================================== */
+
+.fo-w-auto {
+    width: auto;
+}
+
+.fo-w-fit {
+    width: fit-content;
+}
+
+.fo-w-full {
+    width: 100%;
+}
+
+.fo-w-screen {
+    width: 100vw;
+}
+
+.fo-min-w-0 {
+    min-width: 0;
+}
+
+.fo-min-w-full {
+    min-width: 100%;
+}
+
+.fo-max-w-full {
+    max-width: 100%;
+}
+
+.fo-max-w-container {
+    max-width: var(--fo-container-max-width);
+}
+
+/* ==================================================
+   HEIGHT
+================================================== */
+
+.fo-h-auto {
+    height: auto;
+}
+
+.fo-h-full {
+    height: 100%;
+}
+
+.fo-h-screen {
+    height: 100vh;
+}
+
+.fo-min-h-0 {
+    min-height: 0;
+}
+
+.fo-min-h-full {
+    min-height: 100%;
+}
+
+.fo-min-h-screen {
+    min-height: 100vh;
+}
+
+.fo-max-h-full {
+    max-height: 100%;
+}
+
+/* ==================================================
+   OVERFLOW
+================================================== */
+
+.fo-overflow-auto {
+    overflow: auto;
+}
+
+.fo-overflow-hidden {
+    overflow: hidden;
+}
+
+.fo-overflow-visible {
+    overflow: visible;
+}
+
+.fo-overflow-scroll {
+    overflow: scroll;
+}
+
+.fo-overflow-x-auto {
+    overflow-x: auto;
+}
+
+.fo-overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.fo-overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.fo-overflow-y-auto {
+    overflow-y: auto;
+}
+
+.fo-overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.fo-overflow-y-scroll {
+    overflow-y: scroll;
+}
+
+/* ==================================================
+   POSITION
+================================================== */
+
+.fo-relative {
+    position: relative;
+}
+
+.fo-absolute {
+    position: absolute;
+}
+
+.fo-fixed {
+    position: fixed;
+}
+
+.fo-sticky {
+    position: sticky;
+}
+
+.fo-static {
+    position: static;
+}
+
+/* ==================================================
+   POSITION HELPERS
+================================================== */
+
+.fo-top-0 {
+    top: 0;
+}
+
+.fo-right-0 {
+    right: 0;
+}
+
+.fo-bottom-0 {
+    bottom: 0;
+}
+
+.fo-left-0 {
+    left: 0;
+}
+
+.fo-inset-0 {
+    inset: 0;
+}
+
+/* ==================================================
+   OBJECT FIT
+================================================== */
+
+.fo-object-contain {
+    object-fit: contain;
+}
+
+.fo-object-cover {
+    object-fit: cover;
+}
+
+.fo-object-fill {
+    object-fit: fill;
+}
+
+.fo-object-scale-down {
+    object-fit: scale-down;
+}
+
+/* ==================================================
+   ASPECT RATIO
+================================================== */
+
+.fo-aspect-square {
+    aspect-ratio: 1;
+}
+
+.fo-aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+/* ==================================================
+   BORDER RADIUS
+================================================== */
+
+.fo-rounded-none {
+    border-radius: var(--fo-radius-none);
+}
+
+.fo-rounded-xs {
+    border-radius: var(--fo-radius-xs);
+}
+
+.fo-rounded-sm {
+    border-radius: var(--fo-radius-sm);
+}
+
+.fo-rounded-md {
+    border-radius: var(--fo-radius-md);
+}
+
+.fo-rounded-lg {
+    border-radius: var(--fo-radius-lg);
+}
+
+.fo-rounded-xl {
+    border-radius: var(--fo-radius-xl);
+}
+
+.fo-rounded-2xl {
+    border-radius: var(--fo-radius-2xl);
+}
+
+.fo-rounded-pill {
+    border-radius: var(--fo-radius-pill);
+}
+
+.fo-rounded-circle {
+    border-radius: var(--fo-radius-circle);
+}
+
+/* ==================================================
+   SHADOWS
+================================================== */
+
+.fo-shadow-none {
+    box-shadow: none;
+}
+
+.fo-shadow-xs {
+    box-shadow: var(--fo-shadow-xs);
+}
+
+.fo-shadow-sm {
+    box-shadow: var(--fo-shadow-sm);
+}
+
+.fo-shadow-md {
+    box-shadow: var(--fo-shadow-md);
+}
+
+.fo-shadow-lg {
+    box-shadow: var(--fo-shadow-lg);
+}
+
+.fo-shadow-xl {
+    box-shadow: var(--fo-shadow-xl);
+}
+
+/* ==================================================
+   CURSOR
+================================================== */
+
+.fo-cursor-auto {
+    cursor: auto;
+}
+
+.fo-cursor-default {
+    cursor: default;
+}
+
+.fo-cursor-pointer {
+    cursor: pointer;
+}
+
+.fo-cursor-wait {
+    cursor: wait;
+}
+
+.fo-cursor-text {
+    cursor: text;
+}
+
+.fo-cursor-move {
+    cursor: move;
+}
+
+.fo-cursor-help {
+    cursor: help;
+}
+
+.fo-cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.fo-cursor-grab {
+    cursor: grab;
+}
+
+.fo-cursor-grabbing {
+    cursor: grabbing;
+}
+
+/* ==================================================
+   POINTER EVENTS
+================================================== */
+
+.fo-pointer-events-none {
+    pointer-events: none;
+}
+
+.fo-pointer-events-auto {
+    pointer-events: auto;
+}
+
+/* ==================================================
+   USER SELECT
+================================================== */
+
+.fo-select-none {
+    user-select: none;
+}
+
+.fo-select-text {
+    user-select: text;
+}
+
+.fo-select-all {
+    user-select: all;
+}
+
+.fo-select-auto {
+    user-select: auto;
+}
+
+/* ==================================================
+   VISIBILITY
+================================================== */
+
+.fo-visible {
+    visibility: visible;
+}
+
+.fo-invisible {
+    visibility: hidden;
+}
+
+/* ==================================================
+   OPACITY
+================================================== */
+
+.fo-opacity-0 {
+    opacity: 0;
+}
+
+.fo-opacity-25 {
+    opacity: .25;
+}
+
+.fo-opacity-50 {
+    opacity: .5;
+}
+
+.fo-opacity-75 {
+    opacity: .75;
+}
+
+.fo-opacity-100 {
+    opacity: 1;
+}
+
+/* ==================================================
+   Z-INDEX
+================================================== */
+
+.fo-z-auto {
+    z-index: auto;
+}
+
+.fo-z-dropdown {
+    z-index: var(--fo-z-dropdown);
+}
+
+.fo-z-sticky {
+    z-index: var(--fo-z-sticky);
+}
+
+.fo-z-fixed {
+    z-index: var(--fo-z-fixed);
+}
+
+.fo-z-modal-backdrop {
+    z-index: var(--fo-z-modal-backdrop);
+}
+
+.fo-z-modal {
+    z-index: var(--fo-z-modal);
+}
+
+.fo-z-popover {
+    z-index: var(--fo-z-popover);
+}
+
+.fo-z-tooltip {
+    z-index: var(--fo-z-tooltip);
+}
+
+.fo-z-toast {
+    z-index: var(--fo-z-toast);
+}
+
+/* ==================================================
+   BOX SIZING
+================================================== */
+
+.fo-box-border {
+    box-sizing: border-box;
+}
+
+.fo-box-content {
+    box-sizing: content-box;
+}
+
+/* ==================================================
+   ISOLATION
+================================================== */
+
+.fo-isolate {
+    isolation: isolate;
+}
+
+.fo-isolation-auto {
+    isolation: auto;
+}
+
+/* ==================================================
+   FLOAT
+================================================== */
+
+.fo-float-left {
+    float: left;
+}
+
+.fo-float-right {
+    float: right;
+}
+
+.fo-float-none {
+    float: none;
+}
+
+/* ==================================================
+   CLEAR
+================================================== */
+
+.fo-clear-left {
+    clear: left;
+}
+
+.fo-clear-right {
+    clear: right;
+}
+
+.fo-clear-both {
+    clear: both;
+}
+
+.fo-clear-none {
+    clear: none;
+}
+
+/* ==================================================
+   RESPONSIVE HELPERS
+================================================== */
+
+/*
+    Usage:
+
+    <div class="fo-hide-mobile">
+    <div class="fo-hide-tablet">
+    <div class="fo-hide-desktop">
+
+    <div class="fo-show-mobile">
+    <div class="fo-show-tablet">
+    <div class="fo-show-desktop">
+*/
+
+/* ---------- Mobile (< 768px) ---------- */
+
+.fo-show-mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .fo-hide-mobile {
+        display: none !important;
+    }
+
+    .fo-show-mobile {
+        display: block !important;
+    }
+}
+
+/* ---------- Tablet (768px - 1023px) ---------- */
+
+.fo-show-tablet {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .fo-hide-tablet {
+        display: none !important;
+    }
+
+    .fo-show-tablet {
+        display: block !important;
+    }
+}
+
+/* ---------- Desktop (>=1024px) ---------- */
+
+.fo-show-desktop {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+
+    .fo-hide-desktop {
+        display: none !important;
+    }
+
+    .fo-show-desktop {
+        display: block !important;
+    }
+}
+
+/* ==================================================
+   SCREEN READER
+================================================== */
+
+.fo-sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+.fo-sr-only-focusable:focus,
+.fo-sr-only-focusable:active {
+    position: static;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+
+    overflow: visible;
+
+    clip: auto;
+
+    white-space: normal;
+}
+
+/* ==================================================
+   FOCUS
+================================================== */
+
+.fo-focus-ring:focus-visible {
+    outline: none;
+    box-shadow: var(--fo-focus-ring);
+}
+
+.fo-focus-none:focus {
+    outline: none;
+}
+
+/* ==================================================
+   PRINT
+================================================== */
+
+@media print {
+
+    .fo-print-hidden {
+        display: none !important;
+    }
+
+    .fo-print-block {
+        display: block !important;
+    }
+
+    .fo-print-inline {
+        display: inline !important;
+    }
+
+    .fo-print-inline-block {
+        display: inline-block !important;
+    }
+
+    .fo-print-flex {
+        display: flex !important;
+    }
+
+    .fo-print-grid {
+        display: grid !important;
+    }
+}
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fo-motion-safe {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==================================================
+   INTERACTION
+================================================== */
+
+.fo-clickable {
+    cursor: pointer;
+    transition: var(--fo-transition-fast);
+}
+
+.fo-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ==================================================
+   ASPECT RATIO HELPERS
+================================================== */
+
+.fo-square {
+    aspect-ratio: 1 / 1;
+}
+
+.fo-video {
+    aspect-ratio: 16 / 9;
+}
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.fo-container {
+    width: 100%;
+    max-width: var(--fo-container-max-width);
+
+    margin-inline: auto;
+
+    padding-inline: var(--fo-space-6);
+}
+
+@media (max-width: 768px) {
+
+    .fo-container {
+        padding-inline: var(--fo-space-4);
+    }
+}
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.fo-divider {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--fo-color-border);
+}
+
+/* ==================================================
+   STICKY HELPERS
+================================================== */
+
+.fo-sticky-top {
+    position: sticky;
+    top: 0;
+}
+
+.fo-sticky-bottom {
+    position: sticky;
+    bottom: 0;
+}
+
+/* ==================================================
+   TRANSITIONS
+================================================== */
+
+.fo-transition-fast {
+    transition: var(--fo-transition-fast);
+}
+
+.fo-transition-normal {
+    transition: var(--fo-transition-normal);
+}
+
+.fo-transition-slow {
+    transition: var(--fo-transition-slow);
+}
+
+/* ==================================================
+   DEBUG (Development Only)
+================================================== */
+
+/*
+.fo-debug {
+    outline: 1px dashed red;
+}
+
+.fo-debug > * {
+    outline: 1px dashed blue;
+}
+*/

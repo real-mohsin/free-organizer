@@ -1,0 +1,200 @@
+/* ==========================================
+   Base
+========================================== */
+
+.fo-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--fo-space-2);
+
+    border: 1px solid transparent;
+
+    border-radius: var(--fo-radius-md);
+
+    cursor: pointer;
+
+    transition: all var(--fo-transition-fast);
+
+    font-family: inherit;
+
+    font-weight: var(--fo-font-weight-medium);
+
+    white-space: nowrap;
+
+    user-select: none;
+}
+
+.fo-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+.fo-btn--full {
+
+    width: 100%;
+
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-btn--sm {
+
+    height: 32px;
+
+    padding: 0 var(--fo-space-3);
+
+    font-size: .875rem;
+
+}
+
+.fo-btn--md {
+
+    height: 40px;
+
+    padding: 0 var(--fo-space-4);
+
+    font-size: 1rem;
+
+}
+
+.fo-btn--lg {
+
+    height: 48px;
+
+    padding: 0 var(--fo-space-5);
+
+    font-size: 1rem;
+
+}
+
+/* ==========================================
+   Variants
+========================================== */
+
+.fo-btn--primary {
+
+    background: var(--fo-color-primary);
+
+    color: var(--fo-color-white);
+
+}
+
+.fo-btn--primary:hover {
+
+    background: var(--fo-color-primary-hover);
+
+}
+
+.fo-btn--secondary {
+
+    background: var(--fo-color-surface);
+
+    color: var(--fo-color-text-primary);
+
+    border-color: var(--fo-color-border);
+
+}
+
+.fo-btn--secondary:hover {
+
+    background: var(--fo-color-surface-hover);
+
+}
+
+.fo-btn--outline {
+
+    background: transparent;
+
+    border-color: var(--fo-color-primary);
+
+    color: var(--fo-color-primary);
+
+}
+
+.fo-btn--outline:hover {
+
+    background: var(--fo-color-primary-light);
+
+}
+
+.fo-btn--ghost {
+
+    background: transparent;
+
+    color: var(--fo-color-text-primary);
+
+}
+
+.fo-btn--ghost:hover {
+
+    background: var(--fo-color-surface-hover);
+
+}
+
+.fo-btn--danger {
+
+    background: var(--fo-color-danger);
+
+    color: white;
+
+}
+
+.fo-btn--success {
+
+    background: var(--fo-color-success);
+
+    color: white;
+
+}
+
+/* ==========================================
+   Icons
+========================================== */
+
+.fo-btn__icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.fo-btn__label {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+/* ==========================================
+   Loading Spinner
+========================================== */
+
+.fo-btn__spinner {
+
+    width: 16px;
+
+    height: 16px;
+
+    border: 2px solid rgba(255,255,255,.4);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: fo-spin .8s linear infinite;
+
+}

@@ -1,0 +1,106 @@
+/* ==========================================
+   Root
+========================================== */
+
+.fo-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-2);
+
+    width: 100%;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-field__label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-1);
+
+    width: fit-content;
+
+    color: var(--fo-color-text-primary);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.fo-field__required {
+    color: var(--fo-color-danger);
+
+    font-weight: var(--fo-font-weight-bold);
+}
+
+/* ==========================================
+   Control
+========================================== */
+
+.fo-field__control {
+    width: 100%;
+}
+
+/* Make every form control inside Field fill the width */
+.fo-field__control > * {
+    width: 100%;
+}
+
+/* ==========================================
+   Helper Text
+========================================== */
+
+.fo-field__helper {
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Error Text
+========================================== */
+
+.fo-field__error {
+    color: var(--fo-color-danger);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.5;
+
+    font-weight: var(--fo-font-weight-medium);
+}
+
+/* ==========================================
+   Disabled State
+========================================== */
+
+.fo-field--disabled .fo-field__label {
+    color: var(--fo-color-text-disabled);
+
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   Transitions
+========================================== */
+
+.fo-field__label,
+.fo-field__helper,
+.fo-field__error {
+    transition:
+        color var(--fo-transition-fast),
+        opacity var(--fo-transition-fast);
+}

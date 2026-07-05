@@ -1,0 +1,313 @@
+/* ==========================================
+   Root
+========================================== */
+
+.fo-input {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-2);
+}
+
+.fo-input--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-input__label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-1);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    color: var(--fo-color-text-primary);
+}
+
+.fo-input__required {
+    color: var(--fo-color-danger);
+
+    font-weight: var(--fo-font-weight-bold);
+}
+
+/* ==========================================
+   Wrapper
+========================================== */
+
+.fo-input__wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-md);
+
+    background: var(--fo-color-surface);
+
+    transition:
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        background-color var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Input
+========================================== */
+
+.fo-input__field {
+    flex: 1;
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--fo-color-text-primary);
+
+    font: inherit;
+}
+
+.fo-input__field::placeholder {
+    color: var(--fo-color-text-muted);
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-input--sm .fo-input__field {
+    height: 36px;
+
+    padding: 0 var(--fo-space-3);
+
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-input--md .fo-input__field {
+    height: 44px;
+
+    padding: 0 var(--fo-space-4);
+
+    font-size: var(--fo-font-size-md);
+}
+
+.fo-input--lg .fo-input__field {
+    height: 52px;
+
+    padding: 0 var(--fo-space-5);
+
+    font-size: var(--fo-font-size-lg);
+}
+
+/* ==========================================
+   Icons
+========================================== */
+
+.fo-input__icon {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-input__icon svg {
+    width: 18px;
+
+    height: 18px;
+}
+
+/* Left Icon */
+
+.fo-input__icon--left {
+    margin-left: var(--fo-space-4);
+}
+
+.fo-input__wrapper--left-icon .fo-input__field {
+    padding-left: var(--fo-space-2);
+}
+
+/* Right Icon */
+
+.fo-input__icon--right {
+    margin-right: var(--fo-space-4);
+}
+
+.fo-input__wrapper--right-icon .fo-input__field {
+    padding-right: var(--fo-space-2);
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.fo-input__wrapper:hover {
+    border-color: var(--fo-color-border-hover);
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-input__wrapper:focus-within {
+    border-color: var(--fo-color-primary);
+
+    box-shadow: 0 0 0 3px var(--fo-color-focus-ring);
+}
+
+/* ==========================================
+   Error
+========================================== */
+
+.fo-input--error .fo-input__wrapper {
+    border-color: var(--fo-color-danger);
+}
+
+.fo-input--error .fo-input__wrapper:hover {
+    border-color: var(--fo-color-danger);
+}
+
+.fo-input--error .fo-input__wrapper:focus-within {
+    border-color: var(--fo-color-danger);
+
+    box-shadow: 0 0 0 3px var(--fo-color-danger-focus-ring);
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-input--disabled .fo-input__wrapper {
+    background: var(--fo-color-surface-disabled);
+
+    border-color: var(--fo-color-border);
+
+    cursor: not-allowed;
+
+    opacity: 0.75;
+}
+
+.fo-input--disabled .fo-input__field {
+    cursor: not-allowed;
+}
+
+.fo-input--disabled .fo-input__icon {
+    color: var(--fo-color-text-disabled);
+}
+
+/* ==========================================
+   Read Only
+========================================== */
+
+.fo-input__field:read-only {
+    cursor: default;
+}
+
+.fo-input__field:read-only::selection {
+    background: var(--fo-color-primary-light);
+}
+
+/* ==========================================
+   Placeholder
+========================================== */
+
+.fo-input__field::placeholder {
+    color: var(--fo-color-text-muted);
+
+    opacity: 1;
+}
+
+/* ==========================================
+   Helper Text
+========================================== */
+
+.fo-input__helper,
+.fo-input__error {
+    margin-top: var(--fo-space-1);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.4;
+}
+
+.fo-input__helper {
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-input__error {
+    color: var(--fo-color-danger);
+}
+
+/* ==========================================
+   Autofill
+========================================== */
+
+.fo-input__field:-webkit-autofill,
+.fo-input__field:-webkit-autofill:hover,
+.fo-input__field:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--fo-color-text-primary);
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ==========================================
+   Remove Number Input Arrows
+========================================== */
+
+.fo-input__field[type="number"]::-webkit-inner-spin-button,
+.fo-input__field[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+
+    margin: 0;
+}
+
+.fo-input__field[type="number"] {
+    appearance: textfield;
+
+    -moz-appearance: textfield;
+}
+
+/* ==========================================
+   Remove Search Decorations
+========================================== */
+
+.fo-input__field[type="search"]::-webkit-search-decoration,
+.fo-input__field[type="search"]::-webkit-search-cancel-button,
+.fo-input__field[type="search"]::-webkit-search-results-button,
+.fo-input__field[type="search"]::-webkit-search-results-decoration {
+    appearance: none;
+}
+
+/* ==========================================
+   Transitions
+========================================== */
+
+.fo-input__field,
+.fo-input__icon,
+.fo-input__label,
+.fo-input__helper,
+.fo-input__error {
+    transition:
+        color var(--fo-transition-fast),
+        opacity var(--fo-transition-fast);
+}

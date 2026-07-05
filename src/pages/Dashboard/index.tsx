@@ -1,5 +1,7 @@
-import { ArrowRightIcon, PlusIcon } from "../../assets/icons";
+import { ArrowRightIcon, Plus, ArrowRight, PlusIcon, Trash2Icon, Search, CircleDollarSign } from "../../assets/icons";
 import { Button } from "../../components/Button";
+import { IconButton } from "../../components/IconButton";
+import { Input } from "../../components/Input/Input";
 import { useTheme } from "../../hooks/useTheme";
 
 function Dashboard() {
@@ -91,6 +93,70 @@ function Dashboard() {
             >
                 Continue
             </Button>
+
+            --------
+
+            <Button>
+                Save
+            </Button>
+
+            <Button loading>
+                Saving...
+            </Button>
+
+            <Button
+                variant="danger"
+                disabled
+            >
+                Delete
+            </Button>
+
+            <Button
+                leftIcon={<Plus />}
+            >
+                Add Client
+            </Button>
+
+            <Button
+                rightIcon={<ArrowRight />}
+            >
+                Continue
+            </Button>
+
+            <IconButton
+                loading
+                aria-label="Delete"
+                variant="outline"
+            >
+                <Trash2Icon />
+            </IconButton>
+
+            <IconButton
+                variant="danger"
+                aria-label="Delete Client"
+                title="Permanently delete this client"
+            >
+                <Trash2Icon />
+            </IconButton>
+
+            <Input
+                label="Search"
+                placeholder="Search clients..."
+                leftIcon={<Search />}
+            />
+
+            <Input
+                label="Budget"
+                placeholder="5000"
+                rightIcon={<CircleDollarSign />}
+            />
+
+            <Input
+                label="Both Icons"
+                placeholder="Search..."
+                leftIcon={<Search />}
+                rightIcon={<CircleDollarSign />}
+            />
 
         </div>
     );

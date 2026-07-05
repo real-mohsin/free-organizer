@@ -33,14 +33,19 @@
  * => "btn btn-primary loading"
  */
 
+export type ClassDictionary = Record<
+    string,
+    string | number | boolean | null | undefined
+>;
+
 export type ClassValue =
     | string
     | number
     | boolean
     | null
     | undefined
-    | ClassValue[]
-    | Record<string, boolean>;
+    | ClassDictionary
+    | ClassValue[];
 
 export function cn(...inputs: ClassValue[]): string {
     const classes: string[] = [];

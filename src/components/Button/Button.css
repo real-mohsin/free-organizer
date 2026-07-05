@@ -3,6 +3,7 @@
 ========================================== */
 
 .fo-btn {
+    position: relative;
 
     display: inline-flex;
 
@@ -18,23 +19,41 @@
 
     cursor: pointer;
 
-    transition: all var(--fo-transition-fast);
+    user-select: none;
+
+    white-space: nowrap;
 
     font-family: inherit;
 
     font-weight: var(--fo-font-weight-medium);
 
-    white-space: nowrap;
+    line-height: 1;
 
-    user-select: none;
+    transition:
+        background-color var(--fo-transition-fast),
+        color var(--fo-transition-fast),
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+.fo-btn:active:not(:disabled) {
+    transform: scale(0.98);
 }
 
 .fo-btn:disabled {
-
-    opacity: .6;
+    opacity: .55;
 
     cursor: not-allowed;
 
+    pointer-events: none;
+}
+
+.fo-btn:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px var(--fo-color-focus-ring);
 }
 
 .fo-btn--full {
@@ -162,21 +181,25 @@
 ========================================== */
 
 .fo-btn__icon {
-
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
 
     justify-content: center;
 
+    flex-shrink: 0;
+}
+
+.fo-btn__icon svg {
+    width: 18px;
+
+    height: 18px;
 }
 
 .fo-btn__label {
-
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
-
 }
 
 /* ==========================================
@@ -184,17 +207,29 @@
 ========================================== */
 
 .fo-btn__spinner {
-
     width: 16px;
 
     height: 16px;
 
-    border: 2px solid rgba(255,255,255,.4);
+    border: 2px solid rgba(255,255,255,.35);
 
-    border-top-color: white;
+    border-top-color: currentColor;
 
     border-radius: 50%;
 
     animation: fo-spin .8s linear infinite;
+}
 
+@keyframes fo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fo-btn--loading {
+    cursor: wait;
 }

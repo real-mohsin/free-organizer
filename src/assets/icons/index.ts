@@ -14,5 +14,8 @@ export {
     FileText,
     DollarSign,
     ArrowRightIcon,
-    PlusIcon
+    PlusIcon,
+    ArrowRight,
+    Trash2Icon,
+    CircleDollarSign
 } from "lucide-react";

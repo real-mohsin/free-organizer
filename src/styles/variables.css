@@ -71,6 +71,9 @@
    --fo-color-border-light: #f1f5f9;
    --fo-color-border-dark: #cbd5e1;
 
+   --fo-color-focus-ring: rgba(59, 130, 246, 0.35);
+   --fo-color-danger-focus-ring: rgba(220, 38, 38, 0.18);
+
    /* ==================================================
   /* ==================================================
    TYPOGRAPHY

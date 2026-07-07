@@ -1,8 +1,19 @@
 import { ArrowRightIcon, Plus, ArrowRight, PlusIcon, Trash2Icon, Search, CircleDollarSign } from "../../assets/icons";
 import { Button } from "../../components/Button";
+import { Card } from "../../components/Card/Card";
 import { IconButton } from "../../components/IconButton";
 import { Input } from "../../components/Input/Input";
+import { Table } from "../../components/Table";
 import { useTheme } from "../../hooks/useTheme";
+
+import {
+    dummyClients,
+} from "./dummyClients";
+
+import {
+    clientColumns,
+} from "./columns";
+
 
 function Dashboard() {
     const {
@@ -156,6 +167,25 @@ function Dashboard() {
                 placeholder="Search..."
                 leftIcon={<Search />}
                 rightIcon={<CircleDollarSign />}
+            />
+
+            <Card
+                heading="Projects"
+                padding="sm"
+                description="Updated 2 minutes ago"
+                actions={<IconButton aria-label="Refresh">...</IconButton>}
+                footer="Showing 10 of 56 projects"
+            >
+                ...
+            </Card>
+
+            <Table
+                columns={clientColumns}
+                data={dummyClients}
+                getRowKey={(client) => client.id}
+                hoverable
+                zebra
+                stickyHeader
             />
 
         </div>

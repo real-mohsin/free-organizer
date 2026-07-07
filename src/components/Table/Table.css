@@ -1,0 +1,298 @@
+/* ==========================================
+   Root
+========================================== */
+
+.fo-table {
+    position: relative;
+
+    width: auto;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-lg);
+
+    background: var(--fo-color-surface);
+}
+
+/* ==========================================
+   Width
+========================================== */
+
+.fo-table--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Table
+========================================== */
+
+.fo-table__table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    min-width: 100%;
+}
+
+/* ==========================================
+   Sections
+========================================== */
+
+.fo-table__head {
+    background: var(--fo-color-surface-secondary);
+}
+
+.fo-table__body {
+    background: var(--fo-color-surface);
+}
+
+/* ==========================================
+   Sticky Header
+========================================== */
+
+.fo-table--sticky .fo-table__head th {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    background: var(--fo-color-surface-secondary);
+}
+
+/* ==========================================
+   Horizontal Scrolling
+========================================== */
+
+.fo-table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.fo-table::-webkit-scrollbar-thumb {
+    background: var(--fo-color-border);
+
+    border-radius: var(--fo-radius-full);
+}
+
+.fo-table::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-table__header {
+    padding: var(--fo-space-4);
+
+    background: var(--fo-color-surface-secondary);
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-semibold);
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--fo-color-border);
+}
+
+/* ==========================================
+   Body Cells
+========================================== */
+
+.fo-table__cell {
+    padding: var(--fo-space-4);
+
+    color: var(--fo-color-text-primary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.5;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--fo-color-border);
+}
+
+/* ==========================================
+   Rows
+========================================== */
+
+.fo-table__row:last-child .fo-table__cell {
+    border-bottom: none;
+}
+
+/* ==========================================
+   Alignment
+========================================== */
+
+.fo-table__header--left,
+.fo-table__cell--left {
+    text-align: left;
+}
+
+.fo-table__header--center,
+.fo-table__cell--center {
+    text-align: center;
+}
+
+.fo-table__header--right,
+.fo-table__cell--right {
+    text-align: right;
+}
+
+/* ==========================================
+   Typography Helpers
+========================================== */
+
+.fo-table__header,
+.fo-table__cell {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.fo-table__cell {
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+/* ==========================================
+   Row Hover
+========================================== */
+
+.fo-table--hover .fo-table__body .fo-table__row {
+    transition:
+        background-color var(--fo-transition-fast),
+        color var(--fo-transition-fast);
+}
+
+.fo-table--hover .fo-table__body .fo-table__row:hover {
+    background: var(--fo-color-surface-hover);
+}
+
+/* ==========================================
+   Zebra Rows
+========================================== */
+
+.fo-table--zebra
+.fo-table__body
+.fo-table__row:nth-child(even) {
+    background: var(--fo-color-surface-secondary);
+}
+
+/* ==========================================
+   Empty & Loading States
+========================================== */
+
+.fo-table__empty {
+    padding: var(--fo-space-10);
+
+    text-align: center;
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    border-bottom: none;
+}
+
+/* ==========================================
+   Cell Transition
+========================================== */
+
+.fo-table__cell {
+    transition:
+        background-color var(--fo-transition-fast),
+        color var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Row Cursor Helper
+========================================== */
+
+.fo-table__row {
+    cursor: default;
+}
+
+/* ==========================================
+   Focus Visible
+========================================== */
+
+.fo-table:focus-within {
+    outline: 2px solid var(--fo-color-focus-ring);
+
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-table {
+        border-radius: var(--fo-radius-md);
+    }
+
+    .fo-table__header,
+    .fo-table__cell {
+        padding: var(--fo-space-3);
+    }
+
+    .fo-table__header {
+        font-size: var(--fo-font-size-xs);
+    }
+
+    .fo-table__cell {
+        font-size: var(--fo-font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .fo-table__table {
+        min-width: 640px;
+    }
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+.fo-table {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--fo-color-border)
+        transparent;
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-table {
+        overflow: visible;
+
+        border: 1px solid var(--fo-color-border);
+
+        box-shadow: none;
+    }
+
+    .fo-table__header {
+        background: transparent;
+    }
+
+    .fo-table__row {
+        break-inside: avoid;
+    }
+}

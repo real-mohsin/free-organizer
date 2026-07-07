@@ -1,0 +1,256 @@
+/* ==========================================
+   Card
+========================================== */
+
+.fo-card {
+    display: flex;
+
+    flex-direction: column;
+
+    width: auto;
+
+    background: var(--fo-color-surface);
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-lg);
+
+    transition:
+        background-color var(--fo-transition-fast),
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Width
+========================================== */
+
+.fo-card--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Variants
+========================================== */
+
+.fo-card--default {
+    background: var(--fo-color-surface);
+
+    border-color: var(--fo-color-border);
+
+    box-shadow: var(--fo-shadow-sm);
+}
+
+.fo-card--outlined {
+    background: var(--fo-color-surface);
+
+    border: 1px solid var(--fo-color-border);
+
+    box-shadow: none;
+}
+
+.fo-card--elevated {
+    background: var(--fo-color-surface);
+
+    border-color: transparent;
+
+    box-shadow: var(--fo-shadow-lg);
+}
+
+.fo-card--ghost {
+    background: transparent;
+
+    border-color: transparent;
+
+    box-shadow: none;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-card__header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: var(--fo-space-4);
+}
+
+.fo-card__header-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-1);
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.fo-card__heading {
+    color: var(--fo-color-text-primary);
+
+    font-size: var(--fo-font-size-xl);
+
+    font-weight: var(--fo-font-weight-semibold);
+
+    line-height: 1.3;
+}
+
+.fo-card__description {
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.5;
+}
+
+.fo-card__actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: var(--fo-space-2);
+
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   Body
+========================================== */
+
+.fo-card__body {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-4);
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.fo-card__footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--fo-space-3);
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    border-top: 1px solid var(--fo-color-border);
+
+    padding-top: var(--fo-space-4);
+
+    margin-top: var(--fo-space-4);
+}
+
+/* ==========================================
+   Padding
+========================================== */
+
+.fo-card--padding-none {
+    padding: 0;
+}
+
+.fo-card--padding-sm {
+    padding: var(--fo-space-4);
+}
+
+.fo-card--padding-md {
+    padding: var(--fo-space-6);
+}
+
+.fo-card--padding-lg {
+    padding: var(--fo-space-8);
+}
+
+/* ==========================================
+   Overflow
+========================================== */
+
+.fo-card {
+    overflow: hidden;
+}
+
+.fo-card__heading,
+.fo-card__description {
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-card {
+        border-radius: var(--fo-radius-md);
+    }
+
+    .fo-card--padding-lg {
+        padding: var(--fo-space-6);
+    }
+
+    .fo-card__header {
+        gap: var(--fo-space-3);
+    }
+
+    .fo-card__heading {
+        font-size: var(--fo-font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .fo-card__header {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .fo-card__actions {
+        justify-content: flex-start;
+
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-card:focus-visible {
+    outline: 2px solid var(--fo-color-focus-ring);
+
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-card {
+        box-shadow: none;
+
+        border: 1px solid var(--fo-color-border);
+    }
+}

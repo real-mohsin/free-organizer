@@ -14,6 +14,7 @@ import {
 import {
     dummyClients,
 } from "./dummyClients";
+import { Avatar } from "../components/Avatar";
 
 function ComponentShowcase() {
     return (
@@ -212,6 +213,79 @@ function ComponentShowcase() {
                     >
                         Completed
                     </Badge>
+                </div>
+            </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* Avatar */}
+            {/* ------------------------------------------------ */}
+
+            <Card
+                heading="Avatar"
+                description="Avatar component variations"
+            >
+                <div
+                    style={{
+                        display: "flex",
+                        gap: "1rem",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                    }}
+                >
+                    {/* Image */}
+                    <Avatar
+                        src="https://i.pravatar.cc/150?img=1"
+                        name="John Smith"
+                    />
+
+                    {/* Initials */}
+                    <Avatar
+                        name="Sarah Khan"
+                    />
+
+                    {/* One Name */}
+                    <Avatar
+                        name="Mohsin"
+                    />
+
+                    {/* Online */}
+                    <Avatar
+                        name="Emily Johnson"
+                        online
+                    />
+
+                    {/* Small */}
+                    <Avatar
+                        size="sm"
+                        name="Alex Brown"
+                    />
+
+                    {/* Large */}
+                    <Avatar
+                        size="lg"
+                        name="Emma Wilson"
+                    />
+
+                    {/* Extra Large */}
+                    <Avatar
+                        size="xl"
+                        name="Michael Lee"
+                    />
+
+                    {/* Rounded */}
+                    <Avatar
+                        variant="rounded"
+                        name="David Miller"
+                    />
+
+                    {/* Icon Fallback */}
+                    <Avatar />
+
+                    {/* Broken Image */}
+                    <Avatar
+                        src="broken-image.jpg"
+                        name="Fallback Example"
+                    />
                 </div>
             </Card>
 

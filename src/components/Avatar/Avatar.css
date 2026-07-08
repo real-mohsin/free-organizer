@@ -1,0 +1,240 @@
+/* ==========================================
+   Avatar
+========================================== */
+
+.fo-avatar {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: var(--fo-color-surface-secondary);
+
+    color: var(--fo-color-text-primary);
+
+    border: 1px solid var(--fo-color-border);
+
+    user-select: none;
+
+    transition:
+        background-color var(--fo-transition-fast),
+        border-color var(--fo-transition-fast),
+        color var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Shapes
+========================================== */
+
+.fo-avatar--circle {
+    border-radius: 50%;
+}
+
+.fo-avatar--rounded {
+    border-radius: var(--fo-radius-lg);
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-avatar--xs {
+    width: 24px;
+    height: 24px;
+
+    font-size: var(--fo-font-size-xs);
+}
+
+.fo-avatar--sm {
+    width: 32px;
+    height: 32px;
+
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-avatar--md {
+    width: 40px;
+    height: 40px;
+
+    font-size: var(--fo-font-size-md);
+}
+
+.fo-avatar--lg {
+    width: 56px;
+    height: 56px;
+
+    font-size: var(--fo-font-size-lg);
+}
+
+.fo-avatar--xl {
+    width: 72px;
+    height: 72px;
+
+    font-size: var(--fo-font-size-xl);
+}
+
+/* ==========================================
+   Avatar Image
+========================================== */
+
+.fo-avatar__image {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* ==========================================
+   Initials
+========================================== */
+
+.fo-avatar__initials {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    font-weight: var(--fo-font-weight-semibold);
+
+    text-transform: uppercase;
+
+    line-height: 1;
+}
+
+/* ==========================================
+   Fallback Icon
+========================================== */
+
+.fo-avatar__icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+.fo-avatar__icon svg {
+    width: 60%;
+
+    height: 60%;
+}
+
+/* ==========================================
+   Online Status Indicator
+========================================== */
+
+.fo-avatar__status {
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 25%;
+
+    height: 25%;
+
+    min-width: 10px;
+
+    min-height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--fo-color-success);
+
+    border: 2px solid var(--fo-color-surface);
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.fo-avatar:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-avatar:focus-visible {
+    outline: 2px solid var(--fo-color-focus-ring);
+
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Interactive
+========================================== */
+
+.fo-avatar[role="button"] {
+    cursor: pointer;
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-avatar[aria-disabled="true"] {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-avatar--xl {
+        width: 64px;
+
+        height: 64px;
+    }
+
+    .fo-avatar--lg {
+        width: 48px;
+
+        height: 48px;
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-avatar {
+        border: 1px solid var(--fo-color-border);
+
+        box-shadow: none;
+    }
+
+    .fo-avatar__status {
+        display: none;
+    }
+}

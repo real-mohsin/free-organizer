@@ -5,6 +5,7 @@ import Clients from './pages/Clients'
 import Tasks from './pages/Tasks'
 import Login from './pages/Login'
 import AddClient from './pages/Client-Add'
+import ComponentShowcase from './pages/ComponentShowcase'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='add-client' element={ <AddClient /> } />
       <Route path='tasks' element={ <Tasks /> } />
       <Route path='login' element={ <Login /> } />
+      <Route path="componentshowcase" element={<ComponentShowcase />} />
       {/* NO MATCH PATH */}
       <Route path='*' element={ <Login /> } />
     </Routes>

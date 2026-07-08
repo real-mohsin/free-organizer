@@ -1,0 +1,260 @@
+/* ==========================================
+   Badge
+========================================== */
+
+.fo-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--fo-space-2);
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    border: 1px solid transparent;
+
+    border-radius: var(--fo-radius-full);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    user-select: none;
+
+    vertical-align: middle;
+
+    transition:
+        background-color var(--fo-transition-fast),
+        border-color var(--fo-transition-fast),
+        color var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Full Width
+========================================== */
+
+.fo-badge--full {
+    display: flex;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-badge--sm {
+    min-height: 20px;
+
+    padding: 2px var(--fo-space-2);
+
+    font-size: var(--fo-font-size-xs);
+}
+
+.fo-badge--md {
+    min-height: 26px;
+
+    padding: 4px var(--fo-space-3);
+
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-badge--lg {
+    min-height: 34px;
+
+    padding: 6px var(--fo-space-4);
+
+    font-size: var(--fo-font-size-md);
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-badge__label {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+/* ==========================================
+   Default
+========================================== */
+
+.fo-badge--default {
+    background: var(--fo-color-surface-secondary);
+
+    color: var(--fo-color-text-primary);
+
+    border-color: var(--fo-color-border);
+}
+
+/* ==========================================
+   Primary
+========================================== */
+
+.fo-badge--primary {
+    background: var(--fo-color-primary-soft);
+
+    color: var(--fo-color-primary);
+
+    border-color: var(--fo-color-primary-border);
+}
+
+/* ==========================================
+   Secondary
+========================================== */
+
+.fo-badge--secondary {
+    background: var(--fo-color-secondary-soft);
+
+    color: var(--fo-color-text-secondary);
+
+    border-color: var(--fo-color-secondary-border);
+}
+
+/* ==========================================
+   Success
+========================================== */
+
+.fo-badge--success {
+    background: var(--fo-color-success-soft);
+
+    color: var(--fo-color-success);
+
+    border-color: var(--fo-color-success-border);
+}
+
+/* ==========================================
+   Warning
+========================================== */
+
+.fo-badge--warning {
+    background: var(--fo-color-warning-soft);
+
+    color: var(--fo-color-warning);
+
+    border-color: var(--fo-color-warning-border);
+}
+
+/* ==========================================
+   Danger
+========================================== */
+
+.fo-badge--danger {
+    background: var(--fo-color-danger-soft);
+
+    color: var(--fo-color-danger);
+
+    border-color: var(--fo-color-danger-border);
+}
+
+/* ==========================================
+   Info
+========================================== */
+
+.fo-badge--info {
+    background: var(--fo-color-info-soft);
+
+    color: var(--fo-color-info);
+
+    border-color: var(--fo-color-info-border);
+}
+
+/* ==========================================
+   Icons
+========================================== */
+
+.fo-badge__icon {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    line-height: 1;
+}
+
+.fo-badge__icon svg {
+    width: 1em;
+
+    height: 1em;
+}
+
+.fo-badge__icon--start {
+    margin-right: calc(var(--fo-space-1) * -0.5);
+}
+
+.fo-badge__icon--end {
+    margin-left: calc(var(--fo-space-1) * -0.5);
+}
+
+/* ==========================================
+   Dot
+========================================== */
+
+.fo-badge__dot {
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-badge--lg {
+        min-height: 30px;
+
+        padding: 5px var(--fo-space-3);
+    }
+
+    .fo-badge--md {
+        min-height: 24px;
+    }
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-badge:focus-visible {
+    outline: 2px solid var(--fo-color-focus-ring);
+
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-badge[aria-disabled="true"] {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-badge {
+        box-shadow: none;
+    }
+}

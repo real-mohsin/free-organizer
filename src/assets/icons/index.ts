@@ -17,5 +17,6 @@ export {
     PlusIcon,
     ArrowRight,
     Trash2Icon,
-    CircleDollarSign
+    CircleDollarSign,
+    StarIcon
 } from "lucide-react";

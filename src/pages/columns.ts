@@ -1,5 +1,5 @@
 import { TableColumn } from "../../components/Table/Table.types";
-import { Client } from "./dummyClients";
+import { Client } from "../dummyClients";
 
 export const clientColumns: TableColumn<Client>[] = [
     {

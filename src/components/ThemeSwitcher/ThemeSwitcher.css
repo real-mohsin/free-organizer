@@ -1,0 +1,129 @@
+/* ==========================================
+   Theme Switcher
+========================================== */
+
+.fo-theme-switcher {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-2);
+}
+
+/* ==========================================
+   Orientation
+========================================== */
+
+.fo-theme-switcher--horizontal {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+}
+
+.fo-theme-switcher--vertical {
+    flex-direction: column;
+
+    align-items: stretch;
+}
+
+/* ==========================================
+   Full Width
+========================================== */
+
+.fo-theme-switcher--full {
+    width: 100%;
+}
+
+.fo-theme-switcher--full > * {
+    flex: 1;
+}
+
+/* ==========================================
+   Button Alignment
+========================================== */
+
+.fo-theme-switcher .fo-button {
+    flex-shrink: 0;
+}
+
+.fo-theme-switcher--vertical .fo-button {
+    width: 100%;
+}
+
+.fo-theme-switcher--horizontal.fo-theme-switcher--full .fo-button {
+    flex: 1;
+}
+
+/* ==========================================
+   Button Improvements
+========================================== */
+
+.fo-theme-switcher .fo-button {
+    justify-content: center;
+}
+
+.fo-theme-switcher--vertical .fo-button {
+    justify-content: flex-start;
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-theme-switcher[aria-disabled="true"] {
+    opacity: 0.6;
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-theme-switcher:focus-within {
+    outline: 2px solid var(--fo-color-focus-ring);
+
+    outline-offset: 4px;
+
+    border-radius: var(--fo-radius-lg);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-theme-switcher {
+        gap: var(--fo-space-1);
+    }
+
+    .fo-theme-switcher--horizontal:not(.fo-theme-switcher--full) {
+        justify-content: center;
+    }
+
+    .fo-theme-switcher .fo-button {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .fo-theme-switcher--horizontal {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .fo-theme-switcher--horizontal .fo-button {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-theme-switcher {
+        display: none;
+    }
+}

@@ -1,4 +1,4 @@
-import { Plus, Search, CheckCircle } from "lucide-react";
+import { Plus, Search, CheckCircle, Globe } from "lucide-react";
 
 import { Button } from "../components/Button";
 import { IconButton } from "../components/IconButton";
@@ -15,8 +15,34 @@ import {
     dummyClients,
 } from "./dummyClients";
 import { Avatar } from "../components/Avatar";
+import { Select } from "../components/Select";
+import { Textarea } from "../components/Textarea";
 
 function ComponentShowcase() {
+
+    const countries = [
+        {
+            label: "Pakistan",
+            value: "pk",
+        },
+        {
+            label: "Japan",
+            value: "jp",
+        },
+        {
+            label: "Germany",
+            value: "de",
+        },
+        {
+            label: "United States",
+            value: "us",
+        },
+        {
+            label: "United Kingdom",
+            value: "uk",
+        },
+    ];
+
     return (
         <div
             style={{
@@ -305,6 +331,169 @@ function ComponentShowcase() {
                     zebra
                     stickyHeader
                 />
+            </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* Select */}
+            {/* ------------------------------------------------ */}
+
+
+            <Card
+                heading="Select"
+                description="Reusable select component variations"
+            >
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                            "repeat(auto-fit, minmax(300px, 1fr))",
+                        gap: "1.5rem",
+                    }}
+                >
+                    <Select
+                        label="Country"
+                        placeholder="Select Country"
+                        options={countries}
+                    />
+
+                    <Select
+                        label="Country"
+                        placeholder="Select Country"
+                        options={countries}
+                        leftIcon={<Globe size={18} />}
+                    />
+
+                    <Select
+                        label="Required"
+                        placeholder="Select Country"
+                        options={countries}
+                        required
+                    />
+
+                    <Select
+                        label="Error"
+                        placeholder="Select Country"
+                        options={countries}
+                        error="Country is required."
+                    />
+
+                    <Select
+                        label="Helper Text"
+                        placeholder="Select Country"
+                        options={countries}
+                        helperText="Choose your client's country."
+                    />
+
+                    <Select
+                        label="Disabled"
+                        placeholder="Select Country"
+                        options={countries}
+                        disabled
+                    />
+
+                    <Select
+                        label="Small"
+                        size="sm"
+                        placeholder="Select Country"
+                        options={countries}
+                    />
+
+                    <Select
+                        label="Medium"
+                        size="md"
+                        placeholder="Select Country"
+                        options={countries}
+                    />
+
+                    <Select
+                        label="Large"
+                        size="lg"
+                        placeholder="Select Country"
+                        options={countries}
+                    />
+
+                    <Select
+                        label="Full Width"
+                        placeholder="Select Country"
+                        options={countries}
+                        fullWidth
+                    />
+                </div>
+            </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* Textarea */}
+            {/* ------------------------------------------------ */}
+
+
+            <Card
+                heading="Textarea"
+                description="Textarea component variations"
+            >
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                            "repeat(auto-fit, minmax(320px, 1fr))",
+                        gap: "1.5rem",
+                    }}
+                >
+                    <Textarea
+                        label="Basic"
+                        placeholder="Write something..."
+                    />
+
+                    <Textarea
+                        label="Helper Text"
+                        helperText="Visible only to you."
+                        placeholder="Project notes..."
+                    />
+
+                    <Textarea
+                        label="Required"
+                        required
+                        placeholder="Enter description..."
+                    />
+
+                    <Textarea
+                        label="Error"
+                        error="Description is required."
+                        placeholder="Enter description..."
+                    />
+
+                    <Textarea
+                        label="Character Counter"
+                        placeholder="Maximum 500 characters..."
+                        showCount
+                        maxLength={500}
+                    />
+
+                    <Textarea
+                        label="Disabled"
+                        disabled
+                        defaultValue="This field is disabled."
+                    />
+
+                    <Textarea
+                        label="Small"
+                        size="sm"
+                    />
+
+                    <Textarea
+                        label="Medium"
+                        size="md"
+                    />
+
+                    <Textarea
+                        label="Large"
+                        size="lg"
+                    />
+
+                    <Textarea
+                        label="No Resize"
+                        resize="none"
+                    />
+                </div>
             </Card>
         </div>
     );

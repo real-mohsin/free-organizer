@@ -1,0 +1,294 @@
+/* ==========================================
+   Textarea Wrapper
+========================================== */
+
+.fo-textarea-wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-2);
+}
+
+.fo-textarea-wrapper--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-textarea__label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-1);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    color: var(--fo-color-text-primary);
+}
+
+.fo-textarea__required {
+    color: var(--fo-color-danger);
+}
+
+/* ==========================================
+   Textarea
+========================================== */
+
+.fo-textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-md);
+
+    background: var(--fo-color-surface);
+
+    color: var(--fo-color-text-primary);
+
+    font: inherit;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        background-color var(--fo-transition-fast);
+
+    resize: vertical;
+}
+
+.fo-textarea--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.fo-textarea__footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: var(--fo-space-2);
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.fo-textarea:hover:not(:disabled) {
+    border-color: var(--fo-color-border-hover);
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-textarea:focus {
+    border-color: var(--fo-color-primary);
+
+    box-shadow: 0 0 0 3px var(--fo-color-primary-soft);
+}
+
+/* ==========================================
+   Error
+========================================== */
+
+.fo-textarea--error {
+    border-color: var(--fo-color-danger);
+}
+
+.fo-textarea--error:focus {
+    border-color: var(--fo-color-danger);
+
+    box-shadow: 0 0 0 3px var(--fo-color-danger-soft);
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-textarea--disabled {
+    background: var(--fo-color-surface-secondary);
+
+    color: var(--fo-color-text-secondary);
+
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-textarea--sm {
+    padding: var(--fo-space-2);
+
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-textarea--md {
+    padding: var(--fo-space-3);
+
+    font-size: var(--fo-font-size-md);
+}
+
+.fo-textarea--lg {
+    padding: var(--fo-space-4);
+
+    font-size: var(--fo-font-size-lg);
+}
+
+/* ==========================================
+   Resize
+========================================== */
+
+.fo-textarea--resize-none {
+    resize: none;
+}
+
+.fo-textarea--resize-both {
+    resize: both;
+}
+
+.fo-textarea--resize-horizontal {
+    resize: horizontal;
+}
+
+.fo-textarea--resize-vertical {
+    resize: vertical;
+}
+
+/* ==========================================
+   Helper Text
+========================================== */
+
+.fo-textarea__helper {
+    font-size: var(--fo-font-size-sm);
+
+    color: var(--fo-color-text-secondary);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Error Text
+========================================== */
+
+.fo-textarea__error {
+    font-size: var(--fo-font-size-sm);
+
+    color: var(--fo-color-danger);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Character Counter
+========================================== */
+
+.fo-textarea__count {
+    flex-shrink: 0;
+
+    font-size: var(--fo-font-size-xs);
+
+    color: var(--fo-color-text-secondary);
+
+    white-space: nowrap;
+
+    user-select: none;
+}
+
+/* ==========================================
+   Placeholder
+========================================== */
+
+.fo-textarea::placeholder {
+    color: var(--fo-color-text-secondary);
+
+    opacity: 0.8;
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+.fo-textarea {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--fo-color-border)
+        transparent;
+}
+
+.fo-textarea::-webkit-scrollbar {
+    width: 8px;
+
+    height: 8px;
+}
+
+.fo-textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.fo-textarea::-webkit-scrollbar-thumb {
+    background: var(--fo-color-border);
+
+    border-radius: var(--fo-radius-full);
+}
+
+.fo-textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--fo-color-border-hover);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-textarea {
+        font-size: 16px;
+    }
+
+    .fo-textarea__footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .fo-textarea__count {
+        align-self: flex-end;
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-textarea {
+        box-shadow: none;
+
+        resize: none;
+    }
+
+    .fo-textarea__count {
+        display: none;
+    }
+}

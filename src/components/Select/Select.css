@@ -1,0 +1,321 @@
+/* ==========================================
+   Select Wrapper
+========================================== */
+
+.fo-select-wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-2);
+}
+
+.fo-select-wrapper--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-select__label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-1);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    color: var(--fo-color-text-primary);
+}
+
+.fo-select__required {
+    color: var(--fo-color-danger);
+}
+
+/* ==========================================
+   Select Container
+========================================== */
+
+.fo-select {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-md);
+
+    background: var(--fo-color-surface);
+
+    transition:
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        background-color var(--fo-transition-fast);
+}
+
+.fo-select--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Native Select
+========================================== */
+
+.fo-select__control {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--fo-color-text-primary);
+
+    font: inherit;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    padding-right: 2.75rem;
+}
+
+.fo-select__control:disabled {
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   Left Icon
+========================================== */
+
+.fo-select__icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: var(--fo-space-3);
+
+    color: var(--fo-color-text-secondary);
+
+    flex-shrink: 0;
+}
+
+.fo-select--with-icon .fo-select__control {
+    padding-left: var(--fo-space-2);
+}
+
+/* ==========================================
+   Dropdown Arrow
+========================================== */
+
+.fo-select__arrow {
+    position: absolute;
+
+    right: var(--fo-space-3);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.fo-select:hover:not(.fo-select--disabled) {
+    border-color: var(--fo-color-border-hover);
+}
+
+/* ==========================================
+   Focus
+========================================== */
+
+.fo-select:focus-within {
+    border-color: var(--fo-color-primary);
+
+    box-shadow: 0 0 0 3px var(--fo-color-primary-soft);
+}
+
+/* ==========================================
+   Error
+========================================== */
+
+.fo-select--error {
+    border-color: var(--fo-color-danger);
+}
+
+.fo-select--error:focus-within {
+    border-color: var(--fo-color-danger);
+
+    box-shadow: 0 0 0 3px var(--fo-color-danger-soft);
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-select--disabled {
+    opacity: 0.6;
+
+    background: var(--fo-color-surface-secondary);
+
+    cursor: not-allowed;
+}
+
+.fo-select--disabled .fo-select__control {
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-select--sm .fo-select__control {
+    height: 36px;
+
+    padding-top: 0;
+
+    padding-bottom: 0;
+
+    padding-left: var(--fo-space-3);
+
+    font-size: var(--fo-font-size-sm);
+}
+
+.fo-select--md .fo-select__control {
+    height: 44px;
+
+    padding-top: 0;
+
+    padding-bottom: 0;
+
+    padding-left: var(--fo-space-4);
+
+    font-size: var(--fo-font-size-md);
+}
+
+.fo-select--lg .fo-select__control {
+    height: 52px;
+
+    padding-top: 0;
+
+    padding-bottom: 0;
+
+    padding-left: var(--fo-space-5);
+
+    font-size: var(--fo-font-size-lg);
+}
+
+/* ==========================================
+   Helper Text
+========================================== */
+
+.fo-select__helper {
+    font-size: var(--fo-font-size-sm);
+
+    color: var(--fo-color-text-secondary);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Error Text
+========================================== */
+
+.fo-select__error {
+    font-size: var(--fo-font-size-sm);
+
+    color: var(--fo-color-danger);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Placeholder
+========================================== */
+
+.fo-select__control:invalid {
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-select__control option {
+    color: var(--fo-color-text-primary);
+
+    background: var(--fo-color-surface);
+}
+
+/* ==========================================
+   Arrow
+========================================== */
+
+.fo-select__arrow {
+    transition:
+        color var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+.fo-select:focus-within .fo-select__arrow {
+    color: var(--fo-color-primary);
+}
+
+/* ==========================================
+   Icon
+========================================== */
+
+.fo-select__icon svg,
+.fo-select__arrow svg {
+    width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+    .fo-select {
+        width: 100%;
+    }
+
+    .fo-select__control {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+    .fo-select {
+        box-shadow: none;
+    }
+
+    .fo-select__arrow {
+        display: none;
+    }
+}

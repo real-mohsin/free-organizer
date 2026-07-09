@@ -17,6 +17,8 @@ import {
 import { Avatar } from "../components/Avatar";
 import { Select } from "../components/Select";
 import { Textarea } from "../components/Textarea";
+import { Modal } from "../components/Modal";
+import { useState } from "react";
 
 function ComponentShowcase() {
 
@@ -42,6 +44,9 @@ function ComponentShowcase() {
             value: "uk",
         },
     ];
+
+    const [modalOpen, setModalOpen] = useState(false);
+
 
     return (
         <div
@@ -425,7 +430,6 @@ function ComponentShowcase() {
             {/* Textarea */}
             {/* ------------------------------------------------ */}
 
-
             <Card
                 heading="Textarea"
                 description="Textarea component variations"
@@ -494,6 +498,67 @@ function ComponentShowcase() {
                         resize="none"
                     />
                 </div>
+            </Card>
+
+
+            {/* ------------------------------------------------ */}
+            {/* Modals */}
+            {/* ------------------------------------------------ */}
+
+            <Card
+                heading="Modal"
+                description="Reusable modal component"
+            >
+                <Button
+                    onClick={() => setModalOpen(true)}
+                >
+                    Open Modal
+                </Button>
+
+                <Modal
+                    open={modalOpen}
+                    onClose={() => setModalOpen(false)}
+                    heading="Create Client"
+                    description="Fill in the client details below."
+                    size="md"
+                    footer={
+                        <>
+                            <Button
+                                variant="secondary"
+                                onClick={() => setModalOpen(false)}
+                            >
+                                Cancel
+                            </Button>
+
+                            <Button>
+                                Save Client
+                            </Button>
+                        </>
+                    }
+                >
+                    <Input
+                        label="Client Name"
+                        placeholder="John Doe"
+                        fullWidth
+                    />
+
+                    <div style={{ height: 16 }} />
+
+                    <Input
+                        label="Email"
+                        placeholder="john@example.com"
+                        fullWidth
+                    />
+
+                    <div style={{ height: 16 }} />
+
+                    <Textarea
+                        label="Notes"
+                        placeholder="Additional notes..."
+                        rows={4}
+                        fullWidth
+                    />
+                </Modal>
             </Card>
         </div>
     );

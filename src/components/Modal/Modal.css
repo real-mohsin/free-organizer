@@ -1,0 +1,354 @@
+/* ==========================================
+   Modal Overlay
+========================================== */
+
+.fo-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: var(--fo-space-6);
+
+    background: rgba(15, 23, 42, 0.45);
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* ==========================================
+   Modal
+========================================== */
+
+.fo-modal {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    max-height: calc(100vh - 4rem);
+
+    background: var(--fo-color-surface);
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-xl);
+
+    box-shadow: var(--fo-shadow-xl);
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-modal__header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: var(--fo-space-4);
+
+    padding: var(--fo-space-6);
+
+    border-bottom: 1px solid var(--fo-color-border);
+}
+
+.fo-modal__heading {
+    margin: 0;
+
+    font-size: var(--fo-font-size-xl);
+
+    font-weight: var(--fo-font-weight-semibold);
+
+    color: var(--fo-color-text-primary);
+}
+
+.fo-modal__description {
+    margin-top: var(--fo-space-2);
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Close Button
+========================================== */
+
+.fo-modal__close {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: var(--fo-radius-md);
+
+    background: transparent;
+
+    color: var(--fo-color-text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--fo-transition-fast),
+        color var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Body
+========================================== */
+
+.fo-modal__body {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: var(--fo-space-6);
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.fo-modal__footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: var(--fo-space-3);
+
+    padding: var(--fo-space-6);
+
+    border-top: 1px solid var(--fo-color-border);
+}
+
+/* ==========================================
+   Modal Sizes
+========================================== */
+
+.fo-modal--sm {
+    max-width: 400px;
+}
+
+.fo-modal--md {
+    max-width: 600px;
+}
+
+.fo-modal--lg {
+    max-width: 800px;
+}
+
+.fo-modal--xl {
+    max-width: 1000px;
+}
+
+/* ==========================================
+   Close Button
+========================================== */
+
+.fo-modal__close:hover {
+    background: var(--fo-color-surface-secondary);
+
+    color: var(--fo-color-text-primary);
+}
+
+.fo-modal__close:focus-visible {
+    outline: none;
+
+    box-shadow: 0 0 0 3px var(--fo-color-primary-soft);
+}
+
+/* ==========================================
+   Body Scrollbar
+========================================== */
+
+.fo-modal__body {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--fo-color-border)
+        transparent;
+}
+
+.fo-modal__body::-webkit-scrollbar {
+    width: 8px;
+
+    height: 8px;
+}
+
+.fo-modal__body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.fo-modal__body::-webkit-scrollbar-thumb {
+    background: var(--fo-color-border);
+
+    border-radius: var(--fo-radius-full);
+}
+
+.fo-modal__body::-webkit-scrollbar-thumb:hover {
+    background: var(--fo-color-border-hover);
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.fo-modal__footer > * {
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   Animation Ready
+========================================== */
+
+.fo-modal-overlay {
+    opacity: 1;
+
+    transition:
+        opacity var(--fo-transition-fast),
+        backdrop-filter var(--fo-transition-fast);
+}
+
+.fo-modal {
+    transform: translateY(0) scale(1);
+
+    transition:
+        transform var(--fo-transition-fast),
+        opacity var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-modal-overlay {
+        padding: var(--fo-space-4);
+    }
+
+    .fo-modal {
+        width: 100%;
+
+        max-width: none;
+
+        max-height: calc(100vh - 2rem);
+
+        border-radius: var(--fo-radius-lg);
+    }
+
+    .fo-modal__header,
+    .fo-modal__body,
+    .fo-modal__footer {
+        padding: var(--fo-space-4);
+    }
+
+    .fo-modal__footer {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .fo-modal__footer>* {
+        width: 100%;
+    }
+
+    .fo-modal__heading {
+        font-size: var(--fo-font-size-lg);
+    }
+}
+
+/* ==========================================
+   Reduced Motion
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fo-modal,
+    .fo-modal-overlay,
+    .fo-modal__close {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-modal-overlay {
+        position: static;
+
+        display: block;
+
+        padding: 0;
+
+        background: transparent;
+
+        backdrop-filter: none;
+
+        -webkit-backdrop-filter: none;
+    }
+
+    .fo-modal {
+        max-width: 100%;
+
+        max-height: none;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .fo-modal__close {
+        display: none;
+    }
+
+    .fo-modal__footer {
+        display: none;
+    }
+}
+
+/* ==========================================
+   Accessibility
+========================================== */
+
+.fo-modal__close:focus-visible {
+    outline: none;
+}
+
+/* ==========================================
+   Selection
+========================================== */
+
+.fo-modal ::selection {
+    background: var(--fo-color-primary-soft);
+
+    color: var(--fo-color-text-primary);
+}

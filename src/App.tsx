@@ -18,8 +18,8 @@ function App() {
       <Route path='tasks' element={ <Tasks /> } />
       <Route path='login' element={ <Login /> } />
       <Route path="componentshowcase" element={<ComponentShowcase />} />
-      {/* NO MATCH PATH */}
-      <Route path='*' element={ <Login /> } />
+      {/* NO MATCH PATH and Add 404 Not Found Page here */}
+      <Route path='*' element={ <Login /> } /> 
     </Routes>
   )
 }

@@ -19,6 +19,9 @@ import { Select } from "../components/Select";
 import { Textarea } from "../components/Textarea";
 import { Modal } from "../components/Modal";
 import { useState } from "react";
+import { Stack } from "../components/Layout/Stack";
+import { Grid } from "../components/Layout/Grid";
+import { Divider } from "../components/Layout/Divider/Divider";
 
 function ComponentShowcase() {
 
@@ -559,6 +562,110 @@ function ComponentShowcase() {
                         fullWidth
                     />
                 </Modal>
+            </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* Stack */}
+            {/* ------------------------------------------------ */}
+
+            <Card
+                heading="Stack"
+                description="Vertical layout component"
+            >
+                <Stack spacing="lg">
+
+                    <Input
+                        label="Full Name"
+                        placeholder="John Doe"
+                        fullWidth
+                    />
+
+                    <Input
+                        label="Email"
+                        placeholder="john@example.com"
+                        fullWidth
+                    />
+
+                    <Textarea
+                        label="Notes"
+                        rows={4}
+                        fullWidth
+                    />
+
+                    <Button>
+                        Save
+                    </Button>
+
+                </Stack>
+            </Card>
+
+            <Card
+                heading="Grid"
+                description="Responsive grid layout"
+            >
+                <Grid
+                    columns={3}
+                    spacing="lg"
+                >
+                    <Card heading="Card 1">
+                        Content
+                    </Card>
+
+                    <Card heading="Card 2">
+                        Content
+                    </Card>
+
+                    <Card heading="Card 3">
+                        Content
+                    </Card>
+
+                    <Card heading="Card 4">
+                        Content
+                    </Card>
+
+                    <Card heading="Card 5">
+                        Content
+                    </Card>
+
+                    <Card heading="Card 6">
+                        Content
+                    </Card>
+                </Grid>
+            </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* Divider */}
+            {/* ------------------------------------------------ */}
+
+            <Card
+                heading="Divider"
+                description="Separate content visually."
+            >
+                <Stack spacing="lg">
+
+                    <Divider />
+
+                    <Divider variant="dashed" />
+
+                    <Divider variant="dotted" />
+
+                    <Divider>
+                        OR
+                    </Divider>
+
+                    <Divider labelAlign="left">
+                        Filters
+                    </Divider>
+
+                    <Divider labelAlign="center">
+                        Settings
+                    </Divider>
+
+                    <Divider labelAlign="right">
+                        Advanced
+                    </Divider>
+
+                </Stack>
             </Card>
         </div>
     );

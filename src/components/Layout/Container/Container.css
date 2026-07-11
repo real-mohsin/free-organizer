@@ -1,0 +1,128 @@
+/* ==========================================
+   Container
+========================================== */
+
+.fo-container {
+    width: 100%;
+
+    min-width: 0;
+
+    padding-inline: var(--fo-space-4);
+}
+
+/* ==========================================
+   Centering
+========================================== */
+
+.fo-container--centered {
+    margin-inline: auto;
+}
+
+/* ==========================================
+   Full Width
+========================================== */
+
+.fo-container--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Sizes
+========================================== */
+
+.fo-container--xs {
+    max-width: 480px;
+}
+
+.fo-container--sm {
+    max-width: 640px;
+}
+
+.fo-container--md {
+    max-width: 768px;
+}
+
+.fo-container--lg {
+    max-width: 1024px;
+}
+
+.fo-container--xl {
+    max-width: 1280px;
+}
+
+.fo-container--fluid {
+    max-width: none;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .fo-container {
+        padding-inline: var(--fo-space-4);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .fo-container {
+        padding-inline: var(--fo-space-3);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .fo-container {
+        padding-inline: var(--fo-space-2);
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-container {
+        max-width: 100% !important;
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+}
+
+/* ==========================================
+   Utilities
+========================================== */
+
+.fo-container {
+    box-sizing: border-box;
+}
+
+.fo-container > * {
+    min-width: 0;
+}
+
+/* Prevent empty containers from taking space */
+.fo-container:empty {
+    display: none;
+}
+
+/* Images & media should never overflow */
+.fo-container img,
+.fo-container video,
+.fo-container canvas,
+.fo-container svg {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}

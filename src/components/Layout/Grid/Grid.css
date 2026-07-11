@@ -1,0 +1,172 @@
+/* ==========================================
+   Grid
+========================================== */
+
+.fo-grid {
+    display: grid;
+
+    min-width: 0;
+}
+
+/* ==========================================
+   Width
+========================================== */
+
+.fo-grid--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Spacing
+========================================== */
+
+.fo-grid--spacing-none {
+    gap: 0;
+}
+
+.fo-grid--spacing-xs {
+    gap: var(--fo-space-1);
+}
+
+.fo-grid--spacing-sm {
+    gap: var(--fo-space-2);
+}
+
+.fo-grid--spacing-md {
+    gap: var(--fo-space-4);
+}
+
+.fo-grid--spacing-lg {
+    gap: var(--fo-space-6);
+}
+
+.fo-grid--spacing-xl {
+    gap: var(--fo-space-8);
+}
+
+/* ==========================================
+   Children
+========================================== */
+
+.fo-grid > * {
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+/* ==========================================
+   Align Items
+========================================== */
+
+.fo-grid--align-stretch {
+    align-items: stretch;
+}
+
+.fo-grid--align-start {
+    align-items: start;
+}
+
+.fo-grid--align-center {
+    align-items: center;
+}
+
+.fo-grid--align-end {
+    align-items: end;
+}
+
+/* ==========================================
+   Justify Items
+========================================== */
+
+.fo-grid--justify-stretch {
+    justify-items: stretch;
+}
+
+.fo-grid--justify-start {
+    justify-items: start;
+}
+
+.fo-grid--justify-center {
+    justify-items: center;
+}
+
+.fo-grid--justify-end {
+    justify-items: end;
+}
+
+/* ==========================================
+   Grid Auto Flow
+========================================== */
+
+.fo-grid {
+    grid-auto-flow: row;
+
+    grid-auto-rows: auto;
+}
+
+/* ==========================================
+   Overflow Safety
+========================================== */
+
+.fo-grid > * {
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-grid--spacing-xl {
+        gap: var(--fo-space-6);
+    }
+
+    .fo-grid--spacing-lg {
+        gap: var(--fo-space-4);
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-grid {
+        break-inside: avoid;
+    }
+
+    .fo-grid > * {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+}
+
+/* ==========================================
+   Accessibility & Utilities
+========================================== */
+
+.fo-grid:empty {
+    display: none;
+}
+
+.fo-grid > * {
+    box-sizing: border-box;
+}
+
+/* Images, videos and other media should never overflow */
+.fo-grid img,
+.fo-grid video,
+.fo-grid canvas,
+.fo-grid svg {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}

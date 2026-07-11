@@ -1,0 +1,240 @@
+/* ==========================================
+   Divider
+========================================== */
+
+.fo-divider {
+    border: 0;
+
+    margin: 0;
+
+    color: var(--fo-color-border);
+}
+
+/* ==========================================
+   Horizontal Divider
+========================================== */
+
+.fo-divider--horizontal {
+    width: 100%;
+
+    height: 1px;
+
+    background-color: var(--fo-color-border);
+}
+
+/* ==========================================
+   Vertical Divider
+========================================== */
+
+.fo-divider--vertical {
+    display: inline-flex;
+
+    align-self: stretch;
+
+    width: 1px;
+
+    min-height: 1.5rem;
+
+    background-color: var(--fo-color-border);
+}
+
+/* ==========================================
+   Variants
+========================================== */
+
+.fo-divider--solid {
+    border-style: solid;
+}
+
+.fo-divider--dashed {
+    border-style: dashed;
+}
+
+.fo-divider--dotted {
+    border-style: dotted;
+}
+
+/* Horizontal variants */
+
+hr.fo-divider--horizontal.fo-divider--solid {
+    border-top: 1px solid var(--fo-color-border);
+    background: none;
+}
+
+hr.fo-divider--horizontal.fo-divider--dashed {
+    border-top: 1px dashed var(--fo-color-border);
+    background: none;
+}
+
+hr.fo-divider--horizontal.fo-divider--dotted {
+    border-top: 1px dotted var(--fo-color-border);
+    background: none;
+}
+
+/* Vertical variants */
+
+hr.fo-divider--vertical.fo-divider--solid,
+.fo-divider--vertical.fo-divider--solid {
+    border-left: 1px solid var(--fo-color-border);
+    background: none;
+}
+
+hr.fo-divider--vertical.fo-divider--dashed,
+.fo-divider--vertical.fo-divider--dashed {
+    border-left: 1px dashed var(--fo-color-border);
+    background: none;
+}
+
+hr.fo-divider--vertical.fo-divider--dotted,
+.fo-divider--vertical.fo-divider--dotted {
+    border-left: 1px dotted var(--fo-color-border);
+    background: none;
+}
+
+/* ==========================================
+   Labeled Divider
+========================================== */
+
+.fo-divider[role="separator"] {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-divider__line {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: var(--fo-color-border);
+}
+
+.fo-divider__label {
+    flex-shrink: 0;
+
+    padding-inline: var(--fo-space-3);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    color: inherit;
+
+    white-space: nowrap;
+}
+
+/* ==========================================
+   Label Alignment
+========================================== */
+
+.fo-divider--label-left .fo-divider__line:first-child {
+    flex: 0 0 2rem;
+}
+
+.fo-divider--label-left .fo-divider__line:last-child {
+    flex: 1;
+}
+
+.fo-divider--label-center .fo-divider__line {
+    flex: 1;
+}
+
+.fo-divider--label-right .fo-divider__line:first-child {
+    flex: 1;
+}
+
+.fo-divider--label-right .fo-divider__line:last-child {
+    flex: 0 0 2rem;
+}
+
+/* ==========================================
+   Spacing
+========================================== */
+
+.fo-divider--spacing-none {
+    margin-block: 0;
+}
+
+.fo-divider--spacing-xs {
+    margin-block: var(--fo-space-1);
+}
+
+.fo-divider--spacing-sm {
+    margin-block: var(--fo-space-2);
+}
+
+.fo-divider--spacing-md {
+    margin-block: var(--fo-space-4);
+}
+
+.fo-divider--spacing-lg {
+    margin-block: var(--fo-space-6);
+}
+
+.fo-divider--spacing-xl {
+    margin-block: var(--fo-space-8);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-divider__label {
+        padding-inline: var(--fo-space-2);
+
+        font-size: var(--fo-font-size-xs);
+    }
+
+    .fo-divider--label-left .fo-divider__line:first-child,
+    .fo-divider--label-right .fo-divider__line:last-child {
+        flex-basis: 1.5rem;
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-divider,
+    .fo-divider__line {
+        background-color: #000;
+
+        border-color: #000;
+    }
+
+}
+
+/* ==========================================
+   Accessibility
+========================================== */
+
+.fo-divider[role="separator"] {
+    user-select: none;
+}
+
+/* ==========================================
+   Utilities
+========================================== */
+
+.fo-divider {
+    flex-shrink: 0;
+
+    box-sizing: border-box;
+}
+
+.fo-divider__line {
+    min-width: 0;
+}
+
+.fo-divider:empty {
+    display: block;
+}

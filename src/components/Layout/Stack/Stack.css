@@ -1,0 +1,154 @@
+/* ==========================================
+   Stack
+========================================== */
+
+.fo-stack {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+/* ==========================================
+   Width
+========================================== */
+
+.fo-stack--full {
+    width: 100%;
+}
+
+/* ==========================================
+   Spacing
+========================================== */
+
+.fo-stack--spacing-none {
+    gap: 0;
+}
+
+.fo-stack--spacing-xs {
+    gap: var(--fo-space-1);
+}
+
+.fo-stack--spacing-sm {
+    gap: var(--fo-space-2);
+}
+
+.fo-stack--spacing-md {
+    gap: var(--fo-space-4);
+}
+
+.fo-stack--spacing-lg {
+    gap: var(--fo-space-6);
+}
+
+.fo-stack--spacing-xl {
+    gap: var(--fo-space-8);
+}
+
+/* ==========================================
+   Align Items
+========================================== */
+
+.fo-stack--align-stretch {
+    align-items: stretch;
+}
+
+.fo-stack--align-flex-start {
+    align-items: flex-start;
+}
+
+.fo-stack--align-center {
+    align-items: center;
+}
+
+.fo-stack--align-flex-end {
+    align-items: flex-end;
+}
+
+.fo-stack--align-baseline {
+    align-items: baseline;
+}
+
+/* ==========================================
+   Justify Content
+========================================== */
+
+.fo-stack--justify-flex-start {
+    justify-content: flex-start;
+}
+
+.fo-stack--justify-center {
+    justify-content: center;
+}
+
+.fo-stack--justify-flex-end {
+    justify-content: flex-end;
+}
+
+.fo-stack--justify-space-between {
+    justify-content: space-between;
+}
+
+.fo-stack--justify-space-around {
+    justify-content: space-around;
+}
+
+.fo-stack--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+/* ==========================================
+   Wrap
+========================================== */
+
+.fo-stack--wrap {
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   Children
+========================================== */
+
+.fo-stack > * {
+    min-width: 0;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-stack--spacing-xl {
+        gap: var(--fo-space-6);
+    }
+
+    .fo-stack--spacing-lg {
+        gap: var(--fo-space-4);
+    }
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-stack {
+        break-inside: avoid;
+    }
+}
+
+/* ==========================================
+   Utilities
+========================================== */
+
+.fo-stack > * {
+    max-width: 100%;
+}
+
+/* Prevent empty stack from collapsing unexpectedly */
+.fo-stack:empty {
+    display: none;
+}

@@ -5,8 +5,6 @@
 .fo-stack {
     display: flex;
 
-    flex-direction: column;
-
     min-width: 0;
 }
 
@@ -110,7 +108,7 @@
    Children
 ========================================== */
 
-.fo-stack > * {
+.fo-stack>* {
     min-width: 0;
 }
 
@@ -144,11 +142,23 @@
    Utilities
 ========================================== */
 
-.fo-stack > * {
+.fo-stack>* {
     max-width: 100%;
 }
 
 /* Prevent empty stack from collapsing unexpectedly */
 .fo-stack:empty {
     display: none;
+}
+
+/* ==========================================
+   Direction
+========================================== */
+
+.fo-stack--column {
+    flex-direction: column;
+}
+
+.fo-stack--row {
+    flex-direction: row;
 }

@@ -24,6 +24,8 @@ export const Stack = forwardRef<
 
             fullWidth = false,
 
+            direction = "column",
+
             className,
 
             style,
@@ -35,6 +37,7 @@ export const Stack = forwardRef<
 
         const classes = cn(
             "fo-stack",
+            `fo-stack--${direction}`,
             `fo-stack--spacing-${spacing}`,
             `fo-stack--align-${align}`,
             `fo-stack--justify-${justify}`,

@@ -27,6 +27,10 @@ export type StackJustify =
     | "space-around"
     | "space-evenly";
 
+export type StackDirection =
+    | "row"
+    | "column";
+
 export interface StackProps
     extends HTMLAttributes<HTMLDivElement> {
 
@@ -64,4 +68,10 @@ export interface StackProps
      * Custom inline styles.
      */
     style?: CSSProperties;
+
+    /**
+     * Internal flex direction.
+     * Prefer using Stack or HStack.
+    */
+    direction?: StackDirection;
 }

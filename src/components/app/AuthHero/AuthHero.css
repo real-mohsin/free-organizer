@@ -1,0 +1,218 @@
+/* ==========================================
+   Auth Hero
+========================================== */
+
+.fo-auth-hero {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+/* ==========================================
+   Content
+========================================== */
+
+.fo-auth-hero__content {
+    width: 100%;
+
+    max-width: 40rem;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-auth-hero__header {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-4);
+}
+
+/* ==========================================
+   Heading
+========================================== */
+
+.fo-auth-hero__heading {
+    margin: 0;
+
+    font-size: clamp(var(--fo-font-size-4xl),
+            5vw,
+            var(--fo-font-size-6xl));
+
+    font-weight: var(--fo-font-weight-bold);
+
+    line-height: var(--fo-line-height-tight);
+
+    color: var(--fo-color-text);
+}
+
+.fo-auth-hero__heading span {
+    color: var(--fo-color-primary);
+}
+
+/* ==========================================
+   Supporting Text
+========================================== */
+
+.fo-auth-hero__supporting-text {
+    margin: 0;
+
+    font-size: var(--fo-font-size-lg);
+
+    line-height: var(--fo-line-height-relaxed);
+
+    color: var(--fo-color-text-secondary);
+
+    max-width: 34rem;
+}
+
+/* ==========================================
+   Features
+========================================== */
+
+.fo-auth-hero__features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-4);
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+/* ==========================================
+   Feature
+========================================== */
+
+.fo-auth-hero__feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-3);
+}
+
+/* ==========================================
+   Feature Icon
+========================================== */
+
+.fo-auth-hero__feature-icon {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    line-height: 1;
+
+    border-radius: var(--fo-radius-full);
+
+    background: var(--fo-color-primary);
+
+    color: var(--fo-color-primary-foreground);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-bold);
+}
+
+/* ==========================================
+   Feature Text
+========================================== */
+
+.fo-auth-hero__feature-text {
+    font-size: var(--fo-font-size-base);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    line-height: var(--fo-line-height-normal);
+
+    color: var(--fo-color-text);
+}
+
+/* ==========================================
+   Illustration
+========================================== */
+
+.fo-auth-hero__illustration {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 991px) {
+
+    .fo-auth-hero {
+        text-align: center;
+    }
+
+    .fo-auth-hero__content {
+        max-width: 100%;
+    }
+
+    .fo-auth-hero__header {
+        align-items: center;
+    }
+
+    .fo-auth-hero__features {
+        align-self: center;
+    }
+
+    .fo-auth-hero__feature {
+        justify-content: center;
+    }
+
+    .fo-auth-hero__illustration {
+        margin-top: var(--fo-space-8);
+    }
+
+}
+
+/* ==========================================
+   Reduced Motion
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fo-auth-hero,
+    .fo-auth-hero * {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-auth-hero {
+        display: none;
+    }
+
+}

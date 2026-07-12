@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
     "geist": "^1.7.2",
     "lucide-react": "^1.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.81.0",
     "react-router-dom": "^6.22.3",
-    "recharts": "^2.12.3"
+    "recharts": "^2.12.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -1,0 +1,216 @@
+/* ==========================================
+   Auth Layout
+========================================== */
+
+.fo-auth-layout {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 100dvh;
+
+    padding: var(--fo-space-6);
+
+    background: var(--fo-color-background);
+
+    color: var(--fo-color-text);
+
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   Container
+========================================== */
+
+.fo-auth-layout__container {
+    width: 100%;
+}
+
+/* ==========================================
+   Content
+========================================== */
+
+.fo-auth-layout__content {
+    width: 100%;
+}
+
+/* ==========================================
+   Main
+========================================== */
+
+.fo-auth-layout__panel {
+    width: 100%;
+}
+
+/* ==========================================
+   Logo
+========================================== */
+
+.fo-auth-layout__logo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.fo-auth-layout__footer {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: var(--fo-font-size-sm);
+
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==========================================
+   Authentication Content
+========================================== */
+
+.fo-auth-layout__panel {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Body
+========================================== */
+
+.fo-auth-layout__body {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    align-items: center;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Split Layout
+========================================== */
+
+.fo-auth-layout--split .fo-auth-layout__body {
+    gap: var(--fo-space-12);
+}
+
+.fo-auth-layout--split .fo-auth-layout__panel {
+    width: 100%;
+}
+
+/* ==========================================
+   Aside
+========================================== */
+
+.fo-auth-layout__aside {
+    display: none;
+
+    width: 100%;
+}
+
+/* ==========================================
+   Split Layout
+========================================== */
+
+.fo-auth-layout--split .fo-auth-layout__container {
+    max-width: 1200px;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fo-auth-layout {
+        padding: var(--fo-space-4);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .fo-auth-layout {
+        padding: var(--fo-space-3);
+    }
+
+}
+
+/* ==========================================
+   Motion
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fo-auth-layout,
+    .fo-auth-layout * {
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-auth-layout {
+        display: block;
+
+        min-height: auto;
+
+        padding: 0;
+
+        background: #ffffff;
+
+        color: #000000;
+    }
+
+}
+
+/* ==========================================
+   High Contrast
+========================================== */
+
+@media (forced-colors: active) {
+
+    .fo-auth-layout {
+        border: 1px solid CanvasText;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .fo-auth-layout--split .fo-auth-layout__body {
+        grid-template-columns: minmax(0, 1fr) 440px;
+    }
+
+    .fo-auth-layout--split .fo-auth-layout__aside {
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: flex-start;
+    }
+
+}

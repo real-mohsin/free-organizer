@@ -1,0 +1,137 @@
+/* ==========================================
+   Login Card
+========================================== */
+
+.fo-login__card {
+    width: 100%;
+
+    max-width: 28rem;
+
+    margin-inline: auto;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-login__title {
+    margin: 0;
+
+    color: var(--fo-color-text);
+
+    font-size: var(--fo-font-size-3xl);
+
+    font-weight: var(--fo-font-weight-bold);
+
+    line-height: var(--fo-line-height-tight);
+}
+
+.fo-login__subtitle {
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-base);
+
+    line-height: var(--fo-line-height-relaxed);
+}
+
+/* ==========================================
+   Form
+========================================== */
+
+.fo-login__form {
+    width: 100%;
+}
+
+/* ==========================================
+   Links
+========================================== */
+
+.fo-login__link {
+    color: var(--fo-color-primary);
+
+    font-size: var(--fo-font-size-sm);
+
+    font-weight: var(--fo-font-weight-medium);
+
+    text-decoration: none;
+
+    transition:
+        color var(--fo-transition-fast),
+        text-decoration-color var(--fo-transition-fast);
+}
+
+.fo-login__link:hover {
+    text-decoration: underline;
+}
+
+.fo-login__link:focus-visible {
+    outline: none;
+
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Register
+========================================== */
+
+.fo-login__register {
+    margin: 0;
+
+    text-align: center;
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: var(--fo-line-height-normal);
+}
+
+/* Active state */
+
+.fo-login__link:active {
+    opacity: 0.8;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 640px) {
+
+    .fo-login__card {
+        max-width: 100%;
+    }
+
+    .fo-login__register {
+        font-size: var(--fo-font-size-sm);
+    }
+
+}
+
+/* ==========================================
+   Reduced Motion
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fo-login__link {
+        transition: none;
+    }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-login__link {
+        color: inherit;
+
+        text-decoration: underline;
+    }
+
+}

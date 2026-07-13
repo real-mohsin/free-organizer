@@ -3,15 +3,12 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-
-import { AuthHero } from "../../components/app/AuthHero";
-
-
 import type { LoginFormValues } from "./Login.types";
-import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
 import { Card } from "../../components/Card";
 import { Stack } from "../../components/Layout/Stack";
 import { Input } from "../../components/Input";
+import { HStack } from "../../components/Layout/HStack/Hstack";
+import { Checkbox } from "../../components/Checkbox";
 import { Button } from "../../components/Button";
 import { Divider } from "../../components/Layout/Divider/Divider";
 
@@ -33,29 +30,32 @@ export default function Login() {
     };
 
     return (
-
         <Card className="fo-login__card">
 
-            <Stack spacing="lg">
+            <Stack spacing="xl">
 
-                <header className="fo-login__header">
+                {/* Header */}
 
-                    <h2 className="fo-login__title">
-                        Welcome back
-                    </h2>
+                <Stack spacing="sm">
+
+                    <h1 className="fo-login__title">
+                        Welcome Back
+                    </h1>
 
                     <p className="fo-login__subtitle">
                         Sign in to continue to Free Organizer.
                     </p>
 
-                </header>
+                </Stack>
+
+                {/* Form */}
 
                 <form
                     className="fo-login__form"
                     onSubmit={handleSubmit(onSubmit)}
                 >
 
-                    <Stack spacing="md">
+                    <Stack spacing="lg">
 
                         <Input
                             label="Email"
@@ -73,18 +73,24 @@ export default function Login() {
                             {...register("password")}
                         />
 
-                        <label className="fo-login__remember">
+                        <HStack
+                            justify="space-between"
+                            align="center"
+                        >
 
-                            <input
-                                type="checkbox"
+                            <Checkbox
+                                label="Remember me"
                                 {...register("rememberMe")}
                             />
 
-                            <span>
-                                Remember me
-                            </span>
+                            <Link
+                                to="/forgot-password"
+                                className="fo-login__link"
+                            >
+                                Forgot password?
+                            </Link>
 
-                        </label>
+                        </HStack>
 
                         <Button
                             type="submit"
@@ -97,27 +103,32 @@ export default function Login() {
 
                 </form>
 
-                <Divider />
+                {/* Footer */}
 
-                <Stack
-                    spacing="sm"
-                    align="center"
-                >
+                <Stack spacing="md">
 
-                    <Link to="/forgot-password">
-                        Forgot password?
-                    </Link>
+                    <Divider>
+                        OR
+                    </Divider>
 
-                    <Link to="/register">
-                        Create an account
-                    </Link>
+                    <p className="fo-login__register">
+
+                        Don't have an account?{" "}
+
+                        <Link
+                            to="/register"
+                            className="fo-login__link"
+                        >
+                            Create one
+                        </Link>
+
+                    </p>
 
                 </Stack>
 
             </Stack>
 
         </Card>
-
     );
 
 }

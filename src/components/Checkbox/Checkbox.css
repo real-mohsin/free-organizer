@@ -1,0 +1,251 @@
+/* ==========================================
+   Checkbox
+========================================== */
+
+.fo-checkbox {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-2);
+
+    width: 100%;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.fo-checkbox__label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-3);
+
+    width: fit-content;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+/* ==========================================
+   Native Input
+========================================== */
+
+.fo-checkbox__input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   Indicator
+========================================== */
+
+.fo-checkbox__indicator {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 1.25rem;
+
+    height: 1.25rem;
+
+    border: 1px solid var(--fo-color-border);
+
+    border-radius: var(--fo-radius-sm);
+
+    background-color: var(--fo-color-surface);
+
+    transition:
+        background-color var(--fo-transition-fast),
+        border-color var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Label Text
+========================================== */
+
+.fo-checkbox__text {
+    color: var(--fo-color-text);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: var(--fo-line-height-normal);
+}
+
+/* ==========================================
+   Checked
+========================================== */
+
+.fo-checkbox__input:checked + .fo-checkbox__indicator {
+    border-color: var(--fo-color-primary);
+
+    background-color: var(--fo-color-primary);
+
+    color: var(--fo-color-primary-foreground);
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.fo-checkbox__label:hover
+.fo-checkbox__input:not(:disabled)
++ .fo-checkbox__indicator {
+    border-color: var(--fo-color-primary);
+}
+
+/* ==========================================
+   Focus Visible
+========================================== */
+
+.fo-checkbox__input:focus-visible
++ .fo-checkbox__indicator {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px var(--fo-color-primary-alpha-20);
+
+    border-color: var(--fo-color-primary);
+}
+
+/* ==========================================
+   Disabled
+========================================== */
+
+.fo-checkbox--disabled {
+    opacity: 0.65;
+}
+
+.fo-checkbox--disabled
+.fo-checkbox__label {
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   Error
+========================================== */
+
+.fo-checkbox--error
+.fo-checkbox__indicator {
+    border-color: var(--fo-color-danger);
+}
+
+.fo-checkbox--error
+.fo-checkbox__input:focus-visible
++ .fo-checkbox__indicator {
+    box-shadow:
+        0 0 0 3px var(--fo-color-danger-alpha-20);
+
+    border-color: var(--fo-color-danger);
+}
+
+.fo-checkbox__icon {
+    width: 0.875rem;
+
+    height: 0.875rem;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+.fo-checkbox__input:checked
++ .fo-checkbox__indicator
+.fo-checkbox__icon {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* ==========================================
+   Icon
+========================================== */
+
+.fo-checkbox__icon {
+    width: 0.875rem;
+
+    height: 0.875rem;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
+}
+
+.fo-checkbox__input:checked
++ .fo-checkbox__indicator
+.fo-checkbox__icon {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* ==========================================
+   Helper Text
+========================================== */
+
+.fo-checkbox__helper-text {
+    margin: 0;
+
+    margin-left: calc(1.25rem + var(--fo-space-3));
+
+    color: var(--fo-color-text-secondary);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: var(--fo-line-height-normal);
+}
+
+/* ==========================================
+   Error
+========================================== */
+
+.fo-checkbox__error {
+    margin: 0;
+
+    margin-left: calc(1.25rem + var(--fo-space-3));
+
+    color: var(--fo-color-danger);
+
+    font-size: var(--fo-font-size-sm);
+
+    line-height: var(--fo-line-height-normal);
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+    .fo-checkbox__indicator {
+        border-color: #000;
+
+        background: transparent;
+    }
+
+}

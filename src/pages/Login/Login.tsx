@@ -12,12 +12,21 @@ import { Checkbox } from "../../components/Checkbox";
 import { Button } from "../../components/Button";
 import { Divider } from "../../components/Layout/Divider/Divider";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginSchema, type LoginFormData } from "../../features/auth/schemas/login.schema";
+
 export default function Login() {
 
     const {
         register,
         handleSubmit,
-    } = useForm<LoginFormValues>({
+        formState: {
+            errors,
+            isSubmitting
+        },
+    } = useForm<LoginFormData>({
+        resolver: zodResolver(loginSchema),
+
         defaultValues: {
             email: "",
             password: "",
@@ -62,6 +71,7 @@ export default function Login() {
                             type="email"
                             placeholder="Enter your email"
                             autoComplete="email"
+                            error={errors.email?.message}
                             {...register("email")}
                         />
 
@@ -70,6 +80,7 @@ export default function Login() {
                             type="password"
                             placeholder="Enter your password"
                             autoComplete="current-password"
+                            error={errors.password?.message}
                             {...register("password")}
                         />
 

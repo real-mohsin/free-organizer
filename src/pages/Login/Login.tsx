@@ -3,7 +3,6 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import type { LoginFormValues } from "./Login.types";
 import { Card } from "../../components/Card";
 import { Stack } from "../../components/Layout/Stack";
 import { Input } from "../../components/Input";
@@ -14,6 +13,10 @@ import { Divider } from "../../components/Layout/Divider/Divider";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormData } from "../../features/auth/schemas/login.schema";
+import { authService } from "../../services/auth";
+
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Login() {
 
@@ -34,8 +37,33 @@ export default function Login() {
         },
     });
 
-    const onSubmit = (data: LoginFormValues) => {
-        console.log(data);
+    const navigate = useNavigate();
+
+    const [loginError, setLoginError] =
+        useState<string | null>(null);
+
+    const onSubmit = async (
+        data: LoginFormData,
+    ) => {
+
+        setLoginError(null);
+
+        try {
+
+            await authService.login(data);
+
+            navigate("/dashboard");
+
+        } catch (error) {
+
+            setLoginError(
+                error instanceof Error
+                    ? error.message
+                    : "Unable to sign in.",
+            );
+
+        }
+
     };
 
     return (
@@ -56,6 +84,14 @@ export default function Login() {
                     </p>
 
                 </Stack>
+
+                {/* temp showing error */}
+
+                {loginError && (
+                    <p className="fo-login__error">
+                        {loginError}
+                    </p>
+                )}
 
                 {/* Form */}
 

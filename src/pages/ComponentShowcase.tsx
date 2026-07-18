@@ -1,4 +1,4 @@
-import { Plus, Search, CheckCircle, Globe } from "lucide-react";
+import { Plus, Search, CheckCircle, Globe, DollarSign, Users, FolderKanban, CreditCard } from "lucide-react";
 
 import { Button } from "../components/Button";
 import { IconButton } from "../components/IconButton";
@@ -22,6 +22,7 @@ import { useState } from "react";
 import { Stack } from "../components/Layout/Stack";
 import { Grid } from "../components/Layout/Grid";
 import { Divider } from "../components/Layout/Divider/Divider";
+import { StatCard } from "../components/DataDisplay/StatCard";
 
 function ComponentShowcase() {
 
@@ -667,6 +668,50 @@ function ComponentShowcase() {
 
                 </Stack>
             </Card>
+
+            {/* ------------------------------------------------ */}
+            {/* StatCard */}
+            {/* ------------------------------------------------ */}
+
+            <Stack spacing="xl">
+
+                <h2>StatCard</h2>
+
+                <Grid
+                    columns={2}
+                >
+
+                    <StatCard
+                        heading="Revenue"
+                        value="$4,250"
+                        footer="+12% compared to last month"
+                        icon={<DollarSign size={18} />}
+                    />
+
+                    <StatCard
+                        heading="Clients"
+                        value="24"
+                        footer="+2 new clients"
+                        icon={<Users size={18} />}
+                    />
+
+                    <StatCard
+                        heading="Projects"
+                        value="12"
+                        footer="3 due this week"
+                        icon={<FolderKanban size={18} />}
+                    />
+
+                    <StatCard
+                        heading="Outstanding Payments"
+                        value="$1,450"
+                        footer="Awaiting payment"
+                        icon={<CreditCard size={18} />}
+                    />
+
+                </Grid>
+
+            </Stack>
         </div>
     );
 }

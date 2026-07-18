@@ -1,0 +1,45 @@
+.fo-stat-card {
+    height: 100%;
+}
+
+.fo-stat-card__heading {
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-subtitle);
+}
+
+.fo-stat-card__icon {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 1.5rem;
+
+    height: 1.5rem;
+
+    color: var(--fo-color-text-secondary);
+}
+
+.fo-stat-card__actions {
+    flex-shrink: 0;
+}
+
+.fo-stat-card__value {
+    margin: 0;
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-display);
+}
+
+.fo-stat-card__footer {
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+}

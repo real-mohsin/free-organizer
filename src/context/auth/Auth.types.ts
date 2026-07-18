@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import type {
     AuthenticatedUser,
+    LoginRequest
 } from "../../services/auth";
 
 export interface AuthContextValue {
@@ -24,11 +25,9 @@ export interface AuthContextValue {
     /**
      * Sign in.
      */
-    login: (
-        email: string,
-        password: string,
-        rememberMe: boolean,
-    ) => Promise<void>;
+login: (
+    request: LoginRequest,
+) => Promise<void>;
 
     /**
      * Sign out.

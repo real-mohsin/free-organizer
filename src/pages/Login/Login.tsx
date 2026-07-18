@@ -13,10 +13,11 @@ import { Divider } from "../../components/Layout/Divider/Divider";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormData } from "../../features/auth/schemas/login.schema";
-import { authService } from "../../services/auth";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+import { useAuth } from "../../hooks";
 
 export default function Login() {
 
@@ -39,6 +40,8 @@ export default function Login() {
 
     const navigate = useNavigate();
 
+    const { login } = useAuth();
+
     const [loginError, setLoginError] =
         useState<string | null>(null);
 
@@ -50,7 +53,7 @@ export default function Login() {
 
         try {
 
-            await authService.login(data);
+            await login(data);
 
             navigate("/dashboard");
 

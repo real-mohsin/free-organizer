@@ -18,11 +18,10 @@ import {
 import {
     authService,
     type AuthenticatedUser,
+    type LoginRequest,
+    LoginResponse
 } from "../../services/auth";
 
-import type {
-    LoginResponse,
-} from "../../services/auth/auth.types";
 
 export function AuthProvider({
     children,
@@ -60,29 +59,21 @@ export function AuthProvider({
     /**
      * Sign in.
      */
-    const login = useCallback(
-        async (
-            email: string,
-            password: string,
-            rememberMe: boolean,
-        ) => {
+const login = useCallback(
+    async (
+        request: LoginRequest,
+    ) => {
 
-            const response =
-                await authService.login({
+        const response =
+            await authService.login(
+                request,
+            );
 
-                    email,
+        setUser(response.user);
 
-                    password,
-
-                    rememberMe,
-
-                });
-
-            setUser(response.user);
-
-        },
-        [],
-    );
+    },
+    [],
+);
 
     /**
      * Sign out.

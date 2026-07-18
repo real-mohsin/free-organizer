@@ -6,7 +6,7 @@ import {
     useState,
 } from "react";
 
-import { SettingsContext } from "./SettingsContext";
+import { SettingsContext } from "../context";
 
 import { DEFAULT_SETTINGS } from "../constants/defaultSettings";
 

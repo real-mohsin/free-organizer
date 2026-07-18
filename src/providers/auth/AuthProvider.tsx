@@ -12,14 +12,9 @@ import type {
 } from "../../context/auth";
 
 import {
-    AUTH_STORAGE_KEY,
-} from "../../services/auth/auth.constants";
-
-import {
     authService,
     type AuthenticatedUser,
-    type LoginRequest,
-    LoginResponse
+    type LoginRequest
 } from "../../services/auth";
 
 
@@ -38,15 +33,10 @@ export function AuthProvider({
      */
     useEffect(() => {
 
-        const stored =
-            localStorage.getItem(
-                AUTH_STORAGE_KEY,
-            );
+        const session =
+            authService.restoreSession();
 
-        if (stored) {
-
-            const session =
-                JSON.parse(stored) as LoginResponse;
+        if (session) {
 
             setUser(session.user);
 
@@ -59,30 +49,28 @@ export function AuthProvider({
     /**
      * Sign in.
      */
-const login = useCallback(
-    async (
-        request: LoginRequest,
-    ) => {
+    const login = useCallback(
+        async (
+            request: LoginRequest,
+        ) => {
 
-        const response =
-            await authService.login(
-                request,
-            );
+            const response =
+                await authService.login(
+                    request,
+                );
 
-        setUser(response.user);
+            setUser(response.user);
 
-    },
-    [],
-);
+        },
+        [],
+    );
 
     /**
      * Sign out.
      */
     const logout = useCallback(() => {
 
-        localStorage.removeItem(
-            AUTH_STORAGE_KEY,
-        );
+        authService.clearSession();
 
         setUser(null);
 

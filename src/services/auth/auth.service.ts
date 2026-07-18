@@ -30,6 +30,40 @@ class AuthService {
 
     }
 
+    /**
+     * Restore persisted session.
+     */
+    restoreSession():
+        LoginResponse | null {
+
+        const stored =
+            localStorage.getItem(
+                AUTH_STORAGE_KEY,
+            );
+
+        if (!stored) {
+
+            return null;
+
+        }
+
+        return JSON.parse(
+            stored,
+        ) as LoginResponse;
+
+    }
+
+    /**
+     * Clear persisted session.
+     */
+    clearSession(): void {
+
+        localStorage.removeItem(
+            AUTH_STORAGE_KEY,
+        );
+
+    }
+
 }
 
 export const authService =

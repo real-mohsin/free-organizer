@@ -1,0 +1,89 @@
+.fo-chart-tooltip {
+
+    min-width: 12rem;
+
+    padding: 0.875rem 1rem;
+
+    background: var(--fo-color-surface-primary);
+
+    border: 1px solid var(--fo-color-border-primary);
+
+    border-radius: var(--fo-radius-lg);
+
+    box-shadow: var(--fo-shadow-lg);
+
+}
+
+.fo-chart-tooltip__header {
+
+    margin-bottom: 0.75rem;
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-body);
+
+    font-weight: 600;
+
+}
+
+.fo-chart-tooltip__body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+}
+
+.fo-chart-tooltip__row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+}
+
+.fo-chart-tooltip__series {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+}
+
+.fo-chart-tooltip__dot {
+
+    width: 0.625rem;
+
+    height: 0.625rem;
+
+    border-radius: 999px;
+
+    flex-shrink: 0;
+
+}
+
+.fo-chart-tooltip__name {
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+
+}
+
+.fo-chart-tooltip__value {
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-body);
+
+    font-weight: 600;
+
+}

@@ -1,5 +1,3 @@
-import "./RevenueLineChart.css";
-
 import {
     CartesianGrid,
     Line,
@@ -10,6 +8,8 @@ import {
     YAxis,
 } from "recharts";
 
+import { ChartContainer } from "../ChartContainer";
+
 import {
     CHART_COLORS,
     CHART_CONFIG,
@@ -18,6 +18,7 @@ import {
 import type {
     RevenueLineChartProps,
 } from "./RevenueLineChart.types";
+import { ChartTooltip } from "../ChartTooltip/ChartTooltip";
 
 export function RevenueLineChart({
     data,
@@ -25,11 +26,11 @@ export function RevenueLineChart({
 
     return (
 
-        <div className="fo-revenue-line-chart">
+        <ChartContainer>
 
             <ResponsiveContainer
                 width="100%"
-                height={300}
+                height="100%"
             >
 
                 <LineChart
@@ -66,6 +67,7 @@ export function RevenueLineChart({
                         cursor={{
                             stroke: CHART_COLORS.GRID,
                         }}
+                        content={<ChartTooltip />}
                     />
 
                     <Line
@@ -88,39 +90,8 @@ export function RevenueLineChart({
 
             </ResponsiveContainer>
 
-        </div>
+        </ChartContainer>
 
     );
 
 }
-
-// import {
-//   LineChart,
-//   Line,
-//   XAxis,
-//   YAxis,
-// } from "recharts";
-
-// const data = [
-//   { name: "Jan", value: 400 },
-//   { name: "Feb", value: 300 },
-//   { name: "Mar", value: 500 },
-// ];
-
-// export function RevenueLineChart() {
-//   return (
-//     <LineChart
-//       width={500}
-//       height={300}
-//       data={data}
-//     >
-//       <XAxis dataKey="name" />
-//       <YAxis />
-//       <Line
-//         type="monotone"
-//         dataKey="value"
-//         stroke="#8884d8"
-//       />
-//     </LineChart>
-//   );
-// }

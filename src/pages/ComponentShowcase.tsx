@@ -23,6 +23,40 @@ import { Stack } from "../components/Layout/Stack";
 import { Grid } from "../components/Layout/Grid";
 import { Divider } from "../components/Layout/Divider/Divider";
 import { StatCard } from "../components/DataDisplay/StatCard";
+import { ChartCard } from "../components/DataDisplay/ChartCard";
+import { RevenueLineChart } from "../components/Charts/RevenueLineChart/RevenueLineChart";
+
+const revenueData = [
+        { label: "Jan", value: 1200 },
+        { label: "Feb", value: 1800 },
+        { label: "Mar", value: 1600 },
+        { label: "Apr", value: 2400 },
+        { label: "May", value: 2800 },
+        { label: "Jun", value: 3400 },
+    ];
+
+function ChartPlaceholder() {
+
+
+    return (
+
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minHeight: "18rem",
+                borderRadius: "var(--fo-radius-lg)",
+                border: "1px dashed var(--fo-color-border)",
+                color: "var(--fo-color-text-secondary)",
+            }}
+        >
+            📈 Chart Placeholder
+        </div>
+
+    );
+
+}
 
 function ComponentShowcase() {
 
@@ -710,6 +744,48 @@ function ComponentShowcase() {
                     />
 
                 </Grid>
+
+            </Stack>
+
+            {/* ------------------------------------------------ */}
+            {/* ChartCard */}
+            {/* ------------------------------------------------ */}
+
+            <Stack spacing="xl">
+
+                <h2>ChartCard</h2>
+
+                <ChartCard
+                    heading="Revenue"
+                    subtitle="Last 6 Months"
+                >
+                    <RevenueLineChart
+                        data={revenueData}
+                    />
+                </ChartCard>
+
+                <ChartCard
+                    heading="Monthly Expenses"
+                >
+                    <ChartPlaceholder />
+                </ChartCard>
+
+                <ChartCard
+                    heading="Revenue"
+                    subtitle="Last 6 Months"
+                    actions={
+
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                        >
+                            Export
+                        </Button>
+
+                    }
+                >
+                    <ChartPlaceholder />
+                </ChartCard>
 
             </Stack>
         </div>

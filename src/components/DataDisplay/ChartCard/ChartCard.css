@@ -1,0 +1,33 @@
+.fo-chart-card {
+    height: 100%;
+}
+
+.fo-chart-card__heading {
+    margin: 0;
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-section-title);
+}
+
+.fo-chart-card__subtitle {
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+}
+
+.fo-chart-card__actions {
+    flex-shrink: 0;
+}
+
+.fo-chart-card__content {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    min-height: 18rem;
+}

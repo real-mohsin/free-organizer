@@ -1,0 +1,25 @@
+.fo-dashboard {
+    width: 100%;
+}
+
+.fo-dashboard__placeholder {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 300px;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-body);
+
+    border: 2px dashed var(--fo-color-border);
+
+    border-radius: var(--fo-radius-lg);
+
+    background: var(--fo-color-surface-hover);
+}

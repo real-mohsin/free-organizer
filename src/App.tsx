@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Dashboard from './pages/Dashboard'
+
 import Clients from './pages/Clients'
 import Tasks from './pages/Tasks'
 
@@ -10,6 +10,7 @@ import Login from './pages/Login/Login'
 import { AuthHero } from './components/app/AuthHero'
 import { AuthLayout } from './layouts/AuthLayout/AuthLayout'
 import { ProtectedRoute, PublicRoute } from './guards'
+import { Dashboard } from './pages/Dashboard'
 
 function App() {
 

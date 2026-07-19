@@ -25,15 +25,18 @@ import { Divider } from "../components/Layout/Divider/Divider";
 import { StatCard } from "../components/DataDisplay/StatCard";
 import { ChartCard } from "../components/DataDisplay/ChartCard";
 import { RevenueLineChart } from "../components/Charts/RevenueLineChart/RevenueLineChart";
+import { TableCard } from "../components/DataDisplay/TableCard";
+import { PageHeader } from "../components/PageHeader";
+import { PageHero } from "../components/PageHero";
 
 const revenueData = [
-        { label: "Jan", value: 1200 },
-        { label: "Feb", value: 1800 },
-        { label: "Mar", value: 1600 },
-        { label: "Apr", value: 2400 },
-        { label: "May", value: 2800 },
-        { label: "Jun", value: 3400 },
-    ];
+    { label: "Jan", value: 1200 },
+    { label: "Feb", value: 1800 },
+    { label: "Mar", value: 1600 },
+    { label: "Apr", value: 2400 },
+    { label: "May", value: 2800 },
+    { label: "Jun", value: 3400 },
+];
 
 function ChartPlaceholder() {
 
@@ -788,6 +791,58 @@ function ComponentShowcase() {
                 </ChartCard>
 
             </Stack>
+
+            {/* ------------------------------------------------ */}
+            {/* TableCard */}
+            {/* ------------------------------------------------ */}
+
+            <Stack spacing="lg">
+
+                <TableCard
+                    heading="Recent Clients"
+                    subtitle="Latest registered clients"
+                    actions={
+
+                        <Button
+                            size="sm"
+                            variant="secondary"
+                        >
+
+                            View All
+
+                        </Button>
+
+                    }
+                >
+
+                    <Table
+                        columns={clientColumns}
+                        data={dummyClients.slice(0, 5)}
+                    />
+
+                </TableCard>
+
+            </Stack>
+
+            {/* ------------------------------------------------ */}
+            {/* PageHero */}
+            {/* ------------------------------------------------ */}
+
+            <PageHero>
+                <PageHeader
+                    heading="👋 Good Afternoon, Mohsin"
+                    subtitle="Welcome back! Here's an overview of your business today."
+                    actions={
+
+                        <Button>
+
+                            + New Client
+
+                        </Button>
+
+                    }
+                />
+            </PageHero>
         </div>
     );
 }

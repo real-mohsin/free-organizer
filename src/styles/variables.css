@@ -60,6 +60,9 @@
    --fo-color-surface-hover: #f8fafc;
    --fo-color-surface-active: #f1f5f9;
 
+   /* Hero */
+   --fo-color-surface-hero: #EEF6FF;
+
    /* Text */
    --fo-color-text-primary: #1e293b;
    --fo-color-text-secondary: #64748b;
@@ -122,6 +125,19 @@
    --fo-space-16: 64px;
    --fo-space-20: 80px;
    --fo-space-24: 96px;
+
+   /* ==================================================
+   SEMANTIC SPACING
+================================================== */
+
+   --fo-spacing-xs: var(--fo-space-1);
+   --fo-spacing-sm: var(--fo-space-2);
+   --fo-spacing-md: var(--fo-space-4);
+   --fo-spacing-lg: var(--fo-space-6);
+   --fo-spacing-xl: var(--fo-space-8);
+   --fo-spacing-2xl: var(--fo-space-12);
+   --fo-spacing-3xl: var(--fo-space-16);
+   --fo-spacing-4xl: var(--fo-space-20);
 
    /* ==================================================
        BORDER RADIUS

@@ -1,0 +1,39 @@
+.fo-table-card {
+
+    height: 100%;
+
+}
+
+.fo-table-card__heading {
+
+    margin: 0;
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-section-title);
+
+}
+
+.fo-table-card__subtitle {
+
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+
+}
+
+.fo-table-card__actions {
+
+    flex-shrink: 0;
+
+}
+
+.fo-table-card__content {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}

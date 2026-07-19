@@ -1,0 +1,68 @@
+.fo-page-hero {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-spacing-xl);
+
+    padding: var(--fo-spacing-3xl);
+
+    background:
+        linear-gradient(
+            135deg,
+            #EEF2FF 0%,
+            #F8FAFF 45%,
+            #FFFFFF 100%
+        );
+
+    border: 1px solid rgba(99, 102, 241, 0.10);
+
+    border-radius: var(--fo-radius-xl);
+
+    box-shadow:
+        0 10px 30px rgba(99, 102, 241, 0.08);
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.fo-page-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -120px;
+
+    right: -80px;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 102, 241, 0.10);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+}
+
+.fo-page-hero > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}

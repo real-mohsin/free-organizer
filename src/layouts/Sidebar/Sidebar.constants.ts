@@ -20,7 +20,6 @@ export const SIDEBAR_NAVIGATION: SidebarNavigationItem[] = [
         label: "Dashboard",
         href: "/dashboard",
         icon: LayoutDashboard,
-        active: true,
     },
 
     {

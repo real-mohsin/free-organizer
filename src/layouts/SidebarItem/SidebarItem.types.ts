@@ -1,5 +1,5 @@
 import type {
-    ButtonHTMLAttributes,
+    AnchorHTMLAttributes,
 } from "react";
 
 import type {
@@ -7,11 +7,8 @@ import type {
 } from "../Sidebar/Sidebar.types";
 
 export interface SidebarItemProps
-    extends ButtonHTMLAttributes<HTMLButtonElement> {
+    extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
-    /**
-     * Sidebar navigation item.
-     */
     item: SidebarNavigationItem;
 
 }

@@ -263,5 +263,11 @@
    --fo-color-outstanding: #d97706;
    --fo-color-outstanding-light: rgba(245, 158, 11, 0.12);
 
+   --fo-color-sidebar-active: var(--fo-color-primary);
+
+   --fo-color-sidebar-active-bg: var(--fo-color-primary-light);
+
+   --fo-color-topbar-border: var(--fo-color-border);
+
 
 }

@@ -33,11 +33,6 @@ export interface SidebarNavigationItem {
     icon: LucideIcon;
 
     /**
-     * Whether this item is currently active.
-     */
-    active?: boolean;
-
-    /**
      * Optional badge.
      *
      * Example:
@@ -53,11 +48,6 @@ export interface SidebarNavigationItem {
  */
 export interface SidebarProps
     extends HTMLAttributes<HTMLElement> {
-
-    /**
-     * Navigation items.
-     */
-    // items: SidebarNavigationItem[];
 
     /**
      * Optional logo or branding.

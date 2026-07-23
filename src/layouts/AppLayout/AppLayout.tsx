@@ -7,6 +7,7 @@ import type {
 } from "./AppLayout.types";
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../Sidebar";
+import { TopBar } from "../TopBar";
 
 export function AppLayout({
     header,
@@ -32,15 +33,9 @@ export function AppLayout({
 
             <div className="fo-app-layout__main">
 
-                {header && (
-
-                    <header className="fo-app-layout__header">
-
-                        {header}
-
-                    </header>
-
-                )}
+                <TopBar
+                    heading={<span>Dashboard</span>}
+                />
 
                 <main className="fo-app-layout__content">
 

@@ -12,6 +12,7 @@ import { AuthLayout } from './layouts/AuthLayout/AuthLayout'
 import { ProtectedRoute, PublicRoute } from './guards'
 import { Dashboard } from './pages/Dashboard'
 import { AppLayout } from './layouts/AppLayout'
+import { ROUTES } from './routes'
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
         >
 
           <Route
-            path="/login"
+            path={ROUTES.AUTH.LOGIN}
             element={<Login />}
           />
 
@@ -52,27 +53,27 @@ function App() {
         >
 
           <Route
-            path="/dashboard"
+            path={ROUTES.APP.DASHBOARD}
             element={<Dashboard />}
           />
 
           <Route
-            path="/clients"
+            path={ROUTES.APP.CLIENTS}
             element={<Clients />}
           />
 
           <Route
-            path="/add-client"
+            path={ROUTES.APP.ADD_CLIENT}
             element={<AddClient />}
           />
 
           <Route
-            path="/tasks"
+            path={ROUTES.APP.TASKS}
             element={<Tasks />}
           />
 
           <Route
-            path="/componentshowcase"
+            path={ROUTES.APP.COMPONENT_SHOWCASE}
             element={<ComponentShowcase />}
           />
 
@@ -85,7 +86,7 @@ function App() {
       <Route
         path="*"
         element={
-          <Navigate to="/login" replace />
+          <Navigate to={ROUTES.AUTH.LOGIN} replace />
         }
       />
 

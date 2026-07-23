@@ -11,15 +11,11 @@
 
     padding: 0 var(--fo-space-4);
 
-    border: none;
-
     border-radius: var(--fo-radius-lg);
 
     background: transparent;
 
     color: var(--fo-color-text-secondary);
-
-    cursor: pointer;
 
     transition:
         background-color var(--fo-transition-fast),
@@ -29,12 +25,24 @@
     font: var(--fo-font-body);
 
     text-align: left;
+
+    text-decoration: none;
 }
 
 .fo-sidebar-item:hover {
     background: var(--fo-color-surface-hover);
 
     color: var(--fo-color-text-primary);
+}
+
+.fo-sidebar-item--active {
+    background: var(--fo-color-sidebar-active-bg);
+
+    color: var(--fo-color-sidebar-active);
+
+    font-weight: var(--fo-font-weight-semibold);
+    
+    box-shadow: inset 3px 0 0 var(--fo-color-sidebar-active);
 }
 
 .fo-sidebar-item__icon {
@@ -45,6 +53,12 @@
     justify-content: center;
 
     flex-shrink: 0;
+
+    color: inherit;
+
+    transition:
+        color var(--fo-transition-fast),
+        transform var(--fo-transition-fast);
 }
 
 .fo-sidebar-item__label {
@@ -72,13 +86,15 @@
 
     border-radius: var(--fo-radius-pill);
 
-    background: var(--fo-color-primary);
+    background: var(--fo-color-sidebar-active);
 
     color: var(--fo-color-white);
 
     font: var(--fo-font-caption);
 
     font-weight: var(--fo-font-weight-semibold);
+
+    transform: translateX(3px);
 }
 
 .fo-sidebar-item:focus-visible {

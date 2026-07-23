@@ -1,0 +1,73 @@
+.fo-app-layout {
+    display: flex;
+
+    min-height: 100vh;
+
+    background: var(--fo-color-background);
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+.fo-app-layout__sidebar {
+    flex-shrink: 0;
+
+    width: var(--fo-sidebar-width);
+
+    height: 100vh;
+
+    position: sticky;
+
+    top: 0;
+
+    overflow-y: auto;
+
+    border-right: 1px solid var(--fo-color-border);
+
+    background: var(--fo-color-surface);
+}
+
+/* ==========================================
+   Main
+========================================== */
+
+.fo-app-layout__main {
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.fo-app-layout__header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: var(--fo-z-sticky);
+
+    border-bottom: 1px solid var(--fo-color-border);
+
+    background: var(--fo-color-surface);
+}
+
+/* ==========================================
+   Content
+========================================== */
+
+.fo-app-layout__content {
+    flex: 1;
+
+    padding: var(--fo-space-8);
+
+    overflow-x: hidden;
+}

@@ -38,7 +38,6 @@ export function Dashboard({
 }: DashboardProps) {
 
     return (
-
         <div
             className={cn(
                 "fo-dashboard",
@@ -84,8 +83,9 @@ export function Dashboard({
                                 key={stat.heading}
                                 heading={stat.heading}
                                 value={stat.value}
-                                footer={stat.description}
+                                footer={stat.footer}
                                 icon={<Icon size={20} />}
+                                variant={stat.variant}
                             />
 
                         );
@@ -140,7 +140,6 @@ export function Dashboard({
             </Stack>
 
         </div>
-
     );
 
 }

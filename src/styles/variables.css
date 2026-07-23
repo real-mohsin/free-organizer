@@ -248,4 +248,20 @@
     ================================================== */
 
    --fo-dashboard-card-height: 140px;
+
+   /* Dashboard Metrics */
+
+   --fo-color-revenue: #16a34a;
+   --fo-color-revenue-light: rgba(34, 197, 94, 0.12);
+
+   --fo-color-clients: #2563eb;
+   --fo-color-clients-light: rgba(59, 130, 246, 0.12);
+
+   --fo-color-projects: #7c3aed;
+   --fo-color-projects-light: rgba(139, 92, 246, 0.12);
+
+   --fo-color-outstanding: #d97706;
+   --fo-color-outstanding-light: rgba(245, 158, 11, 0.12);
+
+
 }

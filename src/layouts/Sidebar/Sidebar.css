@@ -1,0 +1,85 @@
+.fo-sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+    padding: var(--fo-space-6);
+
+    background: var(--fo-color-surface);
+}
+
+.fo-sidebar__brand {
+    padding-bottom: var(--fo-space-6);
+}
+
+.fo-sidebar__title {
+    margin: 0;
+
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-page-title);
+}
+
+.fo-sidebar__subtitle {
+    margin: 0;
+
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+}
+
+.fo-sidebar__navigation {
+    flex: 1;
+
+    padding: var(--fo-space-6) 0;
+
+    overflow-y: auto;
+}
+
+.fo-sidebar__footer {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-5);
+
+    padding-top: var(--fo-space-6);
+}
+
+.fo-sidebar__profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-4);
+}
+
+.fo-sidebar__user-name {
+    color: var(--fo-color-text-primary);
+
+    font: var(--fo-font-body);
+
+    font-weight: var(--fo-font-weight-semibold);
+}
+
+.fo-sidebar__user-role {
+    color: var(--fo-color-text-secondary);
+
+    font: var(--fo-font-caption);
+}
+
+.fo-sidebar__brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-4);
+
+    padding-bottom: var(--fo-space-6);
+}
+
+.fo-sidebar__navigation .fo-stack {
+    width: 100%;
+}

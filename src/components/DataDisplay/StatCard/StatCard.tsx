@@ -14,6 +14,7 @@ export function StatCard({
     footer,
     icon,
     actions,
+    variant = "default",
     className,
     ...props
 }: StatCardProps) {
@@ -23,6 +24,8 @@ export function StatCard({
         <Card
             className={cn(
                 "fo-stat-card",
+                variant !== "default" &&
+                `fo-stat-card--${variant}`,
                 className,
             )}
             {...props}
@@ -43,7 +46,11 @@ export function StatCard({
                         {icon && (
 
                             <span
-                                className="fo-stat-card__icon"
+                                className={cn(
+                                    "fo-stat-card__icon",
+                                    variant !== "default" &&
+                                    `fo-stat-card__icon--${variant}`,
+                                )}
                                 aria-hidden="true"
                             >
                                 {icon}

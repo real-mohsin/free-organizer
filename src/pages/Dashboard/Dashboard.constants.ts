@@ -9,34 +9,42 @@ import type {
     RevenueDataPoint,
 } from "../../components/Charts/RevenueLineChart";
 
+import type {
+    StatCardVariant,
+} from "../../components/DataDisplay/StatCard";
+
 export const DASHBOARD_STATS = [
 
     {
         heading: "Revenue",
         value: "$18,450",
-        description: "+12.5% from last month",
+        footer: "+12.5% from last month",
         icon: DollarSign,
+        variant: "revenue" satisfies StatCardVariant,
     },
 
     {
         heading: "Clients",
         value: "24",
-        description: "3 new this month",
+        footer: "3 new this month",
         icon: Users,
+        variant: "clients" satisfies StatCardVariant,
     },
 
     {
         heading: "Projects",
         value: "9",
-        description: "6 active projects",
+        footer: "6 active projects",
         icon: FolderKanban,
+        variant: "projects" satisfies StatCardVariant,
     },
 
     {
         heading: "Outstanding",
         value: "$2,300",
-        description: "4 unpaid invoices",
+        footer: "4 unpaid invoices",
         icon: CreditCard,
+        variant: "outstanding" satisfies StatCardVariant,
     },
 
 ] as const;

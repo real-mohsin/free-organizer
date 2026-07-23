@@ -11,6 +11,7 @@ import { AuthHero } from './components/app/AuthHero'
 import { AuthLayout } from './layouts/AuthLayout/AuthLayout'
 import { ProtectedRoute, PublicRoute } from './guards'
 import { Dashboard } from './pages/Dashboard'
+import { AppLayout } from './layouts/AppLayout'
 
 function App() {
 
@@ -47,29 +48,35 @@ function App() {
       >
 
         <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+          element={<AppLayout />}
+        >
 
-        <Route
-          path="/clients"
-          element={<Clients />}
-        />
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
 
-        <Route
-          path="/add-client"
-          element={<AddClient />}
-        />
+          <Route
+            path="/clients"
+            element={<Clients />}
+          />
 
-        <Route
-          path="/tasks"
-          element={<Tasks />}
-        />
+          <Route
+            path="/add-client"
+            element={<AddClient />}
+          />
 
-        <Route
-          path="/componentshowcase"
-          element={<ComponentShowcase />}
-        />
+          <Route
+            path="/tasks"
+            element={<Tasks />}
+          />
+
+          <Route
+            path="/componentshowcase"
+            element={<ComponentShowcase />}
+          />
+
+        </Route>
 
       </Route>
 

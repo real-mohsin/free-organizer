@@ -1,6 +1,39 @@
 .fo-stat-card {
+    position: relative;
+
     height: 100%;
+
+    overflow: hidden;
+
+    transition:
+        transform var(--fo-transition-fast),
+        box-shadow var(--fo-transition-fast),
+        border-color var(--fo-transition-fast);
 }
+
+.fo-stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--fo-shadow-md);
+}
+
+.fo-stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0 auto 0 0;
+
+    width: 4px;
+
+    background: transparent;
+
+    transition: background-color var(--fo-transition-fast);
+}
+
+/* ==========================================
+   Heading
+========================================== */
 
 .fo-stat-card__heading {
     margin: 0;
@@ -10,6 +43,10 @@
     font: var(--fo-font-subtitle);
 }
 
+/* ==========================================
+   Icon
+========================================== */
+
 .fo-stat-card__icon {
     display: inline-flex;
 
@@ -17,16 +54,32 @@
 
     justify-content: center;
 
-    width: 1.5rem;
+    width: 2.75rem;
 
-    height: 1.5rem;
+    height: 2.75rem;
+
+    border-radius: var(--fo-radius-lg);
+
+    background: var(--fo-color-surface-hover);
 
     color: var(--fo-color-text-secondary);
+
+    transition:
+        background-color var(--fo-transition-fast),
+        color var(--fo-transition-fast);
 }
+
+/* ==========================================
+   Actions
+========================================== */
 
 .fo-stat-card__actions {
     flex-shrink: 0;
 }
+
+/* ==========================================
+   Value
+========================================== */
 
 .fo-stat-card__value {
     margin: 0;
@@ -34,7 +87,13 @@
     color: var(--fo-color-text-primary);
 
     font: var(--fo-font-display);
+
+    line-height: 1.1;
 }
+
+/* ==========================================
+   Footer
+========================================== */
 
 .fo-stat-card__footer {
     margin: 0;
@@ -42,4 +101,60 @@
     color: var(--fo-color-text-secondary);
 
     font: var(--fo-font-caption);
+}
+
+/* ==========================================
+   Revenue
+========================================== */
+
+.fo-stat-card--revenue::before {
+    background: #22c55e;
+}
+
+.fo-stat-card__icon--revenue {
+    background: rgba(34, 197, 94, 0.12);
+
+    color: #16a34a;
+}
+
+/* ==========================================
+   Clients
+========================================== */
+
+.fo-stat-card--clients::before {
+    background: #3b82f6;
+}
+
+.fo-stat-card__icon--clients {
+    background: rgba(59, 130, 246, 0.12);
+
+    color: #2563eb;
+}
+
+/* ==========================================
+   Projects
+========================================== */
+
+.fo-stat-card--projects::before {
+    background: #8b5cf6;
+}
+
+.fo-stat-card__icon--projects {
+    background: rgba(139, 92, 246, 0.12);
+
+    color: #7c3aed;
+}
+
+/* ==========================================
+   Outstanding
+========================================== */
+
+.fo-stat-card--outstanding::before {
+    background: #f59e0b;
+}
+
+.fo-stat-card__icon--outstanding {
+    background: rgba(245, 158, 11, 0.12);
+
+    color: #d97706;
 }

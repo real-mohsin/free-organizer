@@ -1,5 +1,6 @@
-import { AuthProvider } from "./auth/AuthProvider";
-import { SettingsProvider } from "./SettingsProvider";
+import { AuthProvider } from "./Auth/AuthProvider";
+import { NotificationProvider } from "./Notification";
+import { SettingsProvider } from "./Settings/SettingsProvider";
 
 export function AppProviders({
     children,
@@ -11,7 +12,9 @@ export function AppProviders({
 
         <SettingsProvider>
             <AuthProvider>
-                {children}
+                <NotificationProvider>
+                    {children}
+                </NotificationProvider>
             </AuthProvider>
         </SettingsProvider>
     );

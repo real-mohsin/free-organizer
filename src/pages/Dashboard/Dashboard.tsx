@@ -17,7 +17,6 @@ import { Table } from "../../components/Table";
 import {
     DASHBOARD_STATS,
     REVENUE_DATA,
-    RECENT_CLIENTS,
 } from "./Dashboard.constants";
 
 import {
@@ -31,11 +30,14 @@ import type {
 import { Plus } from "lucide-react";
 import { clientColumns } from "../columns";
 import { cn } from "../../utils/cn";
+import { useNotification } from "../../providers/Notification";
 
 export function Dashboard({
     className,
     ...props
 }: DashboardProps) {
+
+    const notify = useNotification();
 
     return (
         <div
@@ -55,7 +57,12 @@ export function Dashboard({
                         subtitle="Welcome back! Here's an overview of your freelance business."
                         actions={
 
-                            <Button
+                            <Button onClick={() =>
+                                notify.notify({
+                                    title: "Welcome!",
+                                    description: "Free Organizer notification system is alive 🚀",
+                                })
+                            }
                                 leftIcon={<Plus size={18} />}
                             >
 

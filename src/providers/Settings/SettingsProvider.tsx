@@ -6,16 +6,16 @@ import {
     useState,
 } from "react";
 
-import { SettingsContext } from "../context";
+import { SettingsContext } from "./SettingsContext";
 
-import { DEFAULT_SETTINGS } from "../constants/defaultSettings";
+import { DEFAULT_SETTINGS } from "../../constants/defaultSettings";
 
 import {
     getSettings,
     saveSettings,
-} from "../utils/settingsStorage";
+} from "../../utils/settingsStorage";
 
-import { UserSettings } from "../types/settings.types";
+import { UserSettings } from "../../types/settings.types";
 
 interface SettingsProviderProps {
     children: ReactNode;

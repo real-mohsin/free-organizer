@@ -269,5 +269,25 @@
 
    --fo-color-topbar-border: var(--fo-color-border);
 
+   /* ----------------------------------------------------------
+   Z-Index
+---------------------------------------------------------- */
+
+   --fo-z-index-dropdown: 1000;
+
+   --fo-z-index-sticky: 1010;
+
+   --fo-z-index-header: 1020;
+
+   --fo-z-index-sidebar: 1030;
+
+   --fo-z-index-overlay: 1040;
+
+   --fo-z-index-modal: 1050;
+
+   --fo-z-index-notification: 1060;
+
+   --fo-z-index-tooltip: 1070;
+
 
 }

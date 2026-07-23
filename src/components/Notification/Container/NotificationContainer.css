@@ -1,0 +1,87 @@
+.fo-notification-container {
+    position: fixed;
+
+    z-index: var(--fo-z-index-notification, 1000);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--fo-space-4);
+
+    pointer-events: none;
+}
+
+.fo-notification-container>* {
+    pointer-events: auto;
+}
+
+/* ---------- Top ---------- */
+
+.fo-notification-container--top-left {
+
+    top: var(--fo-space-6);
+
+    left: var(--fo-space-6);
+
+}
+
+.fo-notification-container--top-center {
+
+    top: var(--fo-space-6);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+.fo-notification-container--top-right {
+
+    top: var(--fo-space-6);
+
+    right: var(--fo-space-6);
+
+}
+
+/* ---------- Bottom ---------- */
+
+.fo-notification-container--bottom-left {
+
+    bottom: var(--fo-space-6);
+
+    left: var(--fo-space-6);
+
+}
+
+.fo-notification-container--bottom-center {
+
+    bottom: var(--fo-space-6);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+.fo-notification-container--bottom-right {
+
+    bottom: var(--fo-space-6);
+
+    right: var(--fo-space-6);
+
+}
+
+@media (max-width: 640px) {
+
+    .fo-notification-container {
+
+        left: var(--fo-space-4);
+
+        right: var(--fo-space-4);
+
+        transform: none !important;
+
+    }
+
+}

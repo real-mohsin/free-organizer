@@ -1,10 +1,9 @@
 import {
     useContext,
 } from "react";
+import { AuthContext } from "../providers/Auth";
 
-import {
-    AuthContext,
-} from "../context/auth";
+
 
 /**
  * Authentication hook.

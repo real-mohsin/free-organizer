@@ -11,6 +11,7 @@ import {
 import {
     DEFAULT_NOTIFICATION_DURATION,
     DEFAULT_NOTIFICATION_VARIANT,
+    NOTIFICATION_DISMISS_DURATION,
 } from "./Notification.constants";
 
 import type {
@@ -94,11 +95,41 @@ export function NotificationProvider({
     ) => {
 
         setNotifications((current) =>
-            current.filter(
-                (notification) =>
-                    notification.id !== id,
-            ),
+            current.map((notification) => {
+
+                if (notification.id !== id) {
+
+                    return notification;
+
+                }
+
+                if (notification.status === "dismissed") {
+
+                    return notification;
+
+                }
+
+                return {
+
+                    ...notification,
+
+                    status: "dismissed",
+
+                };
+
+            }),
         );
+
+        window.setTimeout(() => {
+
+            setNotifications((current) =>
+                current.filter(
+                    (notification) =>
+                        notification.id !== id,
+                ),
+            );
+
+        }, NOTIFICATION_DISMISS_DURATION);
 
     }, []);
 

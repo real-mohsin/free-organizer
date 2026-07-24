@@ -20,6 +20,6 @@ export interface NotificationProps
     /**
      * Invoked when the notification is dismissed.
      */
-    onClose?: () => void;
+    onDismiss?: () => void;
 
 }

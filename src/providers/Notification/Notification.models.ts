@@ -90,24 +90,25 @@ export interface NotificationOptions {
 export interface Notification
     extends NotificationOptions {
 
-    /**
-     * Unique identifier.
-     */
     id: string;
 
     /**
-     * Notification variant.
+     * Duration is always resolved by the Provider.
+     */
+    duration: number;
+
+    /**
+     * Variant is always resolved by the Provider.
      */
     variant: NotificationVariant;
 
     /**
-     * Lifecycle state.
+     * Dismissible is always resolved by the Provider.
      */
+    dismissible: boolean;
+
     status: NotificationStatus;
 
-    /**
-     * Creation timestamp.
-     */
     createdAt: number;
 
 }

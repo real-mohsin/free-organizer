@@ -24,3 +24,8 @@ export const DEFAULT_NOTIFICATION_POSITION = "top-right" as const;
  * Allows exit animations to complete.
  */
 export const NOTIFICATION_EXIT_DURATION = 250;
+
+/**
+ * Time in milliseconds for the dismiss animation.
+ */
+export const NOTIFICATION_DISMISS_DURATION = 250;

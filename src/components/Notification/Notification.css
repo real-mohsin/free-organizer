@@ -26,6 +26,37 @@
     box-shadow: var(--fo-shadow-lg);
 
     overflow: hidden;
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    transition:
+
+        opacity 220ms ease,
+
+        transform 220ms ease;
+
+}
+
+.fo-notification--visible {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+}
+
+.fo-notification--dismissed {
+
+    opacity: 0;
+
+    transform:
+
+        translateY(-8px)
+
+        scale(.96);
+
 }
 
 .fo-notification__title {
@@ -87,6 +118,110 @@
 .fo-notification--error {
 
     border-left: 4px solid var(--fo-color-danger);
+
+}
+
+.fo-notification__header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: var(--fo-space-3);
+}
+
+.fo-notification__heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: var(--fo-space-3);
+
+    flex: 1;
+}
+
+.fo-notification__icon {
+
+    width: 2rem;
+
+    height: 2rem;
+
+    border-radius: var(--fo-radius-md);
+
+    background: color-mix(
+        in srgb,
+        currentColor 12%,
+        transparent
+    );
+
+}
+
+.fo-notification__icon--success {
+
+    color: var(--fo-color-success);
+
+}
+
+.fo-notification__icon--info {
+
+    color: var(--fo-color-info);
+
+}
+
+.fo-notification__icon--warning {
+
+    color: var(--fo-color-warning);
+
+}
+
+.fo-notification__icon--error {
+
+    color: var(--fo-color-danger);
+
+}
+
+.fo-notification--visible {
+
+    opacity: 1;
+
+}
+
+.fo-notification--dismissed {
+
+    opacity: 0;
+
+}
+
+.fo-notification__progress {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    overflow: hidden;
+
+    border-radius: 0 0 var(--fo-radius-xl) var(--fo-radius-xl);
+
+}
+
+.fo-notification__progress-bar {
+
+    height: 100%;
+
+    width: 100%;
+
+    background: currentColor;
+
+    opacity: .75;
+
+    transition: width 16ms linear;
 
 }
 

@@ -8,12 +8,14 @@ import type {
     NotificationProps,
 } from "./Notification.types";
 import { Stack } from "../Layout/Stack";
-import { HStack } from "../Layout/HStack/Hstack";
 import { IconButton } from "../IconButton";
+import { NotificationIcon } from "./NotificationIcon";
+import { Button } from "../Button";
+import { useCountdown } from "../../hooks/useCountdown";
 
 export function Notification({
     notification,
-    onClose,
+    onDismiss,
     className,
     ...props
 }: NotificationProps) {
@@ -24,58 +26,86 @@ export function Notification({
         description,
         dismissible,
         action,
-
+        duration,
+        variant,
+        status: notificationStatus,
     } = notification;
+
+    const {
+
+        pause: pauseCountdown,
+
+        resume: resumeCountdown,
+
+        progress,
+
+    } = useCountdown({
+
+        duration,
+
+        enabled:
+            notificationStatus === "visible",
+
+        onComplete: onDismiss,
+
+    });
 
     return (
 
         <div
+            onMouseEnter={pauseCountdown}
+            onMouseLeave={resumeCountdown}
             className={cn(
                 "fo-notification",
-                `fo-notification--${notification.variant}`,
+                `fo-notification--${variant}`,
+                `fo-notification--${notificationStatus}`,
                 className,
             )}
-            role="status"
+            role={
+                variant === "error"
+                    ? "alert"
+                    : "status"
+            }
             {...props}
         >
 
             <Stack spacing="md" className="fo-notification__content">
 
-                <HStack
-                    justify="space-between"
-                    align="flex-start"
-                >
+                <div className="fo-notification__header">
+                    <div className="fo-notification__heading">
+                        <NotificationIcon
+                            variant={variant}
+                        />
+                        <Stack spacing="xs">
 
-                    <Stack spacing="xs">
+                            {title && (
 
-                        {title && (
+                                <h4 className="fo-notification__title">
 
-                            <h4 className="fo-notification__title">
+                                    {title}
 
-                                {title}
+                                </h4>
 
-                            </h4>
+                            )}
 
-                        )}
+                            {description && (
 
-                        {description && (
+                                <p className="fo-notification__description">
 
-                            <p className="fo-notification__description">
+                                    {description}
 
-                                {description}
+                                </p>
 
-                            </p>
+                            )}
 
-                        )}
-
-                    </Stack>
-
+                        </Stack>
+                    </div>
                     {dismissible && (
 
                         <IconButton
                             variant="ghost"
                             aria-label="Dismiss notification"
-                            onClick={onClose}
+                            onClick={onDismiss}
                         >
 
                             <X size={16} />
@@ -84,26 +114,40 @@ export function Notification({
 
                     )}
 
-                </HStack>
+                </div>
 
                 {action && (
 
                     <div className="fo-notification__action">
 
-                        <button
-                            type="button"
-                            onClick={action.onClick}
-                        >
-
+                        <Button variant="ghost" size="sm" onClick={action.onClick}>
                             {action.label}
-
-                        </button>
+                        </Button>
 
                     </div>
 
                 )}
+                {duration > 0 && (
+                    <div className="fo-notification__progress">
+
+                        <div
+
+                            className="fo-notification__progress-bar"
+
+                            style={{
+
+                                width: `${progress}%`,
+
+                            }}
+
+                        />
+
+                    </div>
+                )}
 
             </Stack>
+
+
 
         </div>
 

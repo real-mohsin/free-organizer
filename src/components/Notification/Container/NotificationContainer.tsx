@@ -45,7 +45,7 @@ export function NotificationContainer({
                 <Notification
                     key={notification.id}
                     notification={notification}
-                    onClose={() =>
+                    onDismiss={() =>
                         dismiss(notification.id)
                     }
                 />

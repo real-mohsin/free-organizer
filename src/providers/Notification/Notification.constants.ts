@@ -1,7 +1,7 @@
 /**
  * Maximum number of visible notifications.
  */
-export const MAX_VISIBLE_NOTIFICATIONS = 4;
+export const MAX_VISIBLE_NOTIFICATIONS = 5;
 
 /**
  * Default notification duration.

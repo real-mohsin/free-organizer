@@ -2,6 +2,7 @@ import {
     useCallback,
     useMemo,
     useState,
+    useEffect
 } from "react";
 
 import {
@@ -11,6 +12,7 @@ import {
 import {
     DEFAULT_NOTIFICATION_DURATION,
     DEFAULT_NOTIFICATION_VARIANT,
+    MAX_VISIBLE_NOTIFICATIONS,
     NOTIFICATION_DISMISS_DURATION,
 } from "./Notification.constants";
 
@@ -25,7 +27,9 @@ import type {
 } from "react";
 
 import {
-    generateNotificationId,
+    createNotification,
+    fillVisibleSlots,
+    markNotificationDismissed,
 } from "./Notification.utils";
 import { NotificationContainer } from "../../components/Notification/Container/NotificationContainer";
 
@@ -39,51 +43,82 @@ export function NotificationProvider({
     ] = useState<Notification[]>([]);
 
     /**
+ * Promotes queued notifications to visible
+ * while respecting the maximum visible limit.
+ */
+    const promoteQueuedNotifications = useCallback((
+        notifications: Notification[],
+    ): Notification[] => {
+
+        const visibleCount =
+            notifications.filter(
+                (notification) =>
+                    notification.status === "visible",
+            ).length;
+
+        let remainingSlots =
+            MAX_VISIBLE_NOTIFICATIONS -
+            visibleCount;
+
+        if (remainingSlots <= 0) {
+
+            return notifications;
+
+        }
+
+        return notifications.map((notification) => {
+
+            if (
+
+                notification.status !== "queued" ||
+
+                remainingSlots <= 0
+
+            ) {
+
+                return notification;
+
+            }
+
+            remainingSlots--;
+
+            const updatedNotification: Notification = {
+
+                ...notification,
+
+                status: "visible",
+
+            };
+
+            return updatedNotification;
+
+        });
+
+    }, []);
+
+    /**
      * Displays a notification.
      */
     const notify = useCallback((
         options: NotificationOptions,
     ) => {
 
-        const id = generateNotificationId();
+        const notification =
+            createNotification(options);
 
-        const notification: Notification = {
+        setNotifications((current) =>
 
-            id,
+            fillVisibleSlots([
 
-            createdAt: Date.now(),
+                ...current,
 
-            status: "visible",
+                notification,
 
-            variant:
-                options.variant ??
-                DEFAULT_NOTIFICATION_VARIANT,
+            ]),
 
-            duration:
-                options.duration ??
-                DEFAULT_NOTIFICATION_DURATION,
+        );
 
-            dismissible:
-                options.dismissible ?? true,
-
-            title: options.title,
-
-            description:
-                options.description,
-
-            action: options.action,
-
-        };
-
-        setNotifications((current) => [
-
-            ...current,
-
-            notification,
-
-        ]);
-
-        return id;
+        return notification.id;
 
     }, []);
 
@@ -95,38 +130,33 @@ export function NotificationProvider({
     ) => {
 
         setNotifications((current) =>
-            current.map((notification) => {
 
-                if (notification.id !== id) {
+            markNotificationDismissed(
 
-                    return notification;
+                current,
 
-                }
+                id,
 
-                if (notification.status === "dismissed") {
+            ),
 
-                    return notification;
-
-                }
-
-                return {
-
-                    ...notification,
-
-                    status: "dismissed",
-
-                };
-
-            }),
         );
 
         window.setTimeout(() => {
 
             setNotifications((current) =>
-                current.filter(
-                    (notification) =>
-                        notification.id !== id,
+
+                fillVisibleSlots(
+
+                    current.filter(
+
+                        (notification) =>
+
+                            notification.id !== id,
+
+                    ),
+
                 ),
+
             );
 
         }, NOTIFICATION_DISMISS_DURATION);
@@ -164,6 +194,69 @@ export function NotificationProvider({
             clear,
 
         ]);
+
+    /**
+* Dismiss the latest notification when Escape is pressed.
+*/
+    useEffect(() => {
+
+        const handleKeyDown = (
+            event: KeyboardEvent,
+        ) => {
+
+            if (event.key !== "Escape") {
+
+                return;
+
+            }
+
+            const latestNotification =
+
+                [...notifications]
+
+                    .reverse()
+
+                    .find(
+
+                        (notification) =>
+
+                            notification.status === "visible",
+
+                    );
+
+            if (!latestNotification) {
+
+                return;
+
+            }
+
+            dismiss(
+                latestNotification.id,
+            );
+
+        };
+
+        window.addEventListener(
+            "keydown",
+            handleKeyDown,
+        );
+
+        return () => {
+
+            window.removeEventListener(
+                "keydown",
+                handleKeyDown,
+            );
+
+        };
+
+    }, [
+
+        notifications,
+
+        dismiss,
+
+    ]);
 
     return (
 

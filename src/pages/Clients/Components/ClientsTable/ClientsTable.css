@@ -1,0 +1,21 @@
+/* Reserved for future table customizations. */.fo-client-table__client {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--fo-space-3);
+
+}
+
+.fo-client-table__actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--fo-space-2);
+
+}

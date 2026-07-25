@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.scss'
 
-import Clients from './pages/Clients'
-import Tasks from './pages/Tasks'
 
-import AddClient from './pages/Client-Add'
+import Tasks from './pages/Tasks'
+import { Clients } from './pages/Clients'
+
 import ComponentShowcase from './pages/ComponentShowcase'
 import Login from './pages/Login/Login'
 import { AuthHero } from './components/app/AuthHero'
@@ -13,6 +13,7 @@ import { ProtectedRoute, PublicRoute } from './guards'
 import { Dashboard } from './pages/Dashboard'
 import { AppLayout } from './layouts/AppLayout'
 import { ROUTES } from './routes'
+
 
 function App() {
 
@@ -60,11 +61,6 @@ function App() {
           <Route
             path={ROUTES.APP.CLIENTS}
             element={<Clients />}
-          />
-
-          <Route
-            path={ROUTES.APP.ADD_CLIENT}
-            element={<AddClient />}
           />
 
           <Route

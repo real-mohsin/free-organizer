@@ -1,0 +1,39 @@
+.fo-clients-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: var(--fo-space-6);
+
+    margin-bottom: var(--fo-space-8);
+
+}
+
+.fo-clients-header__description {
+
+    color: var(--fo-color-text-secondary);
+
+    max-width: 42rem;
+
+}
+
+@media (max-width: 768px) {
+
+    .fo-clients-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .fo-clients-header .fo-button {
+
+        width: 100%;
+
+    }
+
+}

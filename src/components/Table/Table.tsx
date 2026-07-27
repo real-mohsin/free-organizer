@@ -8,6 +8,7 @@ export function Table<T>({
     columns,
     data,
     emptyMessage = "No data available.",
+    emptyState,
     loading = false,
     zebra = false,
     hoverable = true,
@@ -45,16 +46,24 @@ export function Table<T>({
         }
 
         if (data.length === 0) {
+
             return (
+
                 <tr>
+
                     <td
                         className="fo-table__empty"
                         colSpan={columns.length}
                     >
-                        {emptyMessage}
+
+                        {emptyState ?? emptyMessage}
+
                     </td>
+
                 </tr>
+
             );
+
         }
 
         return data.map((row, rowIndex) => {
@@ -79,15 +88,15 @@ export function Table<T>({
                                 className={cn(
                                     "fo-table__cell",
                                     column.align &&
-                                        `fo-table__cell--${column.align}`
+                                    `fo-table__cell--${column.align}`
                                 )}
                             >
                                 {column.render
                                     ? column.render(
-                                          value,
-                                          row,
-                                          rowIndex
-                                      )
+                                        value,
+                                        row,
+                                        rowIndex
+                                    )
                                     : String(value ?? "")}
                             </td>
                         );
@@ -116,7 +125,7 @@ export function Table<T>({
                                 className={cn(
                                     "fo-table__header",
                                     column.align &&
-                                        `fo-table__header--${column.align}`
+                                    `fo-table__header--${column.align}`
                                 )}
                                 style={{
                                     width: column.width,

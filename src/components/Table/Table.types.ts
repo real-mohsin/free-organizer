@@ -54,7 +54,12 @@ export interface TableProps<T>
     data: T[];
 
     /**
-     * Empty state message.
+     * Content displayed when there is no data.
+     */
+    emptyState?: ReactNode;
+
+    /**
+     * Simple fallback message.
      */
     emptyMessage?: ReactNode;
 
@@ -84,7 +89,7 @@ export interface TableProps<T>
     fullWidth?: boolean;
 
     getRowKey?: (
-    row: T,
-    rowIndex: number
-) => React.Key;
+        row: T,
+        rowIndex: number
+    ) => React.Key;
 }

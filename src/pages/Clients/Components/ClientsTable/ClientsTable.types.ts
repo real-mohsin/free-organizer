@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import type {
     Client,
 } from "../../../../models/Client.models";
@@ -8,6 +9,11 @@ export interface ClientsTableProps {
      * Clients to display.
      */
     clients: Client[];
+
+    /**
+     * Empty state component
+     */
+    emptyState?: ReactNode;
 
     /**
      * View client.

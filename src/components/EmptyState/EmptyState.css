@@ -1,0 +1,61 @@
+.fo-empty-state {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 22rem;
+
+    padding: var(--fo-space-10);
+
+    text-align: center;
+
+}
+
+.fo-empty-state__illustration {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--fo-color-text-muted);
+
+}
+
+.fo-empty-state__title {
+
+    margin: 0;
+
+    font: var(--fo-font-heading-md);
+
+    color: var(--fo-color-text);
+
+}
+
+.fo-empty-state__description {
+
+    max-width: 30rem;
+
+    margin: 0;
+
+    color: var(--fo-color-text-muted);
+
+    font: var(--fo-font-body-md);
+
+}
+
+.fo-empty-state__actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: var(--fo-space-3);
+
+}

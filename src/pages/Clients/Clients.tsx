@@ -9,8 +9,13 @@ import { mockClients } from "./data/mockClients";
 import { ClientsHeader } from "./Components/ClientHeader/";
 import { ClientsFilters } from "./Components/ClientsFilters";
 import { ClientsTable } from "./Components/ClientsTable/ClientsTable";
+import { ClientsStats } from "./Components/ClientsStats/ClientsStats";
+import { EmptyState } from "../../components/EmptyState";
+import { FolderOpen } from "lucide-react";
+import { Button } from "../../components/Button";
 
 export function Clients() {
+
 
     const [search, setSearch] = useState("");
 
@@ -127,9 +132,9 @@ export function Clients() {
 
             <ClientsHeader />
 
-            {/* <ClientsStats
-                clients={mockClients}
-            /> */}
+            <ClientsStats
+                clients={filteredClients}
+            />
 
             <ClientsFilters
 
@@ -151,6 +156,30 @@ export function Clients() {
 
                 clients={filteredClients}
 
+                emptyState={
+
+                    <EmptyState
+
+                        visual={<FolderOpen size={64} />}
+
+                        heading="No clients found"
+
+                        description="Try adjusting your search or filters."
+
+                        actions={
+
+                            <Button>
+
+                                Add Client
+
+                            </Button>
+
+                        }
+
+                    />
+
+                }
+
                 onView={(client) => console.log(client)}
 
                 onEdit={(client) => console.log(client)}
@@ -158,7 +187,6 @@ export function Clients() {
                 onDelete={(client) => console.log(client)}
 
             />
-
         </Container>
 
     );

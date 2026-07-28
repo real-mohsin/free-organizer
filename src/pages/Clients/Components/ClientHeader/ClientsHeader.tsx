@@ -1,9 +1,15 @@
 import { Button } from "../../../../components/Button";
 import { Stack } from "../../../../components/Layout/Stack";
+import { ClientsHeaderProps } from "./ClientHeader.types";
 import "./ClientsHeader.css";
 
-export function ClientsHeader() {
 
+
+export function ClientsHeader({
+    onAddClient
+}: ClientsHeaderProps) {
+
+    
     return (
 
         <header className="fo-clients-header">
@@ -24,7 +30,7 @@ export function ClientsHeader() {
 
             </Stack>
 
-            <Button>
+            <Button onClick={onAddClient}>
 
                 Add Client
 

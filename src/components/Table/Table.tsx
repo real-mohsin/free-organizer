@@ -44,7 +44,8 @@ export function Table<T>({
                 </tr>
             );
         }
-
+        console.log(data.length);
+        console.log(emptyState);
         if (data.length === 0) {
 
             return (

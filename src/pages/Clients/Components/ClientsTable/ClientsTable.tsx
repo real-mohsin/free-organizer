@@ -42,6 +42,8 @@ export function ClientsTable({
 
     clients,
 
+    emptyState,
+
     onView,
 
     onEdit,
@@ -171,6 +173,8 @@ export function ClientsTable({
             columns={columns}
 
             data={clients}
+
+            emptyState={emptyState}
 
             zebra
 

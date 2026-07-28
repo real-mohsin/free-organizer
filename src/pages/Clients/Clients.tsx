@@ -13,6 +13,15 @@ import { ClientsStats } from "./Components/ClientsStats/ClientsStats";
 import { EmptyState } from "../../components/EmptyState";
 import { FolderOpen } from "lucide-react";
 import { Button } from "../../components/Button";
+import { Modal } from "../../components/Modal";
+import { ClientForm } from "./Components/ClientForm/ClientForm";
+import type {
+    ClientFormValues,
+    ClientFormErrors,
+} from "./Components/ClientForm/ClientForm.types";
+
+import { validateForm } from "../../utils/validation";
+import { clientFormSchema } from "./Components/ClientForm/ClientForm.validation";
 
 export function Clients() {
 
@@ -126,68 +135,231 @@ export function Clients() {
 
     ]);
 
+    const [isAddClientOpen, setIsAddClientOpen] = useState(false);
+
+    const [clientForm, setClientForm] =
+        useState<ClientFormValues>({
+
+
+            name: "",
+
+            company: "",
+
+            email: "",
+
+            phone: "",
+
+            country: "",
+
+            status: "active",
+
+            notes: "",
+
+        });
+
+    const [clientFormErrors, setClientFormErrors] =
+        useState<ClientFormErrors>({});
+
+    const handleClientFormChange = <
+        K extends keyof ClientFormValues
+    >(
+        field: K,
+        value: ClientFormValues[K],
+    ) => {
+
+        setClientForm((current) => ({
+
+            ...current,
+
+            [field]: value,
+
+        }));
+
+        setClientFormErrors((current) => ({
+
+            ...current,
+
+            [field]: undefined,
+
+        }));
+
+    };
+
+    const handleCreateClient = () => {
+
+        const result =
+
+            validateForm(
+
+                clientFormSchema,
+
+                clientForm,
+
+            );
+        console.log("Validation Result:", result);
+
+        if (!result.success) {
+
+            console.log("Errors:", result.errors);
+
+            setClientFormErrors(result.errors);
+
+            return;
+        }
+        if (!result.success) {
+
+            setClientFormErrors(
+
+                result.errors,
+
+            );
+
+            return;
+
+        }
+
+        console.log(result.data);
+
+    };
+
     return (
+        <>
+            <Container>
 
-        <Container>
+                <ClientsHeader onAddClient={() =>
 
-            <ClientsHeader />
+                    setIsAddClientOpen(true)
 
-            <ClientsStats
-                clients={filteredClients}
-            />
+                }
+                />
 
-            <ClientsFilters
+                <ClientsStats
+                    clients={filteredClients}
+                />
 
-                search={search}
+                <ClientsFilters
 
-                status={status}
+                    search={search}
 
-                sort={sort}
+                    status={status}
 
-                onSearchChange={setSearch}
+                    sort={sort}
 
-                onStatusChange={setStatus}
+                    onSearchChange={setSearch}
 
-                onSortChange={setSort}
+                    onStatusChange={setStatus}
 
-            />
+                    onSortChange={setSort}
 
-            <ClientsTable
+                />
 
-                clients={filteredClients}
+                <ClientsTable
 
-                emptyState={
+                    clients={filteredClients}
 
-                    <EmptyState
+                    emptyState={
 
-                        visual={<FolderOpen size={64} />}
+                        <EmptyState
 
-                        heading="No clients found"
+                            visual={<FolderOpen size={64} />}
 
-                        description="Try adjusting your search or filters."
+                            heading="No clients found"
 
-                        actions={
+                            description="Try adjusting your search or filters."
 
-                            <Button>
+                            actions={
 
-                                Add Client
+                                <Button>
 
-                            </Button>
+                                    Add Client
 
-                        }
+                                </Button>
 
-                    />
+                            }
+
+                        />
+
+                    }
+
+                    onView={(client) => console.log(client)}
+
+                    onEdit={(client) => console.log(client)}
+
+                    onDelete={(client) => console.log(client)}
+
+                />
+            </Container>
+
+            <Modal
+
+                open={isAddClientOpen}
+
+                onClose={() =>
+
+                    setIsAddClientOpen(false)
 
                 }
 
-                onView={(client) => console.log(client)}
+                heading="Add Client"
 
-                onEdit={(client) => console.log(client)}
+                description="Create a new client."
 
-                onDelete={(client) => console.log(client)}
+                size="lg"
 
-            />
-        </Container>
+                footer={
+
+                    <>
+
+                        <Button
+
+                            variant="ghost"
+
+                            onClick={() =>
+
+                                setIsAddClientOpen(false)
+
+                            }
+
+                        >
+
+                            Cancel
+
+                        </Button>
+
+                        <Button
+
+                            type="submit"
+
+                            form="client-form"
+
+                        >
+
+                            Save Client
+
+                        </Button>
+
+                    </>
+
+                }
+
+            >
+
+                <ClientForm
+
+                    id="client-form"
+
+                    values={clientForm}
+
+                    errors={clientFormErrors}
+
+                    onChange={handleClientFormChange}
+
+                    onSubmit={handleCreateClient}
+
+                />
+
+            </Modal>
+        </>
 
     );
 

@@ -7,7 +7,7 @@
 
     inset: 0;
 
-    z-index: 1000;
+    z-index: var(--fo-z-index-modal);
 
     display: flex;
 

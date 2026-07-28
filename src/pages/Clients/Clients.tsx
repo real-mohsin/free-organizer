@@ -22,9 +22,12 @@ import type {
 
 import { validateForm } from "../../utils/validation";
 import { clientFormSchema } from "./Components/ClientForm/ClientForm.validation";
+import { Client } from "../../models/Client.models";
+import { useNotification } from "../../providers/Notification";
 
 export function Clients() {
 
+    const [clients, setClients] = useState(mockClients);
 
     const [search, setSearch] = useState("");
 
@@ -34,7 +37,7 @@ export function Clients() {
 
     const filteredClients = useMemo(() => {
 
-        let filtered = [...mockClients];
+        let filtered = [...clients];
 
         /**
          * Search
@@ -137,6 +140,8 @@ export function Clients() {
 
     const [isAddClientOpen, setIsAddClientOpen] = useState(false);
 
+    const notify = useNotification();
+
     const [clientForm, setClientForm] =
         useState<ClientFormValues>({
 
@@ -156,6 +161,30 @@ export function Clients() {
             notes: "",
 
         });
+
+    const resetClientForm = () => {
+
+        setClientForm({
+
+            name: "",
+
+            company: "",
+
+            email: "",
+
+            phone: "",
+
+            country: "",
+
+            status: "active",
+
+            notes: "",
+
+        });
+
+        setClientFormErrors({});
+
+    };
 
     const [clientFormErrors, setClientFormErrors] =
         useState<ClientFormErrors>({});
@@ -206,19 +235,66 @@ export function Clients() {
 
             return;
         }
-        if (!result.success) {
 
-            setClientFormErrors(
+        const now = new Date().toISOString();
 
-                result.errors,
+        const newClient: Client = {
 
-            );
+            id: crypto.randomUUID(),
 
-            return;
+            name: result.data.name,
 
-        }
+            company: result.data.company,
 
-        console.log(result.data);
+            email: result.data.email,
+
+            phone: result.data.phone,
+
+            country: result.data.country,
+
+            notes: result.data.notes,
+
+            status: result.data.status,
+
+            avatar: "",
+
+            city: "",
+
+            website: "",
+
+            type: "business",
+
+            projects: 0,
+
+            totalRevenue: 0,
+
+            createdAt: now,
+
+            updatedAt: now,
+
+        };
+
+        setClients((current) => [
+
+            newClient,
+
+            ...current,
+
+        ]);
+
+        resetClientForm();
+
+        setIsAddClientOpen(false);
+
+        notify.notify({
+
+            variant: "success",
+
+            title: "Client Created",
+
+            description: `${newClient.name} has been added successfully.`,
+
+        });
 
     };
 

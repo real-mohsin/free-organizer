@@ -1,9 +1,35 @@
-import type { ZodSchema } from "zod";
+import type {
+    ZodSchema,
+} from "zod";
+
+export interface ValidationSuccess<T> {
+
+    success: true;
+
+    data: T;
+
+    errors: {};
+
+}
+
+export interface ValidationFailure {
+
+    success: false;
+
+    data: null;
+
+    errors: Record<string, string>;
+
+}
+
+export type ValidationResult<T> =
+    | ValidationSuccess<T>
+    | ValidationFailure;
 
 export function validateForm<T extends object>(
     schema: ZodSchema<T>,
     values: T,
-) {
+): ValidationResult<T> {
 
     const result = schema.safeParse(values);
 
@@ -13,9 +39,9 @@ export function validateForm<T extends object>(
 
             success: true,
 
-            errors: {},
-
             data: result.data,
+
+            errors: {},
 
         };
 
@@ -28,9 +54,8 @@ export function validateForm<T extends object>(
 
     for (const key in fieldErrors) {
 
-        const value = fieldErrors[key];
-
-        errors[key] = value?.[0] ?? "";
+        errors[key] =
+            fieldErrors[key]?.[0] ?? "";
 
     }
 
@@ -38,9 +63,9 @@ export function validateForm<T extends object>(
 
         success: false,
 
-        errors,
-
         data: null,
+
+        errors,
 
     };
 

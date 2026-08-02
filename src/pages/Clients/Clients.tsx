@@ -137,8 +137,17 @@ export function Clients() {
         sort,
 
     ]);
+    const [isClientModalOpen, setIsClientModalOpen] =
+        useState(false);
 
-    const [isAddClientOpen, setIsAddClientOpen] = useState(false);
+    const [editingClient, setEditingClient] =
+        useState<Client | null>(null);
+
+    const [isDeleteModalOpen, setIsDeleteModalOpen] =
+        useState(false);
+
+    const [clientToDelete, setClientToDelete] =
+        useState<Client | null>(null);
 
     const notify = useNotification();
 
@@ -282,9 +291,7 @@ export function Clients() {
 
         ]);
 
-        resetClientForm();
-
-        setIsAddClientOpen(false);
+        closeClientModal();
 
         notify.notify({
 
@@ -298,13 +305,153 @@ export function Clients() {
 
     };
 
+    const handleUpdateClient = () => {
+
+        if (!editingClient) {
+
+            return;
+
+        }
+
+        const result = validateForm(
+
+            clientFormSchema,
+
+            clientForm,
+
+        );
+
+        if (!result.success) {
+
+            setClientFormErrors(result.errors);
+
+            return;
+
+        }
+
+        const now = new Date().toISOString();
+
+        const updatedClient: Client = {
+
+            ...editingClient,
+
+            name: result.data.name,
+
+            company: result.data.company,
+
+            email: result.data.email,
+
+            phone: result.data.phone,
+
+            country: result.data.country,
+
+            notes: result.data.notes,
+
+            status: result.data.status,
+
+            updatedAt: now,
+
+        };
+
+        setClients((current) =>
+
+            current.map((client) =>
+
+                client.id === editingClient.id
+
+                    ? updatedClient
+
+                    : client,
+
+            ),
+
+        );
+
+        notify.notify({
+
+            variant: "success",
+
+            title: "Client Updated",
+
+            description: `${updatedClient.name} has been updated successfully.`,
+
+        });
+
+        closeClientModal();
+
+    };
+
+    const handleEditClient = (client: Client) => {
+        setEditingClient(client);
+        setClientForm({
+
+            name: client.name,
+
+            company: client.company ?? "",
+
+            email: client.email,
+
+            phone: client.phone ?? "",
+
+            country: client.country,
+
+            status: client.status,
+
+            notes: client.notes ?? "",
+        });
+
+        setClientFormErrors({});
+        setIsClientModalOpen(true);
+    }
+
+    const closeClientModal = () => {
+        resetClientForm();
+        setEditingClient(null);
+        setIsClientModalOpen(false);
+    }
+
+    const handleDeleteClient = (
+        client: Client,
+    ) => {
+        setClientToDelete(client);
+        setIsDeleteModalOpen(true);
+    }
+
+    const closeDeleteModal = () => {
+
+        setClientToDelete(null);
+
+        setIsDeleteModalOpen(false);
+
+    };
+
+    const confirmDeleteClient = () => {
+        if (!clientToDelete) {
+            return;
+        }
+        setClients((current) =>
+            current.filter(
+                (client) =>
+                    client.id !== clientToDelete.id,
+            ),
+        );
+
+        notify.notify({
+            variant: "success",
+            title: "Client Delete",
+            description: `${clientToDelete.name} has been deleted.`,
+        });
+
+        closeDeleteModal();
+    }
+
     return (
         <>
             <Container>
 
                 <ClientsHeader onAddClient={() =>
 
-                    setIsAddClientOpen(true)
+                    setIsClientModalOpen(true)
 
                 }
                 />
@@ -359,26 +506,32 @@ export function Clients() {
 
                     onView={(client) => console.log(client)}
 
-                    onEdit={(client) => console.log(client)}
+                    onEdit={handleEditClient}
 
-                    onDelete={(client) => console.log(client)}
+                    onDelete={handleDeleteClient}
 
                 />
             </Container>
 
+            /** Add Client */
+
             <Modal
 
-                open={isAddClientOpen}
+                open={isClientModalOpen}
 
-                onClose={() =>
+                onClose={closeClientModal}
 
-                    setIsAddClientOpen(false)
-
+                heading={
+                    editingClient
+                        ? "Edit Client"
+                        : "Add Client"
                 }
 
-                heading="Add Client"
-
-                description="Create a new client."
+                description={
+                    editingClient
+                        ? "Update client information."
+                        : "Create a new client."
+                }
 
                 size="lg"
 
@@ -390,11 +543,7 @@ export function Clients() {
 
                             variant="ghost"
 
-                            onClick={() =>
-
-                                setIsAddClientOpen(false)
-
-                            }
+                            onClick={closeClientModal}
 
                         >
 
@@ -410,7 +559,9 @@ export function Clients() {
 
                         >
 
-                            Save Client
+                            {editingClient
+                                ? "Update Client"
+                                : "Save Client"}
 
                         </Button>
 
@@ -430,9 +581,56 @@ export function Clients() {
 
                     onChange={handleClientFormChange}
 
-                    onSubmit={handleCreateClient}
+                    onSubmit={
+                        editingClient
+                            ? handleUpdateClient
+                            : handleCreateClient
+                    }
 
                 />
+
+            </Modal>
+
+            /** Delete Client */
+
+            <Modal
+                open={isDeleteModalOpen}
+                onClose={closeDeleteModal}
+                heading="Delete Client"
+                description="This action cannot be undone."
+                footer={
+                    <>
+                        <Button
+                            variant="ghost"
+                            onClick={closeDeleteModal}
+                        >
+                            Cancel
+                        </Button>
+
+                        <Button
+                            variant="danger"
+                            onClick={confirmDeleteClient}
+                        >
+                            Delete Client
+                        </Button>
+                    </>
+                }
+            >
+
+                <p>
+
+                    Are you sure you want to delete
+
+                    <strong>
+
+                        {" "}
+                        {clientToDelete?.name}
+
+                    </strong>
+
+                    ?
+
+                </p>
 
             </Modal>
         </>

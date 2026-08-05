@@ -24,6 +24,7 @@ import { validateForm } from "../../utils/validation";
 import { clientFormSchema } from "./Components/ClientForm/ClientForm.validation";
 import { Client } from "../../models/Client.models";
 import { useNotification } from "../../providers/Notification";
+import { useNavigate } from "react-router-dom";
 
 export function Clients() {
 
@@ -445,6 +446,8 @@ export function Clients() {
         closeDeleteModal();
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <Container>
@@ -504,7 +507,9 @@ export function Clients() {
 
                     }
 
-                    onView={(client) => console.log(client)}
+                    onView={(client) =>
+                        navigate(`/clients/${client.id}`)
+                    }
 
                     onEdit={handleEditClient}
 

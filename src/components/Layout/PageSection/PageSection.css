@@ -1,0 +1,13 @@
+.fo-page-section__title {
+
+    margin: 0;
+
+}
+
+.fo-page-section__description {
+
+    margin: 0;
+
+    color: var(--fo-text-secondary);
+
+}

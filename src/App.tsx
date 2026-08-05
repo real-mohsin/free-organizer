@@ -13,6 +13,7 @@ import { ProtectedRoute, PublicRoute } from './guards'
 import { Dashboard } from './pages/Dashboard'
 import { AppLayout } from './layouts/AppLayout'
 import { ROUTES } from './routes'
+import { ClientProfile } from './pages/ClientProfile/ClientProfile'
 
 
 function App() {
@@ -61,6 +62,14 @@ function App() {
           <Route
             path={ROUTES.APP.CLIENTS}
             element={<Clients />}
+          />
+
+          <Route
+
+            path="/clients/:clientId"
+
+            element={<ClientProfile />}
+
           />
 
           <Route

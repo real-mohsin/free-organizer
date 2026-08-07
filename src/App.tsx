@@ -14,6 +14,7 @@ import { Dashboard } from './pages/Dashboard'
 import { AppLayout } from './layouts/AppLayout'
 import { ROUTES } from './routes'
 import { ClientProfile } from './pages/ClientProfile/ClientProfile'
+import { Projects } from './pages/Projects/Projects'
 
 
 function App() {
@@ -69,6 +70,14 @@ function App() {
             path="/clients/:clientId"
 
             element={<ClientProfile />}
+
+          />
+
+          <Route
+
+            path={ROUTES.APP.PROJECTS}
+
+            element={<Projects />}
 
           />
 

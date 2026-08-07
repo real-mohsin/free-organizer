@@ -14,6 +14,8 @@ export const ROUTES = {
 
         ADD_CLIENT: "/add-client",
 
+        PROJECTS: "/projects",
+
         TASKS: "/tasks",
 
         COMPONENT_SHOWCASE: "/componentshowcase",

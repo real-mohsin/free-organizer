@@ -518,7 +518,7 @@ export function Clients() {
                 />
             </Container>
 
-            /** Add Client */
+             {/* Add Client */}
 
             <Modal
 
@@ -596,7 +596,7 @@ export function Clients() {
 
             </Modal>
 
-            /** Delete Client */
+            {/* Delete Client */}
 
             <Modal
                 open={isDeleteModalOpen}

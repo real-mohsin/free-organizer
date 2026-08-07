@@ -15,6 +15,7 @@ export function Table<T>({
     stickyHeader = false,
     fullWidth = true,
     getRowKey,
+    onRowClick,
     className,
     ...props
 }: TableProps<T>) {
@@ -44,8 +45,7 @@ export function Table<T>({
                 </tr>
             );
         }
-        console.log(data.length);
-        console.log(emptyState);
+
         if (data.length === 0) {
 
             return (
@@ -76,7 +76,18 @@ export function Table<T>({
             return (
                 <tr
                     key={rowKey}
-                    className="fo-table__row"
+                    className={cn(
+                        "fo-table__row",
+                        {
+                            "fo-table__row--clickable": !!onRowClick,
+                        }
+                    )}
+                    onClick={() =>
+                        onRowClick?.(
+                            row,
+                            rowIndex,
+                        )
+                    }
                 >
                     {columns.map((column) => {
 

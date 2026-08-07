@@ -1,0 +1,41 @@
+/* ==========================================
+   Projects Table
+========================================== */
+
+.fo-projects-table {
+    margin-top: var(--fo-spacing-lg);
+}
+
+/* ==========================================
+   Status
+========================================== */
+
+.fo-projects-table__status {
+    text-transform: capitalize;
+}
+
+/* ==========================================
+   Progress
+========================================== */
+
+.fo-projects-table__progress {
+    font-weight: var(--fo-font-weight-medium);
+
+    color: var(--fo-color-text-secondary);
+}
+
+/* ==========================================
+   Budget
+========================================== */
+
+.fo-projects-table__budget {
+    font-weight: var(--fo-font-weight-semibold);
+}
+
+/* ==========================================
+   Actions
+========================================== */
+
+.fo-projects-table__actions {
+    justify-content: center;
+}

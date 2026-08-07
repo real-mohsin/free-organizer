@@ -67,6 +67,8 @@ export function ClientsStats({
 
                 icon={<Users size={20} />}
 
+                variant="success"
+
             />
 
             <StatCard
@@ -77,7 +79,7 @@ export function ClientsStats({
 
                 icon={<UserCheck size={20} />}
 
-                variant="revenue"
+                variant="primary"
 
             />
 
@@ -89,7 +91,7 @@ export function ClientsStats({
 
                 icon={<FolderKanban size={20} />}
 
-                variant="clients"
+                variant="warning"
 
             />
 
@@ -101,7 +103,7 @@ export function ClientsStats({
 
                 icon={<DollarSign size={20} />}
 
-                variant="outstanding"
+                variant="danger"
 
             />
 

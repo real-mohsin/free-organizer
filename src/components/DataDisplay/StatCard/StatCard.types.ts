@@ -8,10 +8,11 @@ import {
  */
 export type StatCardVariant =
     | "default"
-    | "revenue"
-    | "clients"
-    | "projects"
-    | "outstanding";
+    | "primary"
+    | "success"
+    | "warning"
+    | "danger"
+    | "purple";
 
 /**
  * Props for the StatCard component.

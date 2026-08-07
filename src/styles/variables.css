@@ -39,6 +39,13 @@
    --fo-color-info-active: #0369a1;
    --fo-color-info-light: #e0f2fe;
 
+   /* Purple */
+
+   --fo-color-purple: #7c3aed;
+   --fo-color-purple-hover: #6d28d9;
+   --fo-color-purple-active: #5b21b6;
+   --fo-color-purple-light: #ede9fe;
+
    /* Neutral */
    --fo-color-white: #ffffff;
    --fo-color-black: #000000;

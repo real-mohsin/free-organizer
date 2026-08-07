@@ -21,7 +21,7 @@ export interface TableColumn<T> {
      * Custom cell renderer.
      */
     render?: (
-        value: unknown,
+        value: any,
         row: T,
         rowIndex: number
     ) => ReactNode;
@@ -92,4 +92,9 @@ export interface TableProps<T>
         row: T,
         rowIndex: number
     ) => React.Key;
+
+    onRowClick?: (
+        row: T,
+        rowIndex: number,
+    ) => void;
 }

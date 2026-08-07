@@ -1,0 +1,13 @@
+.fo-projects-filters {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--fo-space-5);
+
+    margin-bottom: var(--fo-space-6);
+
+}

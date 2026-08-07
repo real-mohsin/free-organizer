@@ -54,13 +54,13 @@ export function ClientOverview({
             <OverviewItem
                 icon={<CalendarDays size={18} />}
                 label="Created"
-                value={"..."}
+                value={"Jan 10, 2026"}
 />
 
             <OverviewItem
                 icon={<Clock3 size={18} />}
                 label="Updated"
-                value={"..."}
+                value={"Feb 10, 2026"}
 />
 
         </Grid>

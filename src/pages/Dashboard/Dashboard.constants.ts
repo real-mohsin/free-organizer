@@ -20,7 +20,7 @@ export const DASHBOARD_STATS = [
         value: "$18,450",
         footer: "+12.5% from last month",
         icon: DollarSign,
-        variant: "revenue" satisfies StatCardVariant,
+        variant: "success" satisfies StatCardVariant,
     },
 
     {
@@ -28,7 +28,7 @@ export const DASHBOARD_STATS = [
         value: "24",
         footer: "3 new this month",
         icon: Users,
-        variant: "clients" satisfies StatCardVariant,
+        variant: "primary" satisfies StatCardVariant,
     },
 
     {
@@ -36,7 +36,7 @@ export const DASHBOARD_STATS = [
         value: "9",
         footer: "6 active projects",
         icon: FolderKanban,
-        variant: "projects" satisfies StatCardVariant,
+        variant: "purple" satisfies StatCardVariant,
     },
 
     {
@@ -44,7 +44,7 @@ export const DASHBOARD_STATS = [
         value: "$2,300",
         footer: "4 unpaid invoices",
         icon: CreditCard,
-        variant: "outstanding" satisfies StatCardVariant,
+        variant: "warning" satisfies StatCardVariant,
     },
 
 ] as const;

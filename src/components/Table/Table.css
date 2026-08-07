@@ -184,9 +184,7 @@
    Zebra Rows
 ========================================== */
 
-.fo-table--zebra
-.fo-table__body
-.fo-table__row:nth-child(even) {
+.fo-table--zebra .fo-table__body .fo-table__row:nth-child(even) {
     background: var(--fo-color-surface-secondary);
 }
 
@@ -234,6 +232,14 @@
     outline-offset: 2px;
 }
 
+.fo-table__row--clickable {
+    cursor: pointer;
+}
+
+.fo-table__row--clickable:active {
+    transform: scale(0.998);
+}
+
 /* ==========================================
    Responsive
 ========================================== */
@@ -271,8 +277,7 @@
     scrollbar-width: thin;
 
     scrollbar-color:
-        var(--fo-color-border)
-        transparent;
+        var(--fo-color-border) transparent;
 }
 
 /* ==========================================

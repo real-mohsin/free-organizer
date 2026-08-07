@@ -29,24 +29,28 @@ export function ClientStatistics({
         >
 
             <StatCard
+                variant="primary"
                 heading="Projects"
                 value={client.projects}
                 icon={<FolderKanban size={18} />}
             />
 
             <StatCard
+                variant="success"
                 heading="Revenue"
                 value={`$${client.totalRevenue.toLocaleString()}`}
                 icon={<DollarSign size={18} />}
             />
 
             <StatCard
+                variant="warning"
                 heading="Type"
                 value={client.type}
                 icon={<Building2 size={18} />}
             />
 
             <StatCard
+                variant="purple"
                 heading="Client Since"
                 value={new Date(
                     client.createdAt,

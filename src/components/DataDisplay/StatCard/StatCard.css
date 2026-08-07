@@ -104,57 +104,66 @@
 }
 
 /* ==========================================
-   Revenue
+   Primary
 ========================================== */
 
-.fo-stat-card--revenue::before {
-    background: #22c55e;
+.fo-stat-card--primary::before {
+    background: var(--fo-color-primary);
 }
 
-.fo-stat-card__icon--revenue {
-    background: rgba(34, 197, 94, 0.12);
-
-    color: #16a34a;
+.fo-stat-card__icon--primary {
+    background: var(--fo-color-primary-light);
+    color: var(--fo-color-primary);
 }
 
 /* ==========================================
-   Clients
+   Success
 ========================================== */
 
-.fo-stat-card--clients::before {
-    background: #3b82f6;
+.fo-stat-card--success::before {
+    background: var(--fo-color-success);
 }
 
-.fo-stat-card__icon--clients {
-    background: rgba(59, 130, 246, 0.12);
-
-    color: #2563eb;
+.fo-stat-card__icon--success {
+    background: var(--fo-color-success-light);
+    color: var(--fo-color-success);
 }
 
 /* ==========================================
-   Projects
+   Warning
 ========================================== */
 
-.fo-stat-card--projects::before {
-    background: #8b5cf6;
+.fo-stat-card--warning::before {
+    background: var(--fo-color-warning);
 }
 
-.fo-stat-card__icon--projects {
-    background: rgba(139, 92, 246, 0.12);
-
-    color: #7c3aed;
+.fo-stat-card__icon--warning {
+    background: var(--fo-color-warning-light);
+    color: var(--fo-color-warning);
 }
 
 /* ==========================================
-   Outstanding
+   Danger
 ========================================== */
 
-.fo-stat-card--outstanding::before {
-    background: #f59e0b;
+.fo-stat-card--danger::before {
+    background: var(--fo-color-danger);
 }
 
-.fo-stat-card__icon--outstanding {
-    background: rgba(245, 158, 11, 0.12);
+.fo-stat-card__icon--danger {
+    background: var(--fo-color-danger-light);
+    color: var(--fo-color-danger);
+}
 
-    color: #d97706;
+/* ==========================================
+   Purple
+========================================== */
+
+.fo-stat-card--purple::before {
+    background: var(--fo-color-purple);
+}
+
+.fo-stat-card__icon--purple {
+    background: var(--fo-color-purple-light);
+    color: var(--fo-color-purple);
 }
